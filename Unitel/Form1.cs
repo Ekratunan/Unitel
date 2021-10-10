@@ -39,32 +39,51 @@ namespace Unitel
         public void button1_Click(object sender, EventArgs e)
         {
 
-            string exName = textBox1.Text.Trim();
-            string cnNum = textBox2.Text.Trim();
+            string exeName = textBox1.Text.Trim();
+            string counter = comboBox1.Text.Trim();
 
 
+            bool verify = true;
 
 
-            if (exName != "" && cnNum != "")
+            if (verify)
             {
                 this.Hide();
-                Form2 form2 = new Form2(exName, cnNum);
-                form2.Show();
 
+                Dashboard dashboard = new Dashboard(exeName, counter);
 
-                string exeName = textBox1.Text;
-                string counter = textBox2.Text;
-
-                DatabaseFile databaseFile = new DatabaseFile();
-
-                databaseFile.LogInDataInsert(exeName, counter);
-
+                dashboard.Show();
+                
+                
             }
             else
             {
                 label4.Text = "Invalid Name or Counter Number!";
             }
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AdminLogIn adminLogIn = new AdminLogIn();
+
+            adminLogIn.Show();
+            this.Hide();
         }
     }
 }

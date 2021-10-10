@@ -5,31 +5,26 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Unitel
 {
-    public partial class Form2 : Form
+    public partial class Dashboard : Form
     {
-
-
-        public Form2(string exeName, string counter)
+        public Dashboard(string exeName, string counter)
         {
             InitializeComponent();
-            label3.Text = exeName;
-            label4.Text = counter;
+
+            this.label3.Text = exeName;
+            this.label4.Text = counter;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }   
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
@@ -37,8 +32,9 @@ namespace Unitel
         private void button3_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
-            this.Close();
+
             form1.Show();
+            this.Close();
         }
     }
 }
