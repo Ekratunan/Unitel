@@ -8,19 +8,24 @@ using System.Windows.Forms;
 
 namespace Unitel
 {
-    public partial class AdminDashboard : Form
+    public partial class TicketGen : Form
     {
-        public AdminDashboard()
+        public TicketGen()
         {
             InitializeComponent();
         }
 
-        private void balance_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

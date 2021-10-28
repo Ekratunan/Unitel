@@ -8,19 +8,14 @@ using System.Windows.Forms;
 
 namespace Unitel
 {
-    public partial class AdminDashboard : Form
+    public partial class QueueScreen : Form
     {
-        public AdminDashboard()
+        public QueueScreen()
         {
             InitializeComponent();
         }
 
-        private void balance_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

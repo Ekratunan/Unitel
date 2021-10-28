@@ -1,44 +1,55 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Unitel
 {
     class DatabaseFile
     {
+        IMongoDatabase database;
 
-        public void DatabaseCon(string databaseName, string collectionName)
+        public DatabaseFile(string databaseName)
         {
-            
-
+            var client = new MongoClient();
+            database = client.GetDatabase(databaseName);
         }
 
-        public bool PasswordVerify(string userName, string password)
+        public void InsertRecord<T>(string table, T record)
         {
-            bool verification = false;
-
-            var settings = MongoClientSettings.FromConnectionString("mongodb://ekraHossain:ekraHossain17@unitel-shard-00-00.m8yxy.mongodb.net:27017,unitel-shard-00-01.m8yxy.mongodb.net:27017,unitel-shard-00-02.m8yxy.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-110s91-shard-0&authSource=admin&retryWrites=true&w=majority");
-            var client = new MongoClient(settings);
-            var database = client.GetDatabase("employee_info");
-            var collection = database.GetCollection<BsonDocument>("passwords");
-
-            var filter = Builders<BsonDocument>.Filter.Eq("userName", userName);
-
-            BsonDocument studentDocument = collection.Find(filter).FirstOrDefault();
-            string pass = studentDocument.ToString();
-
-            if(pass == password)
-            {
-                verification = true;
-            }
-
-            return verification;
+            var collection = database.GetCollection<T>(table);
+            collection.InsertOne(record);
         }
 
-       
+        public List<T> LoadRecords<T>(string table)
+        {
+            var collection = database.GetCollection<T>(table);
+            return collection.Find(new BsonDocument()).ToList();
+        }
 
-     
+        public T LoadRecordbyIdentity<T>(string table, string field, string value)
+        {
+            var collection = database.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(field, value);
+
+            return collection.Find(filter).FirstOrDefault();
+        }
+
+        public void UpsertRecord<T>(string table, string field, string data, T record)
+        {
+            var collection = database.GetCollection<T>(table);
+
+            var result = collection.ReplaceOne(
+                new BsonDocument(field, data),
+                record,
+                new ReplaceOptions { IsUpsert = true });
+        }
+
+        public void DeleteRecord<T>(string table, string field, string value)
+        {
+            var collection = database.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(field, value);
+            collection.DeleteOne(filter);
+        }
+
     }
 }
