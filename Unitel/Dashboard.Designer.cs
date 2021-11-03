@@ -34,6 +34,10 @@ namespace Unitel
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Token = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,10 +48,6 @@ namespace Unitel
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Token = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -118,6 +118,30 @@ namespace Unitel
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // CustomerName
+            // 
+            this.CustomerName.HeaderText = "Customer Name";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.Width = 220;
+            // 
+            // Phone
+            // 
+            this.Phone.HeaderText = "Phone Number";
+            this.Phone.Name = "Phone";
+            this.Phone.Width = 200;
+            // 
+            // Token
+            // 
+            this.Token.HeaderText = "Token Number";
+            this.Token.Name = "Token";
+            this.Token.Width = 200;
+            // 
+            // ServiceType
+            // 
+            this.ServiceType.HeaderText = "Type of Service";
+            this.ServiceType.Name = "ServiceType";
+            this.ServiceType.Width = 220;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -152,6 +176,7 @@ namespace Unitel
             this.button2.TabIndex = 1;
             this.button2.Text = "Open";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -228,30 +253,6 @@ namespace Unitel
             this.label1.Size = new System.Drawing.Size(107, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Active Executive :";
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.HeaderText = "Customer Name";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.Width = 220;
-            // 
-            // Phone
-            // 
-            this.Phone.HeaderText = "Phone Number";
-            this.Phone.Name = "Phone";
-            this.Phone.Width = 200;
-            // 
-            // Token
-            // 
-            this.Token.HeaderText = "Token Number";
-            this.Token.Name = "Token";
-            this.Token.Width = 200;
-            // 
-            // ServiceType
-            // 
-            this.ServiceType.HeaderText = "Type of Service";
-            this.ServiceType.Name = "ServiceType";
-            this.ServiceType.Width = 220;
             // 
             // Dashboard
             // 

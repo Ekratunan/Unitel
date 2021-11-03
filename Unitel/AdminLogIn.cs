@@ -30,6 +30,11 @@ namespace Unitel
                 label3.ForeColor = Color.Green;
                 label3.Text = "Successfully Log in";
 
+                AdminDashboard adminDashboard = new AdminDashboard();
+
+                adminDashboard.Show();
+                this.Close();
+
             }
             else
             {

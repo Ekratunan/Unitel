@@ -10,7 +10,7 @@ namespace Unitel
 
         public DatabaseFile(string databaseName)
         {
-            var client = new MongoClient();
+            var client = new MongoClient("mongodb+srv://ekraHossain:ekraHossain17@unitel.m8yxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
             database = client.GetDatabase(databaseName);
         }
 
@@ -42,6 +42,8 @@ namespace Unitel
                 new BsonDocument(field, data),
                 record,
                 new ReplaceOptions { IsUpsert = true });
+
+
         }
 
         public void DeleteRecord<T>(string table, string field, string value)

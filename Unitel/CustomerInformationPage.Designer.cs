@@ -34,7 +34,11 @@ namespace Unitel
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -43,20 +47,38 @@ namespace Unitel
             this.label18 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.personalInformation = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,6 +87,8 @@ namespace Unitel
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.simInformation = new System.Windows.Forms.TabPage();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -94,6 +118,8 @@ namespace Unitel
             this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.personalInformation.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.simInformation.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -154,7 +180,11 @@ namespace Unitel
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.comboBox3);
+            this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.comboBox2);
             this.panel4.Controls.Add(this.dateTimePicker3);
             this.panel4.Controls.Add(this.textBox12);
             this.panel4.Controls.Add(this.textBox11);
@@ -167,6 +197,34 @@ namespace Unitel
             this.panel4.Size = new System.Drawing.Size(374, 514);
             this.panel4.TabIndex = 0;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(23, 162);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(69, 17);
+            this.label22.TabIndex = 55;
+            this.label22.Text = "User Level";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(151, 159);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(200, 23);
+            this.comboBox3.TabIndex = 54;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(23, 131);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 17);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "Network Version";
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(23, 461);
@@ -175,6 +233,14 @@ namespace Unitel
             this.button4.TabIndex = 6;
             this.button4.Text = "Deactivate";
             this.button4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(151, 128);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(200, 23);
+            this.comboBox2.TabIndex = 52;
             // 
             // dateTimePicker3
             // 
@@ -245,20 +311,18 @@ namespace Unitel
             // personalInformation
             // 
             this.personalInformation.BackColor = System.Drawing.Color.DarkGray;
+            this.personalInformation.Controls.Add(this.groupBox5);
+            this.personalInformation.Controls.Add(this.groupBox4);
             this.personalInformation.Controls.Add(this.label21);
             this.personalInformation.Controls.Add(this.textBox13);
             this.personalInformation.Controls.Add(this.textBox4);
-            this.personalInformation.Controls.Add(this.richTextBox2);
-            this.personalInformation.Controls.Add(this.richTextBox1);
             this.personalInformation.Controls.Add(this.textBox7);
             this.personalInformation.Controls.Add(this.textBox6);
             this.personalInformation.Controls.Add(this.textBox3);
             this.personalInformation.Controls.Add(this.textBox2);
             this.personalInformation.Controls.Add(this.textBox1);
             this.personalInformation.Controls.Add(this.button1);
-            this.personalInformation.Controls.Add(this.label11);
             this.personalInformation.Controls.Add(this.dateTimePicker1);
-            this.personalInformation.Controls.Add(this.label10);
             this.personalInformation.Controls.Add(this.label9);
             this.personalInformation.Controls.Add(this.label8);
             this.personalInformation.Controls.Add(this.label7);
@@ -272,6 +336,206 @@ namespace Unitel
             this.personalInformation.Size = new System.Drawing.Size(738, 486);
             this.personalInformation.TabIndex = 0;
             this.personalInformation.Text = "Personal Information";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox31);
+            this.groupBox5.Controls.Add(this.label52);
+            this.groupBox5.Controls.Add(this.comboBox6);
+            this.groupBox5.Controls.Add(this.label53);
+            this.groupBox5.Controls.Add(this.textBox32);
+            this.groupBox5.Controls.Add(this.label54);
+            this.groupBox5.Controls.Add(this.textBox33);
+            this.groupBox5.Controls.Add(this.label55);
+            this.groupBox5.Controls.Add(this.textBox34);
+            this.groupBox5.Controls.Add(this.label56);
+            this.groupBox5.Location = new System.Drawing.Point(24, 289);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(686, 117);
+            this.groupBox5.TabIndex = 43;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Permanent Address";
+            // 
+            // textBox31
+            // 
+            this.textBox31.Location = new System.Drawing.Point(301, 39);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(117, 23);
+            this.textBox31.TabIndex = 25;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(301, 21);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(33, 15);
+            this.label52.TabIndex = 24;
+            this.label52.Text = "State";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(7, 88);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(166, 23);
+            this.comboBox6.TabIndex = 23;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(7, 70);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(50, 15);
+            this.label53.TabIndex = 22;
+            this.label53.Text = "Country";
+            // 
+            // textBox32
+            // 
+            this.textBox32.Location = new System.Drawing.Point(424, 39);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(117, 23);
+            this.textBox32.TabIndex = 5;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(424, 21);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(56, 15);
+            this.label54.TabIndex = 4;
+            this.label54.Text = "Postcode";
+            // 
+            // textBox33
+            // 
+            this.textBox33.Location = new System.Drawing.Point(547, 39);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Size = new System.Drawing.Size(117, 23);
+            this.textBox33.TabIndex = 3;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(547, 21);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(28, 15);
+            this.label55.TabIndex = 2;
+            this.label55.Text = "City";
+            // 
+            // textBox34
+            // 
+            this.textBox34.Location = new System.Drawing.Point(7, 39);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(288, 23);
+            this.textBox34.TabIndex = 1;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(7, 21);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(37, 15);
+            this.label56.TabIndex = 0;
+            this.label56.Text = "Street";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox30);
+            this.groupBox4.Controls.Add(this.label51);
+            this.groupBox4.Controls.Add(this.comboBox5);
+            this.groupBox4.Controls.Add(this.label50);
+            this.groupBox4.Controls.Add(this.textBox29);
+            this.groupBox4.Controls.Add(this.label49);
+            this.groupBox4.Controls.Add(this.textBox28);
+            this.groupBox4.Controls.Add(this.label48);
+            this.groupBox4.Controls.Add(this.textBox22);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Location = new System.Drawing.Point(24, 166);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(686, 117);
+            this.groupBox4.TabIndex = 42;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Present Address";
+            // 
+            // textBox30
+            // 
+            this.textBox30.Location = new System.Drawing.Point(301, 39);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(117, 23);
+            this.textBox30.TabIndex = 25;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(301, 21);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(33, 15);
+            this.label51.TabIndex = 24;
+            this.label51.Text = "State";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(7, 88);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(166, 23);
+            this.comboBox5.TabIndex = 23;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(7, 70);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(50, 15);
+            this.label50.TabIndex = 22;
+            this.label50.Text = "Country";
+            // 
+            // textBox29
+            // 
+            this.textBox29.Location = new System.Drawing.Point(424, 39);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(117, 23);
+            this.textBox29.TabIndex = 5;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(424, 21);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(56, 15);
+            this.label49.TabIndex = 4;
+            this.label49.Text = "Postcode";
+            // 
+            // textBox28
+            // 
+            this.textBox28.Location = new System.Drawing.Point(547, 39);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(117, 23);
+            this.textBox28.TabIndex = 3;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(547, 21);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(28, 15);
+            this.label48.TabIndex = 2;
+            this.label48.Text = "City";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(7, 39);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(288, 23);
+            this.textBox22.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Street";
             // 
             // label21
             // 
@@ -296,22 +560,6 @@ namespace Unitel
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(226, 23);
             this.textBox4.TabIndex = 38;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(167, 210);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(543, 38);
-            this.richTextBox2.TabIndex = 36;
-            this.richTextBox2.Text = "";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(167, 166);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(543, 38);
-            this.richTextBox1.TabIndex = 35;
-            this.richTextBox1.Text = "";
             // 
             // textBox7
             // 
@@ -357,32 +605,12 @@ namespace Unitel
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(24, 210);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 15);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Permanent Address";
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(167, 108);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(226, 23);
             this.dateTimePicker1.TabIndex = 34;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(24, 166);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 15);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Present Address";
             // 
             // label9
             // 
@@ -457,6 +685,8 @@ namespace Unitel
             // simInformation
             // 
             this.simInformation.BackColor = System.Drawing.Color.LightGray;
+            this.simInformation.Controls.Add(this.textBox14);
+            this.simInformation.Controls.Add(this.label10);
             this.simInformation.Controls.Add(this.editButton);
             this.simInformation.Controls.Add(this.label17);
             this.simInformation.Controls.Add(this.dateTimePicker2);
@@ -477,6 +707,23 @@ namespace Unitel
             this.simInformation.TabIndex = 1;
             this.simInformation.Text = "SIM Information";
             // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(166, 219);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(226, 23);
+            this.textBox14.TabIndex = 50;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(23, 223);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 15);
+            this.label10.TabIndex = 51;
+            this.label10.Text = "Serial Number";
+            // 
             // editButton
             // 
             this.editButton.Location = new System.Drawing.Point(632, 437);
@@ -490,7 +737,7 @@ namespace Unitel
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label17.Location = new System.Drawing.Point(23, 190);
+            this.label17.Location = new System.Drawing.Point(23, 194);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(114, 15);
             this.label17.TabIndex = 48;
@@ -643,6 +890,7 @@ namespace Unitel
             this.button3.TabIndex = 6;
             this.button3.Text = "Pass to other";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -680,6 +928,10 @@ namespace Unitel
             this.tabControl1.ResumeLayout(false);
             this.personalInformation.ResumeLayout(false);
             this.personalInformation.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.simInformation.ResumeLayout(false);
             this.simInformation.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -707,17 +959,13 @@ namespace Unitel
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -746,5 +994,33 @@ namespace Unitel
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label10;
     }
 }

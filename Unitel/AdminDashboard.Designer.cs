@@ -40,20 +40,39 @@ namespace Unitel
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -80,24 +99,44 @@ namespace Unitel
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.textBox41 = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
@@ -129,6 +168,8 @@ namespace Unitel
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label47 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label46 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -160,8 +201,9 @@ namespace Unitel
             this.panel12 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label47 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
@@ -172,12 +214,16 @@ namespace Unitel
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -229,6 +275,7 @@ namespace Unitel
             this.button6.TabIndex = 1;
             this.button6.Text = "Search";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // groupBox2
             // 
@@ -248,9 +295,9 @@ namespace Unitel
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(6, 37);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(118, 15);
+            this.label26.Size = new System.Drawing.Size(121, 15);
             this.label26.TabIndex = 2;
-            this.label26.Text = "Enter Phone Number";
+            this.label26.Text = "Enter Mobile Number";
             // 
             // textBox24
             // 
@@ -267,6 +314,7 @@ namespace Unitel
             this.button11.TabIndex = 1;
             this.button11.Text = "Search";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // panel1
             // 
@@ -274,14 +322,12 @@ namespace Unitel
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 459);
+            this.panel1.Size = new System.Drawing.Size(200, 522);
             this.panel1.TabIndex = 0;
             // 
             // button5
@@ -295,6 +341,7 @@ namespace Unitel
             this.button5.TabIndex = 4;
             this.button5.Text = "Log Out";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pictureBox1
             // 
@@ -304,30 +351,6 @@ namespace Unitel
             this.pictureBox1.Size = new System.Drawing.Size(182, 63);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Sienna;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(20, 321);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(161, 29);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Deactivation";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Sienna;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(20, 286);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 29);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Add Card";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -340,6 +363,7 @@ namespace Unitel
             this.button2.TabIndex = 1;
             this.button2.Text = "Add New User";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -352,6 +376,7 @@ namespace Unitel
             this.button1.TabIndex = 0;
             this.button1.Text = "Add Employee";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -359,7 +384,7 @@ namespace Unitel
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(681, 459);
+            this.panel2.Size = new System.Drawing.Size(681, 522);
             this.panel2.TabIndex = 1;
             // 
             // tabControl1
@@ -373,8 +398,9 @@ namespace Unitel
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(681, 459);
+            this.tabControl1.Size = new System.Drawing.Size(681, 522);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -383,7 +409,7 @@ namespace Unitel
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(673, 431);
+            this.tabPage1.Size = new System.Drawing.Size(673, 494);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Employee";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -391,12 +417,13 @@ namespace Unitel
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightGray;
+            this.panel4.Controls.Add(this.panel13);
+            this.panel4.Controls.Add(this.groupBox5);
+            this.panel4.Controls.Add(this.groupBox4);
             this.panel4.Controls.Add(this.dateTimePicker1);
-            this.panel4.Controls.Add(this.richTextBox1);
             this.panel4.Controls.Add(this.textBox10);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.textBox7);
             this.panel4.Controls.Add(this.label6);
@@ -412,35 +439,238 @@ namespace Unitel
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(467, 425);
+            this.panel4.Size = new System.Drawing.Size(467, 488);
             this.panel4.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(467, 488);
+            this.panel13.TabIndex = 23;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox31);
+            this.groupBox5.Controls.Add(this.label52);
+            this.groupBox5.Controls.Add(this.comboBox6);
+            this.groupBox5.Controls.Add(this.label53);
+            this.groupBox5.Controls.Add(this.textBox32);
+            this.groupBox5.Controls.Add(this.label54);
+            this.groupBox5.Controls.Add(this.textBox33);
+            this.groupBox5.Controls.Add(this.label55);
+            this.groupBox5.Controls.Add(this.textBox34);
+            this.groupBox5.Controls.Add(this.label56);
+            this.groupBox5.Location = new System.Drawing.Point(11, 344);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(424, 117);
+            this.groupBox5.TabIndex = 22;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Permanent Address";
+            // 
+            // textBox31
+            // 
+            this.textBox31.Location = new System.Drawing.Point(301, 39);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(117, 23);
+            this.textBox31.TabIndex = 25;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(301, 21);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(33, 15);
+            this.label52.TabIndex = 24;
+            this.label52.Text = "State";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(129, 84);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(166, 23);
+            this.comboBox6.TabIndex = 23;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(129, 66);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(50, 15);
+            this.label53.TabIndex = 22;
+            this.label53.Text = "Country";
+            // 
+            // textBox32
+            // 
+            this.textBox32.Location = new System.Drawing.Point(301, 84);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(117, 23);
+            this.textBox32.TabIndex = 5;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(301, 66);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(56, 15);
+            this.label54.TabIndex = 4;
+            this.label54.Text = "Postcode";
+            // 
+            // textBox33
+            // 
+            this.textBox33.Location = new System.Drawing.Point(6, 84);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Size = new System.Drawing.Size(117, 23);
+            this.textBox33.TabIndex = 3;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(6, 66);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(28, 15);
+            this.label55.TabIndex = 2;
+            this.label55.Text = "City";
+            // 
+            // textBox34
+            // 
+            this.textBox34.Location = new System.Drawing.Point(7, 39);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(288, 23);
+            this.textBox34.TabIndex = 1;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(7, 21);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(37, 15);
+            this.label56.TabIndex = 0;
+            this.label56.Text = "Street";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox30);
+            this.groupBox4.Controls.Add(this.label51);
+            this.groupBox4.Controls.Add(this.comboBox5);
+            this.groupBox4.Controls.Add(this.label50);
+            this.groupBox4.Controls.Add(this.textBox29);
+            this.groupBox4.Controls.Add(this.label49);
+            this.groupBox4.Controls.Add(this.textBox28);
+            this.groupBox4.Controls.Add(this.label48);
+            this.groupBox4.Controls.Add(this.textBox22);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Location = new System.Drawing.Point(11, 221);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(424, 117);
+            this.groupBox4.TabIndex = 21;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Present Address";
+            // 
+            // textBox30
+            // 
+            this.textBox30.Location = new System.Drawing.Point(301, 39);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(117, 23);
+            this.textBox30.TabIndex = 25;
+            this.textBox30.TextChanged += new System.EventHandler(this.textBox30_TextChanged);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(301, 21);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(33, 15);
+            this.label51.TabIndex = 24;
+            this.label51.Text = "State";
+            this.label51.Click += new System.EventHandler(this.label51_Click);
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(129, 84);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(166, 23);
+            this.comboBox5.TabIndex = 23;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(129, 66);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(50, 15);
+            this.label50.TabIndex = 22;
+            this.label50.Text = "Country";
+            // 
+            // textBox29
+            // 
+            this.textBox29.Location = new System.Drawing.Point(301, 84);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(117, 23);
+            this.textBox29.TabIndex = 5;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(301, 66);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(56, 15);
+            this.label49.TabIndex = 4;
+            this.label49.Text = "Postcode";
+            // 
+            // textBox28
+            // 
+            this.textBox28.Location = new System.Drawing.Point(6, 84);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(117, 23);
+            this.textBox28.TabIndex = 3;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(6, 66);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(28, 15);
+            this.label48.TabIndex = 2;
+            this.label48.Text = "City";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(7, 39);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(288, 23);
+            this.textBox22.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 21);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 15);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Street";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(234, 209);
+            this.dateTimePicker1.Location = new System.Drawing.Point(226, 128);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(182, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(209, 23);
             this.dateTimePicker1.TabIndex = 20;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(40, 312);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(376, 73);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(234, 262);
+            this.textBox10.Location = new System.Drawing.Point(226, 183);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(182, 23);
+            this.textBox10.Size = new System.Drawing.Size(209, 23);
             this.textBox10.TabIndex = 18;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(234, 241);
+            this.label10.Location = new System.Drawing.Point(226, 162);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 15);
             this.label10.TabIndex = 17;
@@ -450,41 +680,32 @@ namespace Unitel
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(234, 189);
+            this.label9.Location = new System.Drawing.Point(226, 110);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 15);
             this.label9.TabIndex = 15;
             this.label9.Text = "Date of Birth";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 293);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 15);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Address";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 241);
+            this.label7.Location = new System.Drawing.Point(11, 162);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 15);
+            this.label7.Size = new System.Drawing.Size(124, 15);
             this.label7.TabIndex = 12;
-            this.label7.Text = "NID Number";
+            this.label7.Text = "NID/Passport Number";
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(39, 262);
+            this.textBox7.Location = new System.Drawing.Point(11, 183);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(182, 23);
+            this.textBox7.Size = new System.Drawing.Size(209, 23);
             this.textBox7.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 189);
+            this.label6.Location = new System.Drawing.Point(11, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 10;
@@ -492,15 +713,15 @@ namespace Unitel
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(39, 210);
+            this.textBox6.Location = new System.Drawing.Point(11, 128);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(182, 23);
+            this.textBox6.Size = new System.Drawing.Size(209, 23);
             this.textBox6.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 137);
+            this.label5.Location = new System.Drawing.Point(226, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 15);
             this.label5.TabIndex = 8;
@@ -508,15 +729,15 @@ namespace Unitel
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(39, 158);
+            this.textBox5.Location = new System.Drawing.Point(226, 79);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(377, 23);
+            this.textBox5.Size = new System.Drawing.Size(209, 23);
             this.textBox5.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 81);
+            this.label4.Location = new System.Drawing.Point(11, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 15);
             this.label4.TabIndex = 6;
@@ -524,22 +745,22 @@ namespace Unitel
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(39, 102);
+            this.textBox4.Location = new System.Drawing.Point(11, 79);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(377, 23);
+            this.textBox4.Size = new System.Drawing.Size(209, 23);
             this.textBox4.TabIndex = 5;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(234, 51);
+            this.textBox3.Location = new System.Drawing.Point(226, 28);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 23);
+            this.textBox3.Size = new System.Drawing.Size(209, 23);
             this.textBox3.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(234, 30);
+            this.label3.Location = new System.Drawing.Point(226, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 15);
             this.label3.TabIndex = 3;
@@ -548,7 +769,7 @@ namespace Unitel
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 30);
+            this.label2.Location = new System.Drawing.Point(11, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 15);
             this.label2.TabIndex = 1;
@@ -556,9 +777,9 @@ namespace Unitel
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(39, 51);
+            this.textBox2.Location = new System.Drawing.Point(11, 28);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 23);
+            this.textBox2.Size = new System.Drawing.Size(209, 23);
             this.textBox2.TabIndex = 0;
             // 
             // panel3
@@ -576,7 +797,7 @@ namespace Unitel
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(470, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 425);
+            this.panel3.Size = new System.Drawing.Size(200, 488);
             this.panel3.TabIndex = 0;
             // 
             // label13
@@ -652,7 +873,7 @@ namespace Unitel
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(673, 431);
+            this.tabPage2.Size = new System.Drawing.Size(673, 494);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Users";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -664,7 +885,7 @@ namespace Unitel
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(467, 425);
+            this.panel6.Size = new System.Drawing.Size(467, 488);
             this.panel6.TabIndex = 1;
             // 
             // tabControl2
@@ -676,7 +897,7 @@ namespace Unitel
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(467, 425);
+            this.tabControl2.Size = new System.Drawing.Size(467, 488);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage5
@@ -685,7 +906,7 @@ namespace Unitel
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(459, 397);
+            this.tabPage5.Size = new System.Drawing.Size(459, 460);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Personal Info";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -693,174 +914,358 @@ namespace Unitel
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.LightGray;
-            this.panel7.Controls.Add(this.richTextBox2);
-            this.panel7.Controls.Add(this.label22);
-            this.panel7.Controls.Add(this.textBox19);
+            this.panel7.Controls.Add(this.panel14);
+            this.panel7.Controls.Add(this.groupBox6);
+            this.panel7.Controls.Add(this.groupBox7);
+            this.panel7.Controls.Add(this.dateTimePicker2);
             this.panel7.Controls.Add(this.textBox13);
             this.panel7.Controls.Add(this.label14);
-            this.panel7.Controls.Add(this.textBox14);
             this.panel7.Controls.Add(this.label15);
             this.panel7.Controls.Add(this.label16);
-            this.panel7.Controls.Add(this.textBox15);
+            this.panel7.Controls.Add(this.textBox14);
             this.panel7.Controls.Add(this.label17);
-            this.panel7.Controls.Add(this.textBox16);
+            this.panel7.Controls.Add(this.textBox15);
             this.panel7.Controls.Add(this.label18);
-            this.panel7.Controls.Add(this.textBox17);
+            this.panel7.Controls.Add(this.textBox16);
             this.panel7.Controls.Add(this.label19);
+            this.panel7.Controls.Add(this.textBox17);
             this.panel7.Controls.Add(this.textBox18);
             this.panel7.Controls.Add(this.label20);
             this.panel7.Controls.Add(this.label21);
-            this.panel7.Controls.Add(this.textBox20);
+            this.panel7.Controls.Add(this.textBox19);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(453, 391);
+            this.panel7.Size = new System.Drawing.Size(453, 454);
             this.panel7.TabIndex = 0;
             // 
-            // richTextBox2
+            // groupBox6
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(48, 300);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(352, 78);
-            this.richTextBox2.TabIndex = 37;
-            this.richTextBox2.Text = "";
+            this.groupBox6.Controls.Add(this.textBox20);
+            this.groupBox6.Controls.Add(this.label22);
+            this.groupBox6.Controls.Add(this.comboBox7);
+            this.groupBox6.Controls.Add(this.label57);
+            this.groupBox6.Controls.Add(this.textBox35);
+            this.groupBox6.Controls.Add(this.label58);
+            this.groupBox6.Controls.Add(this.textBox36);
+            this.groupBox6.Controls.Add(this.label59);
+            this.groupBox6.Controls.Add(this.textBox37);
+            this.groupBox6.Controls.Add(this.label60);
+            this.groupBox6.Location = new System.Drawing.Point(14, 334);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(424, 117);
+            this.groupBox6.TabIndex = 38;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Permanent Address";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(301, 39);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(117, 23);
+            this.textBox20.TabIndex = 25;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(47, 281);
+            this.label22.Location = new System.Drawing.Point(301, 21);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(49, 15);
-            this.label22.TabIndex = 36;
-            this.label22.Text = "Address";
+            this.label22.Size = new System.Drawing.Size(33, 15);
+            this.label22.TabIndex = 24;
+            this.label22.Text = "State";
             // 
-            // textBox19
+            // comboBox7
             // 
-            this.textBox19.Location = new System.Drawing.Point(228, 39);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(174, 23);
-            this.textBox19.TabIndex = 35;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(129, 84);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(166, 23);
+            this.comboBox7.TabIndex = 23;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(129, 66);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(50, 15);
+            this.label57.TabIndex = 22;
+            this.label57.Text = "Country";
+            // 
+            // textBox35
+            // 
+            this.textBox35.Location = new System.Drawing.Point(301, 84);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.Size = new System.Drawing.Size(117, 23);
+            this.textBox35.TabIndex = 5;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(301, 66);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(56, 15);
+            this.label58.TabIndex = 4;
+            this.label58.Text = "Postcode";
+            // 
+            // textBox36
+            // 
+            this.textBox36.Location = new System.Drawing.Point(6, 84);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.Size = new System.Drawing.Size(117, 23);
+            this.textBox36.TabIndex = 3;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(6, 66);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(28, 15);
+            this.label59.TabIndex = 2;
+            this.label59.Text = "City";
+            // 
+            // textBox37
+            // 
+            this.textBox37.Location = new System.Drawing.Point(7, 39);
+            this.textBox37.Name = "textBox37";
+            this.textBox37.Size = new System.Drawing.Size(288, 23);
+            this.textBox37.TabIndex = 1;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(7, 21);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(37, 15);
+            this.label60.TabIndex = 0;
+            this.label60.Text = "Street";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.textBox38);
+            this.groupBox7.Controls.Add(this.label61);
+            this.groupBox7.Controls.Add(this.comboBox8);
+            this.groupBox7.Controls.Add(this.label62);
+            this.groupBox7.Controls.Add(this.textBox39);
+            this.groupBox7.Controls.Add(this.label63);
+            this.groupBox7.Controls.Add(this.textBox40);
+            this.groupBox7.Controls.Add(this.label64);
+            this.groupBox7.Controls.Add(this.textBox41);
+            this.groupBox7.Controls.Add(this.label65);
+            this.groupBox7.Location = new System.Drawing.Point(14, 211);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(424, 117);
+            this.groupBox7.TabIndex = 37;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Present Address";
+            // 
+            // textBox38
+            // 
+            this.textBox38.Location = new System.Drawing.Point(301, 39);
+            this.textBox38.Name = "textBox38";
+            this.textBox38.Size = new System.Drawing.Size(117, 23);
+            this.textBox38.TabIndex = 25;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(301, 21);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(33, 15);
+            this.label61.TabIndex = 24;
+            this.label61.Text = "State";
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(129, 84);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(166, 23);
+            this.comboBox8.TabIndex = 23;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(129, 66);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(50, 15);
+            this.label62.TabIndex = 22;
+            this.label62.Text = "Country";
+            // 
+            // textBox39
+            // 
+            this.textBox39.Location = new System.Drawing.Point(301, 84);
+            this.textBox39.Name = "textBox39";
+            this.textBox39.Size = new System.Drawing.Size(117, 23);
+            this.textBox39.TabIndex = 5;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(301, 66);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(56, 15);
+            this.label63.TabIndex = 4;
+            this.label63.Text = "Postcode";
+            // 
+            // textBox40
+            // 
+            this.textBox40.Location = new System.Drawing.Point(6, 84);
+            this.textBox40.Name = "textBox40";
+            this.textBox40.Size = new System.Drawing.Size(117, 23);
+            this.textBox40.TabIndex = 3;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(6, 66);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(28, 15);
+            this.label64.TabIndex = 2;
+            this.label64.Text = "City";
+            // 
+            // textBox41
+            // 
+            this.textBox41.Location = new System.Drawing.Point(7, 39);
+            this.textBox41.Name = "textBox41";
+            this.textBox41.Size = new System.Drawing.Size(288, 23);
+            this.textBox41.TabIndex = 1;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(7, 21);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(37, 15);
+            this.label65.TabIndex = 0;
+            this.label65.Text = "Street";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(229, 127);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(209, 23);
+            this.dateTimePicker2.TabIndex = 36;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(228, 250);
+            this.textBox13.Location = new System.Drawing.Point(229, 182);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(172, 23);
-            this.textBox13.TabIndex = 34;
+            this.textBox13.Size = new System.Drawing.Size(209, 23);
+            this.textBox13.TabIndex = 35;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(228, 229);
+            this.label14.Location = new System.Drawing.Point(229, 161);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(88, 15);
-            this.label14.TabIndex = 33;
+            this.label14.TabIndex = 34;
             this.label14.Text = "Phone Number";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(228, 198);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(172, 23);
-            this.textBox14.TabIndex = 32;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(228, 177);
+            this.label15.Location = new System.Drawing.Point(229, 109);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 15);
-            this.label15.TabIndex = 31;
+            this.label15.TabIndex = 33;
             this.label15.Text = "Date of Birth";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(48, 229);
+            this.label16.Location = new System.Drawing.Point(14, 161);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 15);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "NID Number";
+            this.label16.Size = new System.Drawing.Size(124, 15);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "NID/Passport Number";
             // 
-            // textBox15
+            // textBox14
             // 
-            this.textBox15.Location = new System.Drawing.Point(48, 250);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(174, 23);
-            this.textBox15.TabIndex = 29;
+            this.textBox14.Location = new System.Drawing.Point(14, 182);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(209, 23);
+            this.textBox14.TabIndex = 31;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(48, 177);
+            this.label17.Location = new System.Drawing.Point(14, 109);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 15);
-            this.label17.TabIndex = 28;
+            this.label17.TabIndex = 30;
             this.label17.Text = "Nationality";
             // 
-            // textBox16
+            // textBox15
             // 
-            this.textBox16.Location = new System.Drawing.Point(48, 198);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(174, 23);
-            this.textBox16.TabIndex = 27;
+            this.textBox15.Location = new System.Drawing.Point(14, 127);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(209, 23);
+            this.textBox15.TabIndex = 29;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(48, 125);
+            this.label18.Location = new System.Drawing.Point(229, 57);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(89, 15);
-            this.label18.TabIndex = 26;
+            this.label18.TabIndex = 28;
             this.label18.Text = "Mother\'s Name";
             // 
-            // textBox17
+            // textBox16
             // 
-            this.textBox17.Location = new System.Drawing.Point(48, 146);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(352, 23);
-            this.textBox17.TabIndex = 25;
+            this.textBox16.Location = new System.Drawing.Point(229, 78);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(209, 23);
+            this.textBox16.TabIndex = 27;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(48, 69);
+            this.label19.Location = new System.Drawing.Point(14, 57);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(83, 15);
-            this.label19.TabIndex = 24;
+            this.label19.TabIndex = 26;
             this.label19.Text = "Father\'s Name";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(14, 78);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(209, 23);
+            this.textBox17.TabIndex = 25;
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(48, 90);
+            this.textBox18.Location = new System.Drawing.Point(229, 27);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(354, 23);
-            this.textBox18.TabIndex = 23;
+            this.textBox18.Size = new System.Drawing.Size(209, 23);
+            this.textBox18.TabIndex = 24;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(228, 19);
+            this.label20.Location = new System.Drawing.Point(229, 6);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(63, 15);
-            this.label20.TabIndex = 21;
+            this.label20.TabIndex = 23;
             this.label20.Text = "Last Name";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(48, 18);
+            this.label21.Location = new System.Drawing.Point(14, 6);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(64, 15);
-            this.label21.TabIndex = 20;
+            this.label21.TabIndex = 22;
             this.label21.Text = "First Name";
             // 
-            // textBox20
+            // textBox19
             // 
-            this.textBox20.Location = new System.Drawing.Point(48, 39);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(174, 23);
-            this.textBox20.TabIndex = 19;
+            this.textBox19.Location = new System.Drawing.Point(14, 27);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(209, 23);
+            this.textBox19.TabIndex = 21;
             // 
             // tabPage6
             // 
@@ -868,7 +1273,7 @@ namespace Unitel
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(459, 397);
+            this.tabPage6.Size = new System.Drawing.Size(459, 460);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "SIM Info";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -876,6 +1281,7 @@ namespace Unitel
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.LightGray;
+            this.panel8.Controls.Add(this.panel15);
             this.panel8.Controls.Add(this.label43);
             this.panel8.Controls.Add(this.textBox9);
             this.panel8.Controls.Add(this.label29);
@@ -889,7 +1295,7 @@ namespace Unitel
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(453, 391);
+            this.panel8.Size = new System.Drawing.Size(453, 454);
             this.panel8.TabIndex = 0;
             // 
             // label43
@@ -977,7 +1383,7 @@ namespace Unitel
             this.tabPage7.Controls.Add(this.panel9);
             this.tabPage7.Location = new System.Drawing.Point(4, 24);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(459, 397);
+            this.tabPage7.Size = new System.Drawing.Size(459, 460);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Packages";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -985,6 +1391,7 @@ namespace Unitel
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.LightGray;
+            this.panel9.Controls.Add(this.panel16);
             this.panel9.Controls.Add(this.ttValidity);
             this.panel9.Controls.Add(this.ttPack);
             this.panel9.Controls.Add(this.label44);
@@ -1004,7 +1411,7 @@ namespace Unitel
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(459, 397);
+            this.panel9.Size = new System.Drawing.Size(459, 460);
             this.panel9.TabIndex = 0;
             // 
             // ttValidity
@@ -1177,8 +1584,32 @@ namespace Unitel
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(470, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 425);
+            this.panel5.Size = new System.Drawing.Size(200, 488);
             this.panel5.TabIndex = 0;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Regular",
+            "Bronze",
+            "SIlver",
+            "Gold",
+            "Platinum",
+            "Star"});
+            this.comboBox4.Location = new System.Drawing.Point(12, 346);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(182, 23);
+            this.comboBox4.TabIndex = 23;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(12, 327);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(60, 15);
+            this.label47.TabIndex = 22;
+            this.label47.Text = "User Level";
             // 
             // comboBox3
             // 
@@ -1233,9 +1664,9 @@ namespace Unitel
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(12, 163);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(88, 15);
+            this.label25.Size = new System.Drawing.Size(91, 15);
             this.label25.TabIndex = 14;
-            this.label25.Text = "Phone Number";
+            this.label25.Text = "Mobile Number";
             // 
             // button9
             // 
@@ -1261,7 +1692,7 @@ namespace Unitel
             this.tabPage4.Controls.Add(this.panel10);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(673, 431);
+            this.tabPage4.Size = new System.Drawing.Size(673, 494);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Queue";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1273,7 +1704,7 @@ namespace Unitel
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(230, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(443, 431);
+            this.panel11.Size = new System.Drawing.Size(443, 494);
             this.panel11.TabIndex = 1;
             // 
             // dataGridView1
@@ -1291,7 +1722,7 @@ namespace Unitel
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 431);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 494);
             this.dataGridView1.TabIndex = 0;
             // 
             // Phone
@@ -1327,7 +1758,7 @@ namespace Unitel
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(230, 431);
+            this.panel10.Size = new System.Drawing.Size(230, 494);
             this.panel10.TabIndex = 0;
             // 
             // groupBox3
@@ -1451,7 +1882,7 @@ namespace Unitel
             this.tabPage3.Controls.Add(this.panel12);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(673, 431);
+            this.tabPage3.Size = new System.Drawing.Size(673, 494);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Bandwidth";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1464,7 +1895,7 @@ namespace Unitel
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(673, 431);
+            this.panel12.Size = new System.Drawing.Size(673, 494);
             this.panel12.TabIndex = 0;
             // 
             // label42
@@ -1490,39 +1921,42 @@ namespace Unitel
             this.label40.TabIndex = 0;
             this.label40.Text = "OOPS! Something Wrong :(";
             // 
-            // comboBox4
+            // panel14
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Regular",
-            "Bronze",
-            "SIlver",
-            "Gold",
-            "Platinum",
-            "Star"});
-            this.comboBox4.Location = new System.Drawing.Point(12, 346);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(182, 23);
-            this.comboBox4.TabIndex = 23;
+            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(453, 454);
+            this.panel14.TabIndex = 39;
             // 
-            // label47
+            // panel15
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(12, 327);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(60, 15);
-            this.label47.TabIndex = 22;
-            this.label47.Text = "User Level";
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(453, 454);
+            this.panel15.TabIndex = 37;
+            // 
+            // panel16
+            // 
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(0, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(459, 460);
+            this.panel16.TabIndex = 16;
             // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 459);
+            this.ClientSize = new System.Drawing.Size(881, 522);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AdminDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -1534,6 +1968,10 @@ namespace Unitel
             this.tabPage1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -1542,6 +1980,10 @@ namespace Unitel
             this.tabPage5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -1569,19 +2011,15 @@ namespace Unitel
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label6;
@@ -1611,24 +2049,6 @@ namespace Unitel
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label29;
@@ -1697,5 +2117,69 @@ namespace Unitel
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox textBox38;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox textBox41;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel16;
     }
 }

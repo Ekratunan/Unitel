@@ -36,5 +36,18 @@ namespace Unitel
             form1.Show();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string customerName = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string phoneNum = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+
+            CustomerInformationPage cip = new CustomerInformationPage(customerName, phoneNum);
+
+            cip.Show();
+            this.Hide();
+
+
+        }
     }
 }
