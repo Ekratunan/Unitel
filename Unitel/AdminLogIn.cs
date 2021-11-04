@@ -13,6 +13,7 @@ namespace Unitel
         public AdminLogIn()
         {
             InitializeComponent();
+            label3.Text = "";
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -38,7 +39,6 @@ namespace Unitel
             }
             else
             {
-                label3.ForeColor = Color.Red;
                 label3.Text = "Invalid Admin ID or Password";
             }
 

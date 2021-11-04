@@ -1,13 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Unitel
@@ -19,6 +10,8 @@ namespace Unitel
             InitializeComponent();
             this.ActiveControl = textBox1;
             textBox1.Focus();
+
+            label4.Text = "";
 
         }
 
@@ -36,31 +29,78 @@ namespace Unitel
 
         }
 
+        private bool newAccount = false;
+
         public void button1_Click(object sender, EventArgs e)
         {
-
-            string exeName = textBox1.Text.Trim();
+            string empId = textBox1.Text.Trim();
             string counter = comboBox1.Text.Trim();
 
+            bool blankEmpId = empId == "";
+            bool blankCounter = counter == "";
+            bool blankPassword = textBox2.Text.Trim() == "";
 
-            bool verify = true;
-
-
-            if (verify)
+            if (blankEmpId)
+            {
+                label4.Text = "Enter Employee ID";
+            }
+            else if(VerificationTask() && blankCounter)
+            {
+                label4.Text = "Select Counter";
+            }
+            else if(blankPassword && !newAccount)
+            {
+                label4.Text = "Enter Password";
+            }
+            else if(VerificationTask() && !blankCounter)
             {
                 this.Hide();
+                Dashboard dashboard = new Dashboard(empId, counter);
+                TicketGen ticketGen = new TicketGen();
+                QueueScreen queueScreen = new QueueScreen();
 
-                Dashboard dashboard = new Dashboard(exeName, counter);
-
+                queueScreen.Show();
+                ticketGen.Show();
                 dashboard.Show();
-                
-                
             }
-            else
+            else if (!VerificationTask() && !blankEmpId && !blankPassword && !blankCounter)
             {
-                label4.Text = "Invalid Name or Counter Number!";
+                label4.Text = "Invalid Employee ID or Password";
             }
 
+        }
+
+        private bool VerificationTask()
+        {
+            bool inVarify = false;
+
+            DatabaseFile databaseFile = new DatabaseFile("Employee");
+
+            var record = databaseFile.LoadRecords<PassBook>("Emp_Account");
+
+            foreach(var rec in record)
+            {
+                if(rec.EmployeeID == textBox1.Text.Trim())
+                {
+                    if(rec.Password == null)
+                    {
+                        newAccount = true;
+                        PasswordGenerator pass = new PasswordGenerator(rec.EmployeeID);
+                        pass.Show();
+
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        comboBox1.Text = "";
+                        label4.Text = "";
+
+                    }else if(rec.Password == textBox2.Text)
+                    {
+                        inVarify = true;
+                    }
+                }
+            }
+
+            return inVarify;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -90,5 +130,7 @@ namespace Unitel
         {
 
         }
+
+        
     }
 }

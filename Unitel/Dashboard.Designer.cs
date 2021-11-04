@@ -29,6 +29,7 @@ namespace Unitel
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,8 +61,8 @@ namespace Unitel
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel1.BackgroundImage = global::Unitel.Properties.Resources.Background2;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.BackgroundImage = global::Unitel.Properties.Resources.whitebackground_2_01;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -103,7 +104,10 @@ namespace Unitel
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CustomerName,
@@ -111,10 +115,21 @@ namespace Unitel
             this.Token,
             this.ServiceType});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowCellErrors = false;
+            this.dataGridView1.ShowCellToolTips = false;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.ShowRowErrors = false;
             this.dataGridView1.Size = new System.Drawing.Size(884, 403);
+            this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -122,25 +137,29 @@ namespace Unitel
             // 
             this.CustomerName.HeaderText = "Customer Name";
             this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
             this.CustomerName.Width = 220;
             // 
             // Phone
             // 
             this.Phone.HeaderText = "Phone Number";
             this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
             this.Phone.Width = 200;
             // 
             // Token
             // 
             this.Token.HeaderText = "Token Number";
             this.Token.Name = "Token";
+            this.Token.ReadOnly = true;
             this.Token.Width = 200;
             // 
             // ServiceType
             // 
             this.ServiceType.HeaderText = "Type of Service";
             this.ServiceType.Name = "ServiceType";
-            this.ServiceType.Width = 220;
+            this.ServiceType.ReadOnly = true;
+            this.ServiceType.Width = 260;
             // 
             // panel3
             // 
@@ -264,11 +283,12 @@ namespace Unitel
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(900, 560);
             this.MinimumSize = new System.Drawing.Size(900, 560);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dashboard";
+            this.Text = "Unitel - Dashboard (Counter)";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

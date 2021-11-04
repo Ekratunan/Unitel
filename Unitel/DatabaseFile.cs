@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 
 namespace Unitel
@@ -34,12 +35,13 @@ namespace Unitel
             return collection.Find(filter).FirstOrDefault();
         }
 
-        public void UpsertRecord<T>(string table, string field, string data, T record)
+    
+        public void UpsertRecord<T>(string table, Guid Id , T record)
         {
             var collection = database.GetCollection<T>(table);
 
-            var result = collection.ReplaceOne(
-                new BsonDocument(field, data),
+             collection.ReplaceOne(
+                new BsonDocument("_id", Id),
                 record,
                 new ReplaceOptions { IsUpsert = true });
 

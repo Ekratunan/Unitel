@@ -1,11 +1,12 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace Unitel
 {
     class PersonModel
     {
         [BsonId]
-        public string ID { get; set; }
+        public Guid ID { get; set; }
         [BsonElement]
         public string FirstName { get; set; }
         [BsonElement]
@@ -26,7 +27,23 @@ namespace Unitel
         public AddressModel PresentAddress { get; set; }
         [BsonElement]
         public AddressModel PermanentAddress { get; set; }
-        
+        [BsonElement]
+        public string EmployeeID { get; set; }
+        [BsonElement]
+        public string Designation { get; set; }
+        [BsonElement]
+        public string Salary { get; set; }
+
+    }
+
+    public class PassBook
+    {
+        [BsonId]
+        public Guid ID { get; set; }
+        [BsonElement]
+        public string EmployeeID { get; set; }
+        [BsonElement]
+        public string Password { get; set; }
     }
 
     public class AddressModel
@@ -46,7 +63,7 @@ namespace Unitel
     public class EmployeeModel
     {
         [BsonId]
-        public string ID { get; set; }
+        public Guid ID { get; set; }
         [BsonElement]
         public string EmployeeID { get; set; }
         [BsonElement]

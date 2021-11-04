@@ -13,35 +13,39 @@ namespace Unitel
         public CustomerInformationPage(string cusName, string phoneNum)
         {
             InitializeComponent();
-            ValuePicker(cusName, phoneNum);
+            ValuePicker(phoneNum);
+            button4.Hide();
             
         }
 
-        private void ValuePicker(string cusName, string phoneNum)
+        private void ValuePicker( string phoneNum)
         {
-            textBox1.Text = cusName; //First Name
-            textBox4.Text = "Hossain"; //Last Name
-            textBox2.Text = "Altaf Hossain"; //Fathers Name
-            textBox3.Text = "Nehar Sultana"; //Mothers Name
-            textBox6.Text = "Bangladeshi"; //Nationality
-            textBox7.Text = "600 520 7532"; //NID or Passport Number
-            textBox13.Text = "NA"; //Driving License Number
+            DatabaseFile databaseFile = new DatabaseFile("Customer");
+            var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "PhoneNumber", phoneNum);
+
+            textBox1.Text = record.FirstName; //First Name
+            textBox4.Text = record.LastName; //Last Name
+            textBox2.Text = record.FathersName; //Fathers Name
+            textBox3.Text = record.MothersName; //Mothers Name
+            textBox6.Text = record.Nationality; //Nationality
+            textBox7.Text = record.NID_Number; //NID or Passport Number
+            textBox13.Text = record.DrivingLicenseNum; //Driving License Number
 
             //Present Address
-            textBox22.Text = "Street"; //Street
-            textBox30.Text = "Dhaka"; //State
-            textBox29.Text = "1211"; //PostCode
-            textBox28.Text = "Dhaka"; //City
-            comboBox5.Text = "Bangladesh"; //Country
+            textBox22.Text = record.PresentAddress.Street; //Street
+            textBox30.Text = record.PresentAddress.State; //State
+            textBox29.Text = record.PresentAddress.PostCode; //PostCode
+            textBox28.Text = record.PresentAddress.City; //City
+            comboBox5.Text = record.PresentAddress.Country; //Country
 
             //Permanent Address
-            textBox34.Text = "Street"; //Street
-            textBox31.Text = "Dhaka"; //State
-            textBox32.Text = "1211"; //PostCode
-            textBox33.Text = "Dhaka"; //City
-            comboBox6.Text = "Bangladesh"; //Country
+            textBox34.Text = record.PermanentAddress.Street; //Street
+            textBox31.Text = record.PermanentAddress.State; //State
+            textBox32.Text = record.PermanentAddress.PostCode; //PostCode
+            textBox33.Text = record.PermanentAddress.City; //City
+            comboBox6.Text = record.PermanentAddress.Country; //Country
 
-            textBox10.Text = phoneNum; //Mobile Number
+            textBox10.Text = record.PhoneNumber; //Mobile Number
 
         }
 
@@ -78,6 +82,44 @@ namespace Unitel
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if(button1.Text == "Edit")
+            {
+                button4.Show();
+            } else if(button1.Text == "Save")
+            {
+                DatabaseFile databaseFile = new DatabaseFile("Customer");
+                var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "PhoneNumber", textBox10.Text);
+
+                record.FirstName = textBox1.Text;
+                record.LastName = textBox4.Text;
+                record.FathersName = textBox2.Text;
+                record.MothersName = textBox3.Text;
+                record.Nationality = textBox6.Text;
+                record.NID_Number = textBox7.Text;
+                record.DrivingLicenseNum = textBox13.Text;
+                record.PresentAddress = new AddressModel
+                {
+                    Street = textBox22.Text,
+                    State = textBox30.Text,
+                    PostCode = textBox29.Text,
+                    City = textBox28.Text,
+                    Country = comboBox5.Text               
+                };
+                record.PermanentAddress = new AddressModel
+                {
+                    Street = textBox34.Text,
+                    State = textBox31.Text,
+                    PostCode = textBox32.Text,
+                    City = textBox33.Text,
+                    Country = comboBox6.Text
+                };
+
+                databaseFile.UpsertRecord("Personal_Info", record.ID, record);
+            }
         }
     }
 }

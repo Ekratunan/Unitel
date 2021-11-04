@@ -34,21 +34,43 @@ namespace Unitel
             
             if (ValidField())
             {
-                string employeeId = textBox1.Text.Trim().ToString();
-                string firstName = textBox2.Text.Trim().ToString();
-                string lastName = textBox3.Text.Trim().ToString();
-                string phoneNumber = textBox4.Text.Trim().ToString();
-                string designation = textBox5.Text.Trim().ToString();
-                string salary = textBox6.Text.Trim().ToString();
+                string employeeId = textBox1.Text.Trim();
+                string firstName = textBox2.Text.Trim();
+                string lastName = textBox3.Text.Trim();
+                string phoneNumber = textBox4.Text.Trim();
+                string designation = textBox5.Text.Trim();
+                string salary = textBox6.Text.Trim();
 
-                databaseFile.InsertRecord<EmployeeModel>("Emp_Personal_Info", new EmployeeModel { 
+                
+
+                databaseFile.InsertRecord("Emp_Personal_Info", new EmployeeModel { 
                     EmployeeID = employeeId,
                     FirstName = firstName,
                     LastName = lastName,
                     PhoneNumber = phoneNumber,
                     Designation = designation,
-                    Salary = salary
+                    Salary = salary,
+                    PresentAddress = new AddressModel
+                    {
+                        Street = "",
+                        State = "",
+                        City = "",
+                        PostCode = "",
+                        Country = "",
+
+                    },
+                    PermanentAddress = new AddressModel
+                    {
+                        Street = "",
+                        State = "",
+                        City = "",
+                        PostCode = "",
+                        Country = "",
+                    }
                 });
+
+                databaseFile.InsertRecord("Emp_Account", new PassBook {
+                EmployeeID = employeeId});;
 
                 label8.Text = "Saved Successfully";
                 this.Close();

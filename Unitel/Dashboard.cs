@@ -11,11 +11,14 @@ namespace Unitel
 {
     public partial class Dashboard : Form
     {
-        public Dashboard(string exeName, string counter)
+        public Dashboard(string empId, string counter)
         {
             InitializeComponent();
+            DatabaseFile db = new DatabaseFile("Employee");
+            var rec = db.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", empId);
 
-            this.label3.Text = exeName;
+
+            this.label3.Text = $"{ rec.FirstName} { rec.LastName}".ToString();
             this.label4.Text = counter;
         }
 

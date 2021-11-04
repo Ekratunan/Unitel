@@ -93,6 +93,16 @@ namespace Unitel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_Unitel_01 {
+            get {
+                object obj = ResourceManager.GetObject("logo Unitel-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_Unitel_02 {
             get {
                 object obj = ResourceManager.GetObject("logo Unitel-02", resourceCulture);
@@ -116,6 +126,56 @@ namespace Unitel.Properties {
         internal static System.Drawing.Bitmap logo_Unitel_FOR_HOMEPAGE {
             get {
                 object obj = ResourceManager.GetObject("logo-Unitel-FOR-HOMEPAGE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whitebackground {
+            get {
+                object obj = ResourceManager.GetObject("whitebackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whitebackground_01 {
+            get {
+                object obj = ResourceManager.GetObject("whitebackground-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whitebackground_011 {
+            get {
+                object obj = ResourceManager.GetObject("whitebackground-011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whitebackground_2_01 {
+            get {
+                object obj = ResourceManager.GetObject("whitebackground 2-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whitebackground1 {
+            get {
+                object obj = ResourceManager.GetObject("whitebackground1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

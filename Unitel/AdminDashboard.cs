@@ -13,7 +13,8 @@ namespace Unitel
         public AdminDashboard()
         {
             InitializeComponent();
-
+            label66.Text = "";
+            label67.Text = "";
             
         }
 
@@ -64,24 +65,28 @@ namespace Unitel
 
         private void button6_Click(object sender, EventArgs e)
         {
+            label67.Text = "";
             string empID = textBox1.Text.Trim();
             if(empID != "")
             {   
                 EmployeeInfoRead(empID);
-                panel13.Hide();
+            } else
+            {
+                label66.Text = "Please enter a valid Employee ID.";
             }
         }
 
         private void EmployeeInfoRead(string empID)
         {
             DatabaseFile databaseFile = new DatabaseFile("Employee");
-            var record = databaseFile.LoadRecords<EmployeeModel>("Emp_Personal_Info");
+            var record = databaseFile.LoadRecords<PersonModel>("Emp_Personal_Info");
 
-            
+            bool validEmp = false;
 
-            foreach(var rec in record)
+
+            foreach (var rec in record)
             {
-                if(rec.EmployeeID == empID)
+                if (rec.EmployeeID == empID)
                 {
                     textBox2.Text = rec.FirstName;
                     textBox3.Text = rec.LastName;
@@ -93,8 +98,16 @@ namespace Unitel
                     textBox11.Text = rec.Designation;
                     textBox12.Text = rec.Salary;
 
+                    label66.Text = "";
+                    panel13.Hide();
+                    validEmp = true;
                     break;
                 }
+            }
+
+            if (!validEmp)
+            {
+                label66.Text = "Employee not found";
             }
 
 
@@ -108,6 +121,39 @@ namespace Unitel
                 panel15.Hide();
                 panel16.Hide();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DatabaseFile database = new DatabaseFile("Employee");
+            var record = database.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
+            record.FirstName = textBox2.Text;
+            record.LastName = textBox3.Text;
+            record.FathersName = textBox4.Text;
+            record.MothersName = textBox5.Text;
+            record.Nationality = textBox6.Text;
+            record.NID_Number = textBox7.Text;
+            record.Designation = textBox11.Text;
+            record.Salary = textBox12.Text;
+            record.PresentAddress = new AddressModel
+            {
+                Street = textBox22.Text,
+                State = textBox30.Text,
+                City = textBox28.Text,
+                PostCode = textBox29.Text,
+                Country = comboBox5.Text
+            };
+            record.PermanentAddress = new AddressModel
+            {
+                Street = textBox34.Text,
+                State = textBox31.Text,
+                City = textBox33.Text,
+                PostCode = textBox32.Text,
+                Country = comboBox6.Text
+            };
+
+            database.UpsertRecord("Emp_Personal_Info", record.ID, record);
+            label67.Text = "Saved Successfully!";
         }
     }
 }
