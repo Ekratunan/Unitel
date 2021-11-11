@@ -21,7 +21,7 @@ namespace Unitel
         private void ValuePicker( string phoneNum)
         {
             DatabaseFile databaseFile = new DatabaseFile("Customer");
-            var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "PhoneNumber", phoneNum);
+            var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", phoneNum);
 
             textBox1.Text = record.FirstName; //First Name
             textBox4.Text = record.LastName; //Last Name
@@ -120,6 +120,11 @@ namespace Unitel
 
                 databaseFile.UpsertRecord("Personal_Info", record.ID, record);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

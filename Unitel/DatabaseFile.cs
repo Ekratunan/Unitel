@@ -48,10 +48,10 @@ namespace Unitel
 
         }
 
-        public void DeleteRecord<T>(string table, string field, string value)
+        public void DeleteRecord<T>(string table, Guid Id)
         {
             var collection = database.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq(field, value);
+            var filter = Builders<T>.Filter.Eq("_id", Id);
             collection.DeleteOne(filter);
         }
 

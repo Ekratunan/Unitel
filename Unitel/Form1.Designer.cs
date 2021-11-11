@@ -91,7 +91,7 @@ namespace Unitel
             this.label6.Size = new System.Drawing.Size(153, 15);
             this.label6.TabIndex = 9;
             this.label6.Text = "Are you admin? Then go to:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            
             // 
             // comboBox1
             // 
@@ -142,7 +142,7 @@ namespace Unitel
             this.label3.Size = new System.Drawing.Size(57, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            
             // 
             // label2
             // 
@@ -185,7 +185,7 @@ namespace Unitel
             this.textBox2.Size = new System.Drawing.Size(258, 23);
             this.textBox2.TabIndex = 1;
             this.textBox2.UseSystemPasswordChar = true;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            
             // 
             // textBox1
             // 

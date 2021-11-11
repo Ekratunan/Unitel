@@ -131,7 +131,6 @@ namespace Unitel
             this.dataGridView1.Size = new System.Drawing.Size(884, 403);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CustomerName
             // 
@@ -223,7 +222,6 @@ namespace Unitel
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Active Host";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button3
             // 
@@ -254,6 +252,7 @@ namespace Unitel
             this.label3.Size = new System.Drawing.Size(145, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Name of Active member";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -283,6 +282,7 @@ namespace Unitel
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(900, 560);
             this.MinimumSize = new System.Drawing.Size(900, 560);

@@ -14,12 +14,15 @@ namespace Unitel
             this.empId = empId;
             label4.Text = "";
 
+            
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool isBlank = textBox1.Text.Trim() == "" || textBox2.Text.Trim() == "";
+            bool isBlank = textBox1.Text.Trim() == "" && textBox2.Text.Trim() == "";
+            bool firstBlank = textBox1.Text.Trim() == "";
+            bool notComfirm = textBox2.Text.Trim() == "" && textBox1.Text.Trim() != "";
             bool passMatch = textBox1.Text == textBox2.Text;
 
             if(!isBlank && passMatch)
@@ -32,15 +35,18 @@ namespace Unitel
                     record.Password = textBox1.Text;
                     databaseFile.UpsertRecord("Emp_Account", record.ID, record);
 
-                    Form1 home = new Form1();
-
-                    home.Show();
                     this.Close();
                 }
-            }else if (isBlank)
+            }else if (isBlank || firstBlank)
             {
                 label4.Text = "Please enter a password!";
-            } else if (!passMatch)
+
+            } else if (notComfirm)
+            {
+                label4.Text = "Please confirm your password!";
+            }
+            else if (!passMatch)
+
             {
                 label4.Text = "Password does not matched";
             }
@@ -65,12 +71,17 @@ namespace Unitel
             }
             else if (!hasSpeChar)
             {
-                label4.Text = "Password must contains special characters and numbers";
+                label4.Text = "Must contains special characters and numbers";
             }
             
 
 
             return valid;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

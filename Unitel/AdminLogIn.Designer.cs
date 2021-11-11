@@ -47,10 +47,11 @@ namespace Unitel
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(7, 106);
+            this.panel1.Location = new System.Drawing.Point(1, 120);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 264);
+            this.panel1.Size = new System.Drawing.Size(301, 281);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
@@ -64,7 +65,7 @@ namespace Unitel
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(8)))), ((int)(((byte)(31)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 19);
+            this.groupBox1.Location = new System.Drawing.Point(21, 19);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 242);
             this.groupBox1.TabIndex = 6;
@@ -159,9 +160,9 @@ namespace Unitel
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Unitel.Properties.Resources.logo_Unitel_02;
-            this.pictureBox1.Location = new System.Drawing.Point(57, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(63, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(176, 64);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -169,10 +170,10 @@ namespace Unitel
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::Unitel.Properties.Resources.whitebackground_2_01;
+            this.BackgroundImage = global::Unitel.Properties.Resources.admin_log_in_back_01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(296, 379);
+            this.ClientSize = new System.Drawing.Size(300, 400);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);

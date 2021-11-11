@@ -121,11 +121,14 @@
   <data name="whitebackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\whitebackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo Unitel-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo Unitel-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whitebackground 2-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whitebackground 2-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo Unitel-021" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo Unitel-021.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whitebackground-011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whitebackground-011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo Unitel-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo Unitel-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,22 +139,22 @@
   <data name="whitebackground-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\whitebackground-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whitebackground-011" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\whitebackground-011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo-Unitel-FOR-HOMEPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-Unitel-FOR-HOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo Unitel-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo Unitel-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo Unitel-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo Unitel-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo Unitel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo Unitel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whitebackground 2-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\whitebackground 2-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo Unitel-021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo Unitel-021.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo-Unitel-FOR-HOMEPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-Unitel-FOR-HOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin log in back-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin log in back-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

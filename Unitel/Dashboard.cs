@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.DataFormats;
 
 namespace Unitel
 {
     public partial class Dashboard : Form
     {
+        TicketGen ticketGen;
+        QueueScreen queueScreen;
+
         public Dashboard(string empId, string counter)
         {
             InitializeComponent();
@@ -18,25 +15,25 @@ namespace Unitel
             var rec = db.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", empId);
 
 
-            this.label3.Text = $"{ rec.FirstName} { rec.LastName}".ToString();
+            this.label3.Text = $"{ rec.FirstName} { rec.LastName}";
             this.label4.Text = counter;
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+            ticketGen = new TicketGen();
+            queueScreen = new QueueScreen();
+            queueScreen.Show();
+            ticketGen.Show();
 
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
-
             form1.Show();
+            
+
+            queueScreen.Close();
+            ticketGen.Close();
             this.Close();
         }
 
@@ -49,7 +46,10 @@ namespace Unitel
 
             cip.Show();
             this.Hide();
+        }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

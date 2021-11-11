@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Unitel
@@ -41,9 +36,19 @@ namespace Unitel
                 string designation = textBox5.Text.Trim();
                 string salary = textBox6.Text.Trim();
 
-                
 
-                databaseFile.InsertRecord("Emp_Personal_Info", new EmployeeModel { 
+                string adminStat;
+                if (checkBox1.Checked)
+                {
+                    adminStat = "Admin";
+                }
+                else
+                {
+                    adminStat = "Not Admin";
+                }
+
+                databaseFile.InsertRecord("Emp_Personal_Info", new EmployeeModel
+                {
                     EmployeeID = employeeId,
                     FirstName = firstName,
                     LastName = lastName,
@@ -56,8 +61,7 @@ namespace Unitel
                         State = "",
                         City = "",
                         PostCode = "",
-                        Country = "",
-
+                        Country = ""
                     },
                     PermanentAddress = new AddressModel
                     {
@@ -65,15 +69,28 @@ namespace Unitel
                         State = "",
                         City = "",
                         PostCode = "",
-                        Country = "",
-                    }
+                        Country = ""
+                    },
+                    AdminStatus = adminStat
+
                 });
 
-                databaseFile.InsertRecord("Emp_Account", new PassBook {
-                EmployeeID = employeeId});;
+                databaseFile.InsertRecord("Emp_Account", new PassBook
+                {
+                    AdminStatus = adminStat,
+                    EmployeeID = employeeId
+                });
 
+                
                 label8.Text = "Saved Successfully";
-                this.Close();
+
+                DialogResult dr = MessageBox.Show("Saved Successfully", "Confirmation", MessageBoxButtons.OK);
+                if (dr == DialogResult.OK)
+                {
+                    this.Close();
+                }
+               
+                
             }
             
         }
