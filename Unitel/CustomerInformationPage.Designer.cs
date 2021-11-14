@@ -170,7 +170,7 @@ namespace Unitel
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.panel4);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.SplitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
@@ -995,7 +995,7 @@ namespace Unitel
             this.button1.TabIndex = 39;
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // dateTimePicker1
             // 
@@ -1282,7 +1282,7 @@ namespace Unitel
             this.button3.TabIndex = 6;
             this.button3.Text = "Pass to other";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
             // 
@@ -1293,7 +1293,7 @@ namespace Unitel
             this.button2.TabIndex = 5;
             this.button2.Text = "Mark as Solved";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // CustomerInformationPage
             // 

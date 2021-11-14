@@ -10,7 +10,7 @@ namespace Unitel
 {
     public partial class CustomerInformationPage : Form
     {
-        public CustomerInformationPage(string cusName, string phoneNum)
+        public CustomerInformationPage(string phoneNum)
         {
             InitializeComponent();
             ValuePicker(phoneNum);
@@ -49,7 +49,7 @@ namespace Unitel
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -59,32 +59,32 @@ namespace Unitel
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        private void SplitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void GroupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void Button1_Click_1(object sender, EventArgs e)
         {
             if(button1.Text == "Edit")
             {
@@ -122,7 +122,7 @@ namespace Unitel
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
 
         }

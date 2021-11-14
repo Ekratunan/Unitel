@@ -268,27 +268,27 @@ namespace Unitel
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             NewEmployee newEmployee = new NewEmployee();
 
             newEmployee.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
             Form1 home = new Form1();
             home.Show();
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             NewUser newUser = new NewUser();
             newUser.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Button6_Click(object sender, EventArgs e)
         {
             label67.Text = "";
             string empID = textBox1.Text.Trim();
@@ -301,7 +301,7 @@ namespace Unitel
             }
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void Button11_Click(object sender, EventArgs e)
         { 
             if (textBox24.Text.Trim() == "")
             {
@@ -317,7 +317,7 @@ namespace Unitel
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Button7_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Save Changes?", "Confirmation", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
@@ -457,7 +457,7 @@ namespace Unitel
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             if (button3.Text == "Edit" && textBox8.Text.Trim() != "")
             {
@@ -473,7 +473,7 @@ namespace Unitel
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             if(button4.Text == "Edit" && textBox23.Text.Trim() != "")
             {
@@ -601,7 +601,7 @@ namespace Unitel
             return tot;
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void Button8_Click(object sender, EventArgs e)
         {
             DatabaseFile databaseFile = new DatabaseFile("Employee");
 
@@ -641,7 +641,7 @@ namespace Unitel
 
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void Button10_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Save changes?", "Confirmation", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
@@ -721,7 +721,7 @@ namespace Unitel
             databaseFile.UpsertRecord("SIM_Info", recSim.ID, recSim);
         }
 
-        private void textBox24_KeyDown(object sender, KeyEventArgs e)
+        private void TextBox24_KeyDown(object sender, KeyEventArgs e)
         {
             ctr1 = (Control)sender;
             if(ctr1 is TextBox)
@@ -735,7 +735,7 @@ namespace Unitel
 
         }
 
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             ctr1 = (Control)sender;
             if (ctr1 is TextBox)
@@ -748,7 +748,7 @@ namespace Unitel
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void Button9_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are you sure to delete the record?", "Confirmation", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)

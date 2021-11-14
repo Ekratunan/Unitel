@@ -26,7 +26,7 @@ namespace Unitel
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
             form1.Show();
@@ -39,16 +39,16 @@ namespace Unitel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string customerName = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            
             string phoneNum = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 
-            CustomerInformationPage cip = new CustomerInformationPage(customerName, phoneNum);
+            CustomerInformationPage cip = new CustomerInformationPage(phoneNum);
 
             cip.Show();
             this.Hide();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Label3_Click(object sender, EventArgs e)
         {
 
         }

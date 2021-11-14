@@ -296,7 +296,7 @@ namespace Unitel
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(176, 23);
             this.textBox1.TabIndex = 0;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
             // 
             // button6
             // 
@@ -306,7 +306,7 @@ namespace Unitel
             this.button6.TabIndex = 1;
             this.button6.Text = "Search";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // groupBox2
             // 
@@ -347,7 +347,7 @@ namespace Unitel
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(176, 23);
             this.textBox24.TabIndex = 0;
-            this.textBox24.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox24_KeyDown);
+            this.textBox24.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox24_KeyDown);
             // 
             // button11
             // 
@@ -357,7 +357,7 @@ namespace Unitel
             this.button11.TabIndex = 1;
             this.button11.Text = "Search";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
             // 
             // panel1
             // 
@@ -387,7 +387,7 @@ namespace Unitel
             this.button5.Text = "Log Out";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // pictureBox1
             // 
@@ -410,7 +410,7 @@ namespace Unitel
             this.button2.TabIndex = 1;
             this.button2.Text = "Add New User";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -423,7 +423,7 @@ namespace Unitel
             this.button1.TabIndex = 0;
             this.button1.Text = "Add Employee";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // panel2
             // 
@@ -1337,7 +1337,7 @@ namespace Unitel
             this.button3.TabIndex = 13;
             this.button3.Text = "Edit";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // label67
             // 
@@ -1419,7 +1419,7 @@ namespace Unitel
             this.button8.TabIndex = 4;
             this.button8.Text = "Remove";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // button7
             // 
@@ -1429,7 +1429,7 @@ namespace Unitel
             this.button7.TabIndex = 3;
             this.button7.Text = "Update";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // tabPage2
             // 
@@ -2705,7 +2705,7 @@ namespace Unitel
             this.button4.TabIndex = 24;
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // comboBox4
             // 
@@ -2798,7 +2798,7 @@ namespace Unitel
             this.button9.TabIndex = 13;
             this.button9.Text = "Remove";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // button10
             // 
@@ -2808,7 +2808,7 @@ namespace Unitel
             this.button10.TabIndex = 12;
             this.button10.Text = "Update";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // tabPage4
             // 

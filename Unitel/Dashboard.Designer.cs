@@ -233,7 +233,7 @@ namespace Unitel
             this.button3.TabIndex = 4;
             this.button3.Text = "Log Out";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // label4
             // 
@@ -252,7 +252,7 @@ namespace Unitel
             this.label3.Size = new System.Drawing.Size(145, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Name of Active member";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label2
             // 

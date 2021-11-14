@@ -5,20 +5,39 @@ using System.Collections.Generic;
 
 namespace Unitel
 {
-    class DatabaseFile
+    internal class DatabaseFile
     {
-        IMongoDatabase database;
+        readonly IMongoDatabase database;
 
         public DatabaseFile(string databaseName)
         {
-            var client = new MongoClient("mongodb+srv://ekraHossain:ekraHossain17@unitel.m8yxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-            database = client.GetDatabase(databaseName);
+            try
+            {
+                var client = new MongoClient("mongodb+srv://ekraHossain:ekraHossain17@unitel.m8yxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+                database = client.GetDatabase(databaseName);
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Connection Failed");
+            }
+
+            
+            
         }
 
         public void InsertRecord<T>(string table, T record)
         {
-            var collection = database.GetCollection<T>(table);
-            collection.InsertOne(record);
+            try
+            {
+                var collection = database.GetCollection<T>(table);
+                collection.InsertOne(record);
+            }
+            catch (MongoConnectionException)
+            {
+                Console.WriteLine("Insertion Error");
+            }
+            
+            
         }
 
         public List<T> LoadRecords<T>(string table)
@@ -40,17 +59,23 @@ namespace Unitel
         {
             var collection = database.GetCollection<T>(table);
 
-             collection.ReplaceOne(
+            try
+            {
+                collection.ReplaceOne(
                 new BsonDocument("_id", Id),
                 record,
                 new ReplaceOptions { IsUpsert = true });
-
-
+            }
+            catch(MongoConnectionException)
+            {
+                Console.WriteLine("Writing Error");
+            }
         }
 
         public void DeleteRecord<T>(string table, Guid Id)
         {
             var collection = database.GetCollection<T>(table);
+            
             var filter = Builders<T>.Filter.Eq("_id", Id);
             collection.DeleteOne(filter);
         }
