@@ -9,8 +9,10 @@ namespace Unitel
     {
         [BsonId]
         public Guid Id { get; set; }
+        public string CustomerName { get; set; }
         public string MobileNumber { get; set; }
+        public string TokenNumber { get; set; }
         public string TypeOfService { get; set; }
-        public PersonModel Customer { get; set; }
+        public int TokenDigit { get; set; }
     }
 }

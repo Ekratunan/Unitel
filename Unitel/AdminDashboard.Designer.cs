@@ -234,6 +234,8 @@ namespace Unitel
             this.panel12 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.textBox55 = new System.Windows.Forms.TextBox();
+            this.textBox56 = new System.Windows.Forms.TextBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
@@ -464,6 +466,7 @@ namespace Unitel
             // 
             this.panel4.BackColor = System.Drawing.Color.LightGray;
             this.panel4.Controls.Add(this.panel13);
+            this.panel4.Controls.Add(this.textBox55);
             this.panel4.Controls.Add(this.textBox45);
             this.panel4.Controls.Add(this.textBox44);
             this.panel4.Controls.Add(this.comboBox12);
@@ -1166,10 +1169,17 @@ namespace Unitel
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePicker1.Location = new System.Drawing.Point(226, 128);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker1.Size = new System.Drawing.Size(209, 23);
             this.dateTimePicker1.TabIndex = 20;
+            this.dateTimePicker1.Value = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             // 
             // textBox10
             // 
@@ -1479,9 +1489,10 @@ namespace Unitel
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.LightGray;
+            this.panel7.Controls.Add(this.panel14);
+            this.panel7.Controls.Add(this.textBox56);
             this.panel7.Controls.Add(this.textBox49);
             this.panel7.Controls.Add(this.textBox48);
-            this.panel7.Controls.Add(this.panel14);
             this.panel7.Controls.Add(this.comboBox11);
             this.panel7.Controls.Add(this.comboBox10);
             this.panel7.Controls.Add(this.label72);
@@ -1529,9 +1540,10 @@ namespace Unitel
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel14.Location = new System.Drawing.Point(110, 75);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(261, 101);
+            this.panel14.Size = new System.Drawing.Size(453, 576);
             this.panel14.TabIndex = 39;
             // 
             // comboBox11
@@ -2181,10 +2193,15 @@ namespace Unitel
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(229, 127);
+            this.dateTimePicker2.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker2.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(209, 23);
             this.dateTimePicker2.TabIndex = 36;
+            this.dateTimePicker2.Value = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             // 
             // textBox13
             // 
@@ -2357,9 +2374,10 @@ namespace Unitel
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel15.Location = new System.Drawing.Point(334, 141);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(198, 476);
+            this.panel15.Size = new System.Drawing.Size(453, 576);
             this.panel15.TabIndex = 37;
             // 
             // label43
@@ -2481,9 +2499,10 @@ namespace Unitel
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel16.Location = new System.Drawing.Point(255, 108);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(274, 450);
+            this.panel16.Size = new System.Drawing.Size(459, 582);
             this.panel16.TabIndex = 16;
             // 
             // ttValidity
@@ -3045,6 +3064,22 @@ namespace Unitel
             this.label40.TabIndex = 0;
             this.label40.Text = "OOPS! Something Wrong :(";
             // 
+            // textBox55
+            // 
+            this.textBox55.Location = new System.Drawing.Point(226, 128);
+            this.textBox55.Name = "textBox55";
+            this.textBox55.ReadOnly = true;
+            this.textBox55.Size = new System.Drawing.Size(209, 23);
+            this.textBox55.TabIndex = 33;
+            // 
+            // textBox56
+            // 
+            this.textBox56.Location = new System.Drawing.Point(229, 127);
+            this.textBox56.Name = "textBox56";
+            this.textBox56.ReadOnly = true;
+            this.textBox56.Size = new System.Drawing.Size(209, 23);
+            this.textBox56.TabIndex = 50;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -3312,5 +3347,7 @@ namespace Unitel
         private System.Windows.Forms.TextBox textBox52;
         private System.Windows.Forms.TextBox textBox54;
         private System.Windows.Forms.TextBox textBox53;
+        private System.Windows.Forms.TextBox textBox55;
+        private System.Windows.Forms.TextBox textBox56;
     }
 }

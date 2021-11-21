@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 
@@ -11,9 +13,21 @@ namespace Unitel
         {
             InitializeComponent();
             this.ActiveControl = textBox1;
-            textBox1.Focus();
-            databaseFile = new DatabaseFile("Employee");
-            label4.Text = "";
+            if (CheckForInternetConnection())
+            {
+                textBox1.Focus();
+                databaseFile = new DatabaseFile("Employee");
+                label4.Text = "";
+
+            }
+            else
+            {
+                label4.Text = "No Internet Connection";
+            }
+            
+            
+
+            
         }
 
         private static bool CheckForInternetConnection()
@@ -32,54 +46,61 @@ namespace Unitel
 
         private bool VerificationTask()
         {
+            var record = databaseFile.LoadRecords<PassBook>("Emp_Account");
+
             bool inVerify = false;
+            bool existance = record.Any(p => p.EmployeeID == textBox1.Text.Trim());
             try
             {
                 if (CheckForInternetConnection())
                 {
-                    var record = databaseFile.LoadRecords<PassBook>("Emp_Account");
 
-                    bool exist = false;
                     if (textBox1.Text.Trim() == "")
                     {
+                        label4.ForeColor = Color.Red;
                         label4.Text = "Enter Employee ID";
                     }
                     else
                     {
-                        foreach (var rec in record)
+                        if (existance)
                         {
+                            var rec = databaseFile.LoadRecordbyIdentity<PassBook>("Emp_Account", "EmployeeID", textBox1.Text.Trim());
                             if (rec.EmployeeID == textBox1.Text.Trim())
                             {
-                                exist = true;
                                 if (rec.Password == null)
                                 {
                                     PasswordGenerator password = new PasswordGenerator(rec.EmployeeID);
                                     password.Show();
                                 }
                                 else if (rec.Password != null && textBox2.Text.Trim() == "")
+
                                 {
+                                    label4.ForeColor = Color.Red;
                                     label4.Text = "Enter your password";
                                 }
                                 else if (rec.Password != null && rec.Password != "" && comboBox1.Text.Trim() == "")
+
                                 {
+                                    label4.ForeColor = Color.Red;
                                     label4.Text = "Select a Counter";
                                 }
                                 else if (rec.Password != null && rec.Password != "" && comboBox1.Text.Trim() != "" && rec.Password == textBox2.Text.Trim())
                                 {
                                     inVerify = true;
-                                    break;
                                 }
                             }
-                        }
 
-                        if (!exist)
+                        }
+                        else if (!existance)
                         {
+                            label4.ForeColor = Color.Red;
                             label4.Text = "Employee not found";
                         }
                     }
                 }
                 else
                 {
+                    label4.ForeColor = Color.Red;
                     label4.Text = "No Internet";
                 }
                 
@@ -112,6 +133,8 @@ namespace Unitel
 
         public void Button1_Click(object sender, EventArgs e)
         {
+            label4.ForeColor = Color.Green;
+            label4.Text = "Logging In...";
 
             if (VerificationTask())
             {

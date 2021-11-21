@@ -18,34 +18,44 @@ namespace Unitel
             
         }
 
-        private void ValuePicker( string phoneNum)
+        private void ValuePicker(string phoneNum)
         {
-            DatabaseFile databaseFile = new DatabaseFile("Customer");
-            var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", phoneNum);
+           if(phoneNum == "")
+            {
 
-            textBox1.Text = record.FirstName; //First Name
-            textBox4.Text = record.LastName; //Last Name
-            textBox2.Text = record.FathersName; //Fathers Name
-            textBox3.Text = record.MothersName; //Mothers Name
-            textBox6.Text = record.Nationality; //Nationality
-            textBox7.Text = record.NID_Number; //NID or Passport Number
-            textBox13.Text = record.DrivingLicenseNum; //Driving License Number
+            }
+            else
+            {
+                DatabaseFile databaseFile = new DatabaseFile("Customer");
+                var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", phoneNum);
 
-            //Present Address
-            textBox22.Text = record.PresentAddress.Street; //Street
-            textBox30.Text = record.PresentAddress.State; //State
-            textBox29.Text = record.PresentAddress.PostCode; //PostCode
-            textBox28.Text = record.PresentAddress.City; //City
-            comboBox5.Text = record.PresentAddress.Country; //Country
+                textBox1.Text = record.FirstName; //First Name
+                textBox4.Text = record.LastName; //Last Name
+                textBox2.Text = record.FathersName; //Fathers Name
+                textBox3.Text = record.MothersName; //Mothers Name
+                textBox6.Text = record.Nationality; //Nationality
+                textBox7.Text = record.NID_Number; //NID or Passport Number
+                textBox13.Text = record.DrivingLicenseNum; //Driving License Number
 
-            //Permanent Address
-            textBox34.Text = record.PermanentAddress.Street; //Street
-            textBox31.Text = record.PermanentAddress.State; //State
-            textBox32.Text = record.PermanentAddress.PostCode; //PostCode
-            textBox33.Text = record.PermanentAddress.City; //City
-            comboBox6.Text = record.PermanentAddress.Country; //Country
+                //Present Address
+                textBox22.Text = record.PresentAddress.Street; //Street
+                textBox30.Text = record.PresentAddress.State; //State
+                textBox29.Text = record.PresentAddress.PostCode; //PostCode
+                textBox28.Text = record.PresentAddress.City; //City
+                comboBox5.Text = record.PresentAddress.Country; //Country
 
-            textBox10.Text = record.PhoneNumber; //Mobile Number
+                //Permanent Address
+                textBox34.Text = record.PermanentAddress.Street; //Street
+                textBox31.Text = record.PermanentAddress.State; //State
+                textBox32.Text = record.PermanentAddress.PostCode; //PostCode
+                textBox33.Text = record.PermanentAddress.City; //City
+                comboBox6.Text = record.PermanentAddress.Country; //Country
+
+                textBox10.Text = record.PhoneNumber; //Mobile Number
+            }
+            
+            
+           
 
         }
 

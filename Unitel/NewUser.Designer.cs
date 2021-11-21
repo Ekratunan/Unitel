@@ -36,6 +36,10 @@ namespace Unitel
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -83,10 +87,6 @@ namespace Unitel
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -194,9 +194,51 @@ namespace Unitel
             this.panel2.Size = new System.Drawing.Size(816, 419);
             this.panel2.TabIndex = 1;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(476, 264);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 15);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "Package Type";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(476, 206);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 15);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "Network Version";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Prepaid",
+            "Postpaid"});
+            this.comboBox4.Location = new System.Drawing.Point(476, 282);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(163, 23);
+            this.comboBox4.TabIndex = 67;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "2G",
+            "3G",
+            "4G",
+            "5G"});
+            this.comboBox3.Location = new System.Drawing.Point(476, 225);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(163, 23);
+            this.comboBox3.TabIndex = 66;
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(594, 83);
+            this.textBox1.Location = new System.Drawing.Point(24, 130);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(194, 23);
             this.textBox1.TabIndex = 65;
@@ -204,7 +246,7 @@ namespace Unitel
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(594, 65);
+            this.label6.Location = new System.Drawing.Point(24, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 15);
             this.label6.TabIndex = 64;
@@ -871,10 +913,16 @@ namespace Unitel
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(24, 130);
+            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(594, 83);
+            this.dateTimePicker2.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker2.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(209, 23);
+            this.dateTimePicker2.Size = new System.Drawing.Size(121, 23);
             this.dateTimePicker2.TabIndex = 54;
+            this.dateTimePicker2.Value = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // textBox13
             // 
@@ -896,7 +944,7 @@ namespace Unitel
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(24, 112);
+            this.label15.Location = new System.Drawing.Point(594, 65);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 15);
             this.label15.TabIndex = 51;
@@ -997,48 +1045,6 @@ namespace Unitel
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(209, 23);
             this.textBox19.TabIndex = 39;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "2G",
-            "3G",
-            "4G",
-            "5G"});
-            this.comboBox3.Location = new System.Drawing.Point(476, 225);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(163, 23);
-            this.comboBox3.TabIndex = 66;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Prepaid",
-            "Postpaid"});
-            this.comboBox4.Location = new System.Drawing.Point(476, 282);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(163, 23);
-            this.comboBox4.TabIndex = 67;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(476, 206);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 15);
-            this.label8.TabIndex = 68;
-            this.label8.Text = "Network Version";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(476, 264);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 15);
-            this.label9.TabIndex = 69;
-            this.label9.Text = "Package Type";
             // 
             // NewUser
             // 

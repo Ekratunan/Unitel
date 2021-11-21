@@ -45,6 +45,8 @@ namespace Unitel
                 textBox49.ReadOnly = false;
                 textBox49.Hide();
 
+                textBox56.Hide();
+
                 //Present Address
                 textBox41.ReadOnly = false;
                 textBox38.ReadOnly = false;
@@ -87,6 +89,8 @@ namespace Unitel
                 textBox49.ReadOnly = true;
                 textBox49.Text = comboBox10.Text.Trim();
                 textBox49.Show();
+                textBox56.Text = dateTimePicker2.Text;
+                textBox56.Show();
 
                 //Present Address
                 textBox41.ReadOnly = true;
@@ -150,6 +154,8 @@ namespace Unitel
                     textBox13.Text = rec.PhoneNumber; //Initial
                     comboBox11.Text = rec.MaritalStatus;
                     textBox48.Text = rec.MaritalStatus;
+                    textBox56.Text = rec.DateOfBirth;
+                    dateTimePicker2.Text = rec.DateOfBirth;
 
                     //Present Address
                     textBox41.Text = rec.PresentAddress.Street;
@@ -229,6 +235,8 @@ namespace Unitel
                     textBox6.Text = rec.Nationality;
                     comboBox9.Text = rec.Gender;
                     textBox45.Text = rec.Gender;
+                    textBox55.Text = rec.DateOfBirth;
+                    dateTimePicker1.Text = rec.DateOfBirth;
                     textBox42.Text = rec.DrivingLicenseNum;
                     comboBox12.Text = rec.MaritalStatus;
                     textBox44.Text = rec.MaritalStatus;
@@ -386,6 +394,7 @@ namespace Unitel
                 textBox42.ReadOnly = false;
                 textBox44.ReadOnly = false;
                 textBox44.Hide();
+                textBox55.Hide();
                 textBox7.ReadOnly = false;
                 textBox45.ReadOnly = false;
                 textBox45.Hide();
@@ -426,6 +435,8 @@ namespace Unitel
                 textBox42.ReadOnly = true;
                 textBox44.Text = comboBox12.Text.Trim();
                 textBox44.Show();
+                textBox55.Text = dateTimePicker1.Text;
+                textBox55.Show();
                 textBox7.ReadOnly = true;
                 textBox45.ReadOnly = true;
                 textBox45.Text = comboBox9.Text.Trim();

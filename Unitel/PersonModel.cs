@@ -20,6 +20,8 @@ namespace Unitel
         [BsonElement]
         public string PhoneNumber { get; set; }
         [BsonElement]
+        public string DateOfBirth { get; set; }
+        [BsonElement]
         public string Nationality { get; set; }
         [BsonElement]
         public string NID_Number { get; set; }
@@ -130,6 +132,8 @@ namespace Unitel
         public string MothersName { get; set; }
         [BsonElement]
         public string PhoneNumber { get; set; }
+        [BsonElement]
+        public string DateOfBirth { get; set; }
         [BsonElement]
         public string Nationality { get; set; }
         [BsonElement]

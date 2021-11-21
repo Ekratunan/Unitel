@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -23,13 +24,13 @@ namespace Unitel
             bool isBlank = textBox1.Text.Trim() == "" && textBox2.Text.Trim() == "";
             bool firstBlank = textBox1.Text.Trim() == "";
             bool notComfirm = textBox2.Text.Trim() == "" && textBox1.Text.Trim() != "";
-            bool passMatch = textBox1.Text == textBox2.Text;
+            bool passMatch = PasswordValidator();
 
             if(!isBlank && passMatch)
             {
                 DatabaseFile databaseFile = new DatabaseFile("Employee");
 
-                if (PasswordValidator())
+                if (passMatch)
                 {
                     var record = databaseFile.LoadRecordbyIdentity<PassBook>("Emp_Account", "EmployeeID", empId);
                     record.Password = textBox1.Text;
@@ -45,11 +46,7 @@ namespace Unitel
             {
                 label4.Text = "Please confirm your password!";
             }
-            else if (!passMatch)
-
-            {
-                label4.Text = "Password does not matched";
-            }
+            
 
             
         }
@@ -59,21 +56,29 @@ namespace Unitel
             bool valid = false;
             string sample = textBox1.Text;
             
-            Regex rgx = new Regex("[^A-Za-z0-9]+$");
-            bool hasSpeChar = rgx.IsMatch(sample);
+            bool hasSpeChar = sample.Any(p => !char.IsLetterOrDigit(p));
             bool passMatch = textBox1.Text == textBox2.Text;
+            bool containNumber = sample.Any(char.IsDigit);
 
    
-            if (hasSpeChar && passMatch)
+            if (containNumber && hasSpeChar && passMatch)
             {
                 valid = true;
 
             }
             else if (!hasSpeChar)
             {
-                label4.Text = "Must contains special characters and numbers";
+                label4.Text = "Must contains atleast one special characters";
+            }else if (!containNumber)
+            {
+                label4.Text = "Must contains atleast one number";
             }
-            
+            else if (!passMatch)
+
+            {
+                label4.Text = "Password does not matched";
+            }
+
 
 
             return valid;

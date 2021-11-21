@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -10,30 +11,62 @@ namespace Unitel
 {
     public partial class TicketGen : Form
     {
+        private int tokenNumber = 0;
+
+        Timer timer = new Timer
+        {
+            Interval = (8 * 1000)
+        };
+
         public TicketGen()
         {
             InitializeComponent();
+            label3.Text = "";
+
+            DatabaseFile databaseFile = new DatabaseFile("Tokens");
+            var record = databaseFile.LoadRecords<TokenModel>("ActiveCounter");
+            int size = record.Count;
+            try
+            {
+                tokenNumber = record.Max(p => p.TokenDigit +1);
+            }
+            catch (Exception)
+            {
+                tokenNumber++;
+                label3.Text = "Unable to fetch data";
+            }
+
+            
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
             label3.Text = "";
         }
 
         private bool MobileValidator()
         {
-            bool isValid = true;
+            bool isValid = false;
+            string mobNumberInput = textBox1.Text.Trim();
 
-            if(textBox1.Text.Trim() == "")
+            if (mobNumberInput == "")
             {
+                label3.ForeColor = Color.Red;
                 label3.Text = "Please enter a mobile number";
             }
             else
             {
-                string mobileNumber = textBox1.Text;
-                int convNumber = Convert.ToInt32(mobileNumber);
-                if (convNumber > 01000000000)
+                int convNumber = Convert.ToInt32(mobNumberInput);
+                if (convNumber >= 1200000000)
                 {
-                    isValid = false;
+                    isValid = true;
                 }
                 else
                 {
+                    label3.ForeColor = Color.Red;
                     label3.Text = "Enter a valid Mobile Number";
                 }
 
@@ -42,51 +75,55 @@ namespace Unitel
             return isValid;
         }
 
-        private void TokenGenerator(string service)
+        private void TokenGenerator(string service, string tokenNum)
         {
             DatabaseFile database = new DatabaseFile("Tokens");
             DatabaseFile personInfo = new DatabaseFile("Customer");
 
-            bool recordNotFound = true;
-
             var record = personInfo.LoadRecords<PersonModel>("Personal_Info");
+            bool searching = record.Any(r => r.MobileNumber == textBox1.Text.Trim());
 
-            foreach(var rec in record)
+            if(service == "Buy New SIM")
             {
-                if(rec.PhoneNumber == textBox1.Text)
+                database.InsertRecord("ActiveCounter", new TokenModel
                 {
-                    database.InsertRecord("ActiveCounter", new TokenModel {
-                        MobileNumber = textBox1.Text,
-                        TypeOfService = service,
-                        Customer = new PersonModel
-                        {
-                            FirstName = rec.FirstName,
-                            LastName = rec.LastName,
-                            Nationality = rec.Nationality,
-                            NID_Number = rec.NID_Number,
-                            PresentAddress = new AddressModel
-                            {
-                                Street = rec.PresentAddress.Street,
-                                State = rec.PresentAddress.State,
-                                PostCode = rec.PresentAddress.PostCode,
-                                City = rec.PresentAddress.City,
-                                Country = rec.PresentAddress.Country
-                            }
-                        }
-                    });
+                    CustomerName = "New User",
+                    MobileNumber = textBox1.Text,
+                    TypeOfService = service,
+                    TokenNumber = tokenNum,
+                    TokenDigit = tokenNumber
+                });
 
-                    recordNotFound = false;
-                }
-                
+                tokenNumber++;
+                label3.ForeColor = Color.Green;
+                timer.Start();
+                label3.Text = "Token Created";
+                textBox1.Text = "";
             }
+            else if (searching && service != "Buy New SIM")
+            {
 
-            if (recordNotFound)
+                var rec = personInfo.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", textBox1.Text.Trim());
+                database.InsertRecord("ActiveCounter", new TokenModel {
+                     CustomerName = $"{rec.FirstName} {rec.LastName}",
+                     MobileNumber = rec.MobileNumber,
+                     TypeOfService = service,
+                     TokenNumber = tokenNum,
+                     TokenDigit = tokenNumber
+                });
+
+                tokenNumber++;
+                label3.ForeColor = Color.Green;
+                timer.Start();
+                label3.Text = "Token Created";
+                textBox1.Text = "";
+            }
+            else if (!searching)
             {
                 label3.ForeColor = Color.Red;
                 label3.Text = "User does not exist";
             }
 
-            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -99,7 +136,7 @@ namespace Unitel
         {
             if (MobileValidator())
             {
-                TokenGenerator(button2.Text);
+                TokenGenerator(button2.Text, $"SR{tokenNumber}");
             }
         }
 
@@ -107,24 +144,23 @@ namespace Unitel
         {
             if (MobileValidator())
             {
-                TokenGenerator(button3.Text);
+                TokenGenerator(button3.Text, $"IR{tokenNumber}");
             }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (MobileValidator())
-            {
-                TokenGenerator(button1.Text);
-            }
+            
+            TokenGenerator(button1.Text, $"New{tokenNumber}");
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             if (MobileValidator())
             {
-                TokenGenerator(button4.Text);
+                TokenGenerator(button4.Text, $"Info{tokenNumber}");
             }
         }
 
@@ -132,7 +168,7 @@ namespace Unitel
         {
             if (MobileValidator())
             {
-                TokenGenerator(button6.Text);
+                TokenGenerator(button6.Text, $"OP{tokenNumber}");
             }
         }
 
@@ -140,7 +176,7 @@ namespace Unitel
         {
             if (MobileValidator())
             {
-                TokenGenerator(button5.Text);
+                TokenGenerator(button5.Text, $"CS{tokenNumber}");
             }
         }
     }

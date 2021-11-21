@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -23,52 +24,31 @@ namespace Unitel
         private void GenerateMobileNumber()
         {
             DatabaseFile databaseFile = new DatabaseFile("Customer");
+            var record = databaseFile.LoadRecords<SIM_Model>("SIM_Info");
+            long sample = 1200000000;
+            int numOfRec = record.Count;
 
-            var record = databaseFile.LoadRecords<PersonModel>("Personal_Info");
-            int count = record.Count, max = 1;
-            long sampleNumber;
-            long iniNumber = 0;
+            string uniqueNum = "N/A";
 
-
-            if (count == 0)
+            for(int i = 0; i <= numOfRec; i++)
             {
-                label2.Text = "01200000000";
-            }
-            else
-            {
-                foreach (var rec in record)
+                var smt = $"0{sample}";
+                bool existance = record.Any(p => p.MobileNumber == smt);
+
+                if (existance)
                 {
-                    string sampleText = rec.MobileNumber;
-                    sampleNumber = StriToInt(sampleText);
-                    if (120000000 < sampleNumber && max == count)
-                    {
-                        iniNumber = sampleNumber + 1;
-                        label2.Text = $"{"0" + iniNumber}";
-                    }
-                    else
-                    {
-                        max++;
-                    }
-
+                    sample++;
+                }
+                else
+                {
+                    uniqueNum = $"0{sample}";
+                    break;
                 }
             }
+
+            label2.Text = uniqueNum;
         }
-
-        private long StriToInt(string sample)
-        {
-            int result = 0;
-            try
-            {
-                result = Int32.Parse(sample);
-
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine($"Unable to parse '{sample}'");
-            }
-
-            return result;
-        }
+ 
 
         private void CreateAUser()
         {
@@ -84,6 +64,7 @@ namespace Unitel
                 Nationality = textBox15.Text.Trim(),
                 FathersName = textBox17.Text.Trim(),
                 MothersName = textBox16.Text.Trim(),
+                DateOfBirth = dateTimePicker2.Text.Trim(),
                 NID_Number = textBox14.Text.Trim(),
                 Gender = comboBox2.Text.Trim(),
                 DrivingLicenseNum = textBox13.Text.Trim(),
@@ -165,15 +146,14 @@ namespace Unitel
             {
                 label3.Text = "Enter Father's Name";
                 noBlank = false;
-            }
-            else if (dateTimePicker2.Text.Trim() == "")
+            }else if (dateTimePicker2.Text.Trim() == "01-01-1920")
             {
-                label3.Text = "Enter Birth date";
+                label3.Text = "Enter Birth Date";
                 noBlank = false;
             }
-            else if (textBox14.Text.Trim() == "")
+            else if (textBox14.Text.Trim() == "" || !textBox14.Text.All(char.IsDigit))
             {
-                label3.Text = "Enter NID/Passport Number";
+                label3.Text = "Enter Valid NID/Passport Number";
                 noBlank = false;
             }
             else if (textBox37.Text.Trim() == "")
@@ -186,9 +166,9 @@ namespace Unitel
                 label3.Text = "Invalid Permanent Address";
                 noBlank = false;
             }
-            else if (textBox35.Text.Trim() == "")
+            else if (textBox35.Text.Trim() == "" || !textBox35.Text.Any(char.IsDigit))
             {
-                label3.Text = "Invalid Permanent Address";
+                label3.Text = "Invalid PostCode";
                 noBlank = false;
             }
             else if (textBox36.Text.Trim() == "")
@@ -225,6 +205,11 @@ namespace Unitel
         }
 
         private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
         }
