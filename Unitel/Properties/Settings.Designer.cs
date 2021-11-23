@@ -25,21 +25,10 @@ namespace Unitel.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Drawing.Color Setting {
-            get {
-                return ((global::System.Drawing.Color)(this["Setting"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Setting1 {
+        public string Setting {
             get {
-                return ((string)(this["Setting1"]));
-            }
-            set {
-                this["Setting1"] = value;
+                return ((string)(this["Setting"]));
             }
         }
     }

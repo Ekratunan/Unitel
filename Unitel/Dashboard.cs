@@ -87,18 +87,32 @@ namespace Unitel
         {
             
             string phoneNum = dataGridView1.CurrentRow.Cells["MobileNumber"].Value.ToString();
+            string token = dataGridView1.CurrentRow.Cells["TokenNumber"].Value.ToString();
+
+            Console.WriteLine(phoneNum);
+            Console.WriteLine(token);
 
             if (phoneNum == "")
             {
-                NewUser newUser = new NewUser();
-                newUser.Show();
-            }else if(phoneNum != "")
+                CustomerInformationPage newCustomer = new CustomerInformationPage(token);
+                newCustomer.Show();
+
+            }
+            else if(phoneNum != "")
             {
-                CustomerInformationPage cip = new CustomerInformationPage(phoneNum);
+                CustomerInformationPage cip = new CustomerInformationPage(phoneNum, token);
                 cip.Show();
             }
 
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string token = dataGridView1.CurrentRow.Cells["TokenNumber"].Value.ToString();
+            string counter = label4.Text.Trim();
+
+            queueScreen.Call_Control(token, counter);
         }
     }
 }

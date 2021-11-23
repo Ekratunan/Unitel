@@ -8,13 +8,15 @@
     <Product>Unitel Desktop Server Application</Product>
     <Copyright>Unitel UODA Project Authority</Copyright>
     <SignAssembly>false</SignAssembly>
-    <ApplicationIcon />
+    <ApplicationIcon>icon_initial_01_tsX_icon.ico</ApplicationIcon>
     <Win32Resource />
     <StartupObject />
+    <PackageId>Unitel Alpha</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>false</Optimize>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -8,7 +9,9 @@ namespace Unitel
 {
     public partial class Form1 : Form
     {
-        readonly DatabaseFile databaseFile;
+        readonly DatabaseFile databaseFile = new DatabaseFile("Employee");
+        private List<PassBook> record{ get; set; }
+        
         public Form1()
         {
             InitializeComponent();
@@ -16,19 +19,18 @@ namespace Unitel
             if (CheckForInternetConnection())
             {
                 textBox1.Focus();
-                databaseFile = new DatabaseFile("Employee");
                 label4.Text = "";
-
+                var passRecord = databaseFile.LoadRecords<PassBook>("Emp_Account");
+                record = passRecord;
             }
             else
             {
                 label4.Text = "No Internet Connection";
             }
             
-            
-
-            
         }
+
+        
 
         private static bool CheckForInternetConnection()
         {
@@ -46,74 +48,46 @@ namespace Unitel
 
         private bool VerificationTask()
         {
-            var record = databaseFile.LoadRecords<PassBook>("Emp_Account");
-
             bool inVerify = false;
             bool existance = record.Any(p => p.EmployeeID == textBox1.Text.Trim());
-            try
-            {
-                if (CheckForInternetConnection())
-                {
 
-                    if (textBox1.Text.Trim() == "")
+            if (CheckForInternetConnection())
+            {
+                if (existance)
+                {
+                    var rec = record.Find(p => p.EmployeeID == textBox1.Text.Trim());
+
+
+                    if (rec.EmployeeID == textBox1.Text.Trim())
                     {
-                        label4.ForeColor = Color.Red;
-                        label4.Text = "Enter Employee ID";
-                    }
-                    else
-                    {
-                        if (existance)
+                        if (rec.Password != null && rec.Password != "" && comboBox1.Text.Trim() != "" && rec.Password == textBox2.Text.Trim())
                         {
-                            var rec = databaseFile.LoadRecordbyIdentity<PassBook>("Emp_Account", "EmployeeID", textBox1.Text.Trim());
-                            if (rec.EmployeeID == textBox1.Text.Trim())
+                            inVerify = true;
+                        }
+                        else
+                        {
+                            DialogResult dr = MessageBox.Show($"Incorrect Password for E-ID: {rec.EmployeeID}", "Error", MessageBoxButtons.OK);
+                            if(dr == DialogResult.OK)
                             {
-                                if (rec.Password == null)
-                                {
-                                    PasswordGenerator password = new PasswordGenerator(rec.EmployeeID);
-                                    password.Show();
-                                }
-                                else if (rec.Password != null && textBox2.Text.Trim() == "")
-
-                                {
-                                    label4.ForeColor = Color.Red;
-                                    label4.Text = "Enter your password";
-                                }
-                                else if (rec.Password != null && rec.Password != "" && comboBox1.Text.Trim() == "")
-
-                                {
-                                    label4.ForeColor = Color.Red;
-                                    label4.Text = "Select a Counter";
-                                }
-                                else if (rec.Password != null && rec.Password != "" && comboBox1.Text.Trim() != "" && rec.Password == textBox2.Text.Trim())
-                                {
-                                    inVerify = true;
-                                }
+                                label4.Text = "";
                             }
-
-                        }
-                        else if (!existance)
-                        {
-                            label4.ForeColor = Color.Red;
-                            label4.Text = "Employee not found";
                         }
                     }
+
                 }
-                else
-                {
-                    label4.ForeColor = Color.Red;
-                    label4.Text = "No Internet";
-                }
-                
-                
-
-
-
-                
             }
-            catch
+            else
             {
-                //keep empty
+                label4.ForeColor = Color.Red;
+                label4.Text = "No Internet";
             }
+
+
+
+
+
+
+
 
             return inVerify;
 
@@ -133,19 +107,22 @@ namespace Unitel
 
         public void Button1_Click(object sender, EventArgs e)
         {
-            label4.ForeColor = Color.Green;
-            label4.Text = "Logging In...";
-
-            if (VerificationTask())
+            
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                Dashboard dashboard = new Dashboard(textBox1.Text.Trim(), comboBox1.Text.Trim());
-                dashboard.Show();
+                label4.Text = "Logging in...";
+                if (VerificationTask())
+                {
+                    Dashboard dashboard = new Dashboard(textBox1.Text.Trim(), comboBox1.Text.Trim());
+                    dashboard.Show();
 
-                this.Hide();
+                    this.Hide();
+                }
             }
+            
+           
 
             
-
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -158,9 +135,87 @@ namespace Unitel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        
+        private void textBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            if(string.IsNullOrEmpty(textBox1.Text.Trim()))
+            {
+                e.Cancel = true;
+                textBox1.Focus();
+                errorProvider1.SetError(textBox1, "Please Enter Employee ID");
+            }else if(!record.Any(p => p.EmployeeID == textBox1.Text.Trim()))
+            {
+                e.Cancel = true;
+                textBox1.Focus();
+                errorProvider1.SetError(textBox1, "Employee ID is not valid");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox1, null);
+            }
+        }
+
+        private void textBox2_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox1.Text.Trim()))
+            {
+                bool exist = record.Any(p => p.EmployeeID == textBox1.Text.Trim());
+
+                if (exist)
+                {
+                    var rec = record.Find(p => p.EmployeeID == textBox1.Text.Trim());
+                    if (rec.Password == null || rec.Password == "")
+                    {
+                        PasswordGenerator pass = new PasswordGenerator(rec.EmployeeID);
+                        pass.ShowDialog();
+                    }
+                    else if (textBox2.Text.Trim() == "" && rec.Password != null)
+                    {
+                        e.Cancel = true;
+                        errorProvider1.SetError(textBox2, "Enter Password");
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        errorProvider1.SetError(textBox2, null);
+                    }
+
+                }
+                
+                
+
+            }
+            
+            
+        }
+
+        private void comboBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text))
+            {
+                if (string.IsNullOrEmpty(comboBox1.Text))
+                {
+                    e.Cancel = true;
+                    comboBox1.Focus();
+                    errorProvider1.SetError(comboBox1, "Enter Counter Number");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(comboBox1, null);
+
+                }
+            }            
+            
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

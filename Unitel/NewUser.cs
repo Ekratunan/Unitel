@@ -11,14 +11,14 @@ namespace Unitel
 {
     public partial class NewUser : Form
     {
-        
+        public string numberPass { get; set; }
         public NewUser()
         {
             InitializeComponent();
             label3.Text = "";
 
             GenerateMobileNumber();
-            
+            numberPass = label2.Text;
         }
 
         private void GenerateMobileNumber()
@@ -95,7 +95,7 @@ namespace Unitel
                 NetworkVersion = comboBox3.Text.Trim(),
                 UserLevel = "Regular",
                 SIM_Version = "N/A",
-                DateOfIssue = "Date will be added",
+                DateOfIssue = DateTime.Today.ToString(),
                 SerialNumber = "N/A",
                 Device_IMEI = "No Device Detected",
                 Device_Model = "No Device Found",
@@ -118,10 +118,15 @@ namespace Unitel
             if (ValidField())
             {
                 CreateAUser();
+                DialogResult dr = MessageBox.Show("Saved Successfully", "Confirmation", MessageBoxButtons.OK);
+
                 label3.Text = "Successfully Saved!";
                 
-
-                this.Close();
+                if(dr == DialogResult.OK)
+                {
+                    this.Close();
+                }
+                
             }
         }
 

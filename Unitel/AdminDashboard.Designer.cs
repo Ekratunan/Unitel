@@ -49,6 +49,7 @@ namespace Unitel
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.textBox55 = new System.Windows.Forms.TextBox();
             this.textBox45 = new System.Windows.Forms.TextBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
             this.comboBox12 = new System.Windows.Forms.ComboBox();
@@ -114,9 +115,10 @@ namespace Unitel
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.textBox56 = new System.Windows.Forms.TextBox();
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.textBox48 = new System.Windows.Forms.TextBox();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.label72 = new System.Windows.Forms.Label();
@@ -219,6 +221,7 @@ namespace Unitel
             this.Service = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Token = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.queueToken = new System.Windows.Forms.Label();
             this.queueService = new System.Windows.Forms.Label();
@@ -234,8 +237,6 @@ namespace Unitel
             this.panel12 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox55 = new System.Windows.Forms.TextBox();
-            this.textBox56 = new System.Windows.Forms.TextBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
@@ -507,6 +508,14 @@ namespace Unitel
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(467, 610);
             this.panel13.TabIndex = 23;
+            // 
+            // textBox55
+            // 
+            this.textBox55.Location = new System.Drawing.Point(226, 128);
+            this.textBox55.Name = "textBox55";
+            this.textBox55.ReadOnly = true;
+            this.textBox55.Size = new System.Drawing.Size(209, 23);
+            this.textBox55.TabIndex = 33;
             // 
             // textBox45
             // 
@@ -1169,7 +1178,7 @@ namespace Unitel
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePicker1.Location = new System.Drawing.Point(226, 128);
@@ -1523,6 +1532,23 @@ namespace Unitel
             this.panel7.Size = new System.Drawing.Size(453, 576);
             this.panel7.TabIndex = 0;
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(453, 576);
+            this.panel14.TabIndex = 39;
+            // 
+            // textBox56
+            // 
+            this.textBox56.Location = new System.Drawing.Point(229, 127);
+            this.textBox56.Name = "textBox56";
+            this.textBox56.ReadOnly = true;
+            this.textBox56.Size = new System.Drawing.Size(209, 23);
+            this.textBox56.TabIndex = 50;
+            // 
             // textBox49
             // 
             this.textBox49.Location = new System.Drawing.Point(14, 274);
@@ -1536,15 +1562,6 @@ namespace Unitel
             this.textBox48.Name = "textBox48";
             this.textBox48.Size = new System.Drawing.Size(209, 23);
             this.textBox48.TabIndex = 48;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(0, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(453, 576);
-            this.panel14.TabIndex = 39;
             // 
             // comboBox11
             // 
@@ -2193,7 +2210,7 @@ namespace Unitel
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(229, 127);
             this.dateTimePicker2.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
@@ -2895,6 +2912,7 @@ namespace Unitel
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.LightGray;
+            this.panel10.Controls.Add(this.button12);
             this.panel10.Controls.Add(this.groupBox3);
             this.panel10.Controls.Add(this.label35);
             this.panel10.Controls.Add(this.comboBox1);
@@ -2903,6 +2921,15 @@ namespace Unitel
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(230, 616);
             this.panel10.TabIndex = 0;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(141, 38);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 3;
+            this.button12.Text = "Search";
+            this.button12.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -3006,18 +3033,21 @@ namespace Unitel
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Counter 01",
-            "Counter 02",
-            "Counter 03",
-            "Counter 04",
-            "Counter 05",
-            "Counter 06",
-            "Counter 07",
-            "Counter 08",
-            "Counter 09"});
+            "R02",
+            "R02",
+            "R03",
+            "R04",
+            "N01",
+            "N02",
+            "N03",
+            "N04",
+            "N05",
+            "I01",
+            "I02",
+            "I03"});
             this.comboBox1.Location = new System.Drawing.Point(20, 38);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 23);
+            this.comboBox1.Size = new System.Drawing.Size(115, 23);
             this.comboBox1.TabIndex = 0;
             // 
             // tabPage3
@@ -3063,22 +3093,6 @@ namespace Unitel
             this.label40.Size = new System.Drawing.Size(644, 65);
             this.label40.TabIndex = 0;
             this.label40.Text = "OOPS! Something Wrong :(";
-            // 
-            // textBox55
-            // 
-            this.textBox55.Location = new System.Drawing.Point(226, 128);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.ReadOnly = true;
-            this.textBox55.Size = new System.Drawing.Size(209, 23);
-            this.textBox55.TabIndex = 33;
-            // 
-            // textBox56
-            // 
-            this.textBox56.Location = new System.Drawing.Point(229, 127);
-            this.textBox56.Name = "textBox56";
-            this.textBox56.ReadOnly = true;
-            this.textBox56.Size = new System.Drawing.Size(209, 23);
-            this.textBox56.TabIndex = 50;
             // 
             // AdminDashboard
             // 
@@ -3349,5 +3363,6 @@ namespace Unitel
         private System.Windows.Forms.TextBox textBox53;
         private System.Windows.Forms.TextBox textBox55;
         private System.Windows.Forms.TextBox textBox56;
+        private System.Windows.Forms.Button button12;
     }
 }

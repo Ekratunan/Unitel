@@ -165,6 +165,7 @@ namespace Unitel
             this.button1.TabIndex = 0;
             this.button1.Text = "Call";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -234,7 +235,6 @@ namespace Unitel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Unitel.Properties.Resources.Background2;
             this.ClientSize = new System.Drawing.Size(884, 521);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);

@@ -155,7 +155,8 @@ namespace Unitel
                     comboBox11.Text = rec.MaritalStatus;
                     textBox48.Text = rec.MaritalStatus;
                     textBox56.Text = rec.DateOfBirth;
-                    dateTimePicker2.Text = rec.DateOfBirth;
+                    dateTimePicker2.Value = DateTime.ParseExact(rec.DateOfBirth, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
+
 
                     //Present Address
                     textBox41.Text = rec.PresentAddress.Street;
@@ -235,12 +236,17 @@ namespace Unitel
                     textBox6.Text = rec.Nationality;
                     comboBox9.Text = rec.Gender;
                     textBox45.Text = rec.Gender;
-                    textBox55.Text = rec.DateOfBirth;
-                    dateTimePicker1.Text = rec.DateOfBirth;
                     textBox42.Text = rec.DrivingLicenseNum;
                     comboBox12.Text = rec.MaritalStatus;
                     textBox44.Text = rec.MaritalStatus;
                     textBox10.Text = rec.PhoneNumber;
+                    textBox55.Text = rec.DateOfBirth;
+                    if(rec.DateOfBirth != null)
+                    {
+                        dateTimePicker1.Value = DateTime.ParseExact(rec.DateOfBirth, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
+                    }
+                    
+
 
                     textBox22.Text = rec.PresentAddress.Street;
                     textBox30.Text = rec.PresentAddress.State;
@@ -279,7 +285,6 @@ namespace Unitel
         private void Button1_Click(object sender, EventArgs e)
         {
             NewEmployee newEmployee = new NewEmployee();
-
             newEmployee.Show();
         }
 
@@ -342,7 +347,7 @@ namespace Unitel
                 record.Gender = comboBox9.Text.Trim();
                 record.PhoneNumber = textBox10.Text.Trim();
                 record.DrivingLicenseNum = textBox42.Text.Trim();
-
+                record.DateOfBirth = dateTimePicker1.Text;
                 record.Designation = textBox11.Text.Trim();
                 record.Salary = textBox12.Text.Trim();
                 record.EmployeeID = textBox8.Text.Trim();
@@ -441,6 +446,9 @@ namespace Unitel
                 textBox45.ReadOnly = true;
                 textBox45.Text = comboBox9.Text.Trim();
                 textBox45.Show();
+
+                textBox55.Text = dateTimePicker1.Text;
+                textBox55.Show();
 
                 //Present Address
                 textBox22.ReadOnly = true;
@@ -552,6 +560,7 @@ namespace Unitel
             textBox13.Text = ""; //Initial
             comboBox11.Text = "";
             textBox48.Text = "";
+            textBox56.Text = "";
 
             //Present Address
             textBox41.Text = "";
@@ -659,7 +668,6 @@ namespace Unitel
             {
                 UpdateInfo();
                 CustomerWriteAccess(false);
-                Refresher();
                 button10.Hide();
                 button9.Hide();
                 button4.Text = "Edit";
@@ -687,6 +695,7 @@ namespace Unitel
             record.DrivingLicenseNum = textBox43.Text.Trim();
             record.PhoneNumber = textBox13.Text.Trim();
             record.MaritalStatus = comboBox11.Text.Trim();
+            record.DateOfBirth = dateTimePicker2.Text;
             record.PresentAddress = new AddressModel
             {
                 Street = textBox41.Text.Trim(),
