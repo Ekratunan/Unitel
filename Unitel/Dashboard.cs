@@ -5,47 +5,41 @@ namespace Unitel
 {
     public partial class Dashboard : Form
     {
+        readonly DatabaseFile tokenSync = new DatabaseFile("Tokens");
         readonly TicketGen ticketGen = new TicketGen();
         readonly QueueScreen queueScreen = new QueueScreen();
         private int numOfRec = 0;
+        readonly DatabaseFile db = new DatabaseFile("Employee");
 
-        public Dashboard(string empId, string counter)
+
+        public Dashboard(string empId, string counter, int num)
         {
             InitializeComponent();
-            DatabaseFile db = new DatabaseFile("Employee");
-            var rec = db.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", empId);
-
+            
             DataFetch();
-
-
+            
+            var rec = db.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", empId);
             this.label3.Text = $"{ rec.FirstName} { rec.LastName}";
             this.label4.Text = counter;
 
-            queueScreen.Show();
-            ticketGen.Show();
-
-            Timer timer = new Timer
+            if(num == 1)
             {
-                Interval = (5 * 1000) // 10 secs
-            };
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
-
-        }
-
-        DatabaseFile tokenSync = new DatabaseFile("Tokens");
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
-            int newRec = record.Count;
-
-            if (numOfRec != newRec)
+                ticketGen.Show();
+            }
+            else if(num == 2)
             {
-                DataFetch();
+                queueScreen.Show();
+            }else if(num == 3)
+            {
+                queueScreen.Show();
+                ticketGen.Show();
             }
             
-            
         }
+
+        
+
+        
 
         private void DataFetch()
         {
@@ -72,47 +66,126 @@ namespace Unitel
             
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void LogOut()
         {
-            Form1 form1 = new Form1();
-            form1.Show();
-            
-
+            var record = tokenSync.LoadRecordbyIdentity<CounterModel>("Counters", "CounterNumber", label4.Text);
+            tokenSync.DeleteRecord<CounterModel>("Counters", record.Id);
             queueScreen.Close();
             ticketGen.Close();
+
+            Home form1 = new Home();
+            form1.Show();
+            
             this.Close();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+         
+        private void Button3_Click(object sender, EventArgs e)
         {
-            
-            string phoneNum = dataGridView1.CurrentRow.Cells["MobileNumber"].Value.ToString();
-            string token = dataGridView1.CurrentRow.Cells["TokenNumber"].Value.ToString();
-
-            Console.WriteLine(phoneNum);
-            Console.WriteLine(token);
-
-            if (phoneNum == "")
-            {
-                CustomerInformationPage newCustomer = new CustomerInformationPage(token);
-                newCustomer.Show();
-
-            }
-            else if(phoneNum != "")
-            {
-                CustomerInformationPage cip = new CustomerInformationPage(phoneNum, token);
-                cip.Show();
-            }
-
-            this.WindowState = FormWindowState.Minimized;
+            button3.Enabled = false;
+            LogOut();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
-            string token = dataGridView1.CurrentRow.Cells["TokenNumber"].Value.ToString();
-            string counter = label4.Text.Trim();
+            if(dataGridView1.RowCount > 0)
+            {
+                string typeOfSer = dataGridView1.CurrentRow.Cells["TypeOfService"].Value.ToString();
+                string phoneNum = dataGridView1.CurrentRow.Cells["MobileNumber"].Value.ToString();
+                string token = dataGridView1.CurrentRow.Cells["TokenNumber"].Value.ToString();
+                CustomerInformationPage cip;
 
-            queueScreen.Call_Control(token, counter);
+
+                this.WindowState = FormWindowState.Minimized;
+                if (phoneNum == "")
+                {
+
+                    cip = new CustomerInformationPage(token, typeOfSer, this);
+                    cip.Show();
+                }
+                else if (phoneNum != "")
+                {
+                    cip = new CustomerInformationPage(phoneNum, token, typeOfSer, this);
+                    cip.Show();
+
+                }
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.RowCount > 0)
+            {
+                string token = dataGridView1.CurrentRow.Cells["TokenNumber"].Value.ToString();
+                string counter = label4.Text.Trim();
+
+                queueScreen.Call_Control(token, counter);
+            }
+
+           
+        }
+
+        private void Dashboard_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(5);
+                ShowInTaskbar = false;
+            }
+
+            if(this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Normal;
+                notifyIcon1.Visible = false;
+                this.ShowInTaskbar = true;
+            }
+        }
+
+        private void NotifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
+            ShowInTaskbar = true;
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            if(dataGridView1.RowCount > 0)
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+            }
+
+
+            try
+            {
+                var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
+                int newRec = record.Count;
+
+                if (numOfRec != newRec)
+                {
+                    DataFetch();
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+
+            }
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            
+            tokenSync.InsertRecord("Counters", new CounterModel {
+                ExecutiveName = label3.Text,
+                CounterNumber = label4.Text
+            });
         }
     }
 }

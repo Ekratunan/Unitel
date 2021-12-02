@@ -11,81 +11,72 @@ namespace Unitel
             InitializeComponent();
 
             //Line 5
-            label9.Text = "";
-            label14.Text = "";
+            line6TN.Text = "";
+            line6CN.Text = "";
 
             //Line 4
-            label8.Text = "";
-            label13.Text = "";
+            line5TN.Text = "";
+            line5CN.Text = "";
 
             //Line 3
-            label6.Text = "";
-            label12.Text = "";
+            line4TN.Text = "";
+            line4CN.Text = "";
 
             //Line 2
-            label7.Text = "";
-            label11.Text = "";
+            line3TN.Text = "";
+            line3CN.Text = "";
 
             //Line 1
-            label5.Text = "";
-            label10.Text = "";
+            line2TN.Text = "";
+            line2CN.Text = "";
 
             //Main Line
-            label2.Text = "";
-            label4.Text = "";
+            line1TN.Text = "";
+            line1CN.Text = "";
         }
 
-        Timer timer = new Timer
-        {
-            Interval = (1 * 1000)
-        };
 
         public void Call_Control(string token, string counter)
         {
-            if (label2.Text == "" || label4.Text == "")
+            if (line1TN.Text == "" || line1CN.Text == "")
             {
                 //Main Line
-                label2.Text = token;
-                label4.Text = counter;
-            } else if (label2.Text != token)
+                line1TN.Text = token;
+                line1CN.Text = counter;
+            } else if (line1TN.Text != token)
             {
-                if (timer.Enabled)
+                if (blinkerTimer.Enabled)
                 {
-                    timer.Stop();
+                    blinkerTimer.Stop();
                 }
                 
                 
+                //Line 6
+                line6TN.Text = line5TN.Text;
+                line6CN.Text = line5CN.Text;
+
                 //Line 5
-                label9.Text = label8.Text;
-                label14.Text = label13.Text;
+                line5TN.Text = line4TN.Text;
+                line5CN.Text = line4CN.Text;
 
                 //Line 4
-                label8.Text = label6.Text;
-                label13.Text = label12.Text;
+                line4TN.Text = line3TN.Text;
+                line4CN.Text = line3CN.Text;
 
                 //Line 3
-                label6.Text = label7.Text;
-                label12.Text = label11.Text;
+                line3TN.Text = line2TN.Text;
+                line3CN.Text = line2CN.Text;
 
                 //Line 2
-                label7.Text = label5.Text;
-                label11.Text = label10.Text;
-
-                //Line 1
-                label5.Text = label2.Text;
-                label10.Text = label4.Text;
+                line2TN.Text = line1TN.Text;
+                line2CN.Text = line1CN.Text;
 
                 //Main Line
-                label2.Text = token;
-                label4.Text = counter;
-            }else if(label2.Text == token)
+                line1TN.Text = token;
+                line1CN.Text = counter;
+            }else if(line1TN.Text == token)
             {
-                timer = new Timer
-                {
-                    Interval = (1 * 1000)
-                };
-                timer.Tick += new EventHandler(timer_Tick);
-                timer.Start();
+                blinkerTimer.Enabled = true;
             }
 
                 
@@ -95,39 +86,26 @@ namespace Unitel
 
         private int countTimer = 0;
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void BlinkerTimer_Tick(object sender, EventArgs e)
         {
-            if(label2.ForeColor == Color.SeaGreen && countTimer < 6)
+            if (line1TN.ForeColor == Color.FromArgb(21, 2, 54) && countTimer < 6)
             {
-                label2.ForeColor = Color.Red;
-                label4.ForeColor = Color.Red;
+                line1TN.ForeColor = Color.Red;
+                line1CN.ForeColor = Color.Red;
                 countTimer++;
-            }else if(label2.ForeColor == Color.Red && countTimer < 6)
+            }
+            else if (line1TN.ForeColor == Color.Red && countTimer < 6)
             {
-                label2.ForeColor = Color.SeaGreen;
-                label4.ForeColor = Color.SeaGreen;
+                line1TN.ForeColor = Color.FromArgb(21, 2, 54);
+                line1CN.ForeColor = Color.FromArgb(21, 2, 54);
                 countTimer++;
             }
 
-            if(countTimer >= 6)
+            if (countTimer >= 6)
             {
-                timer.Stop();
+                blinkerTimer.Stop();
                 countTimer = 0;
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void QueueScreen_Load(object sender, EventArgs e)
-        {
 
         }
     }

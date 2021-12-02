@@ -4,23 +4,44 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Authors>Unitel Private Properties Ltd.</Authors>
-    <Product>Unitel Desktop Server Application</Product>
-    <Copyright>Unitel UODA Project Authority</Copyright>
+    <Authors>Unitel PTO</Authors>
+    <Product>Unitel Desktop</Product>
+    <Copyright>2021 (c) Unitel Project Team and Organisation</Copyright>
     <SignAssembly>false</SignAssembly>
-    <ApplicationIcon>icon_initial_01_tsX_icon.ico</ApplicationIcon>
+    <ApplicationIcon>icon_01_VbH_icon.ico</ApplicationIcon>
     <Win32Resource />
     <StartupObject />
     <PackageId>Unitel Alpha</PackageId>
+    <Version>1.0.3</Version>
+    <Company>Unitel PTO</Company>
+    <NeutralLanguage>en-UM</NeutralLanguage>
+    <PackageReleaseNotes>022/12/2021 Release version:
+1. Bugs fixed.
+2. Keyboard Shortcut added.
+3. Optimized performance.
+4. Optimized users experiences.</PackageReleaseNotes>
+    <Description>Unitel is a universal customer service application that can be use at any Service Center for Mobile Operator, Bank, Device After Service Provider, Hospital and so on. This project is under consultation on porject group 'Unitel' for University of Development Alternative(UODA). Owners: Ekra Hossain, Abir Hossain,Nowshin Atia Sarker, Md. Rezwan Ibna Akram, Md. Saiful Islam Rafid, Md. Nasir Islam Sharif &amp; Md. Monir Hossain.</Description>
+    <AssemblyName>Unitel (Alpha)</AssemblyName>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageIcon>Icon-01.png</PackageIcon>
+    <PackageIconUrl />
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="E:\Project\Desktop UI\Elements\Icon-01.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

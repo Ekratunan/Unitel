@@ -8,6 +8,8 @@ namespace Unitel
         [BsonId]
         public Guid ID { get; set; }
         [BsonElement]
+        public byte[] UserImage { get; set; }
+        [BsonElement]
         public string MobileNumber { get; set; }
         [BsonElement]
         public string FirstName { get; set; }
@@ -84,17 +86,6 @@ namespace Unitel
         public string talkTimeValidity { get; set; }
     }
 
-    public class PassBook
-    {
-        [BsonId]
-        public Guid ID { get; set; }
-        [BsonElement]
-        public string EmployeeID { get; set; }
-        [BsonElement]
-        public string Password { get; set; }
-        [BsonElement]
-        public string AdminStatus { get; set; }
-    }
 
     public class AddressModel
     {
@@ -110,10 +101,25 @@ namespace Unitel
         public string Country { get; set; }
     }
 
+    public class SecurityModel
+    {
+        [BsonId]
+        public Guid ID { get; set; }
+        [BsonElement]
+        public string EmployeeID { get; set; }
+        [BsonElement]
+        public byte[] Password { get; set; }
+        [BsonElement]
+        public string AdminStatus { get; set; }
+
+    }
+
     public class EmployeeModel
     {
         [BsonId]
         public Guid ID { get; set; }
+        [BsonElement]
+        public byte[] UserImage { get; set; }
         [BsonElement]
         public string AdminStatus { get; set; }
         [BsonElement]

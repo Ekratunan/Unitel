@@ -12,11 +12,8 @@ namespace Unitel
     public partial class TicketGen : Form
     {
         private int tokenNumber = 0;
-
-        Timer timer = new Timer
-        {
-            Interval = (8 * 1000)
-        };
+        DatabaseFile database = new DatabaseFile("Tokens");
+        DatabaseFile personInfo = new DatabaseFile("Customer");
 
         public TicketGen()
         {
@@ -36,54 +33,35 @@ namespace Unitel
                 label3.Text = "Unable to fetch data";
             }
 
-            
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
-
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            label3.Text = "";
         }
 
         private bool MobileValidator()
         {
-            bool isValid = false;
             string mobNumberInput = textBox1.Text.Trim();
 
             if (mobNumberInput == "")
             {
-                label3.ForeColor = Color.Red;
-                label3.Text = "Please enter a mobile number";
+                label3.Text = "Enter a mobile number";
+                timer1.Enabled = true;
+                return false;
+            }
+            else if(mobNumberInput.Length < 11)
+            {
+                label3.Text = "Please enter a valid mobile number";
+                timer1.Enabled = true;
+                return false;
+
             }
             else
             {
-                int convNumber = Convert.ToInt32(mobNumberInput);
-                if (convNumber >= 1200000000)
-                {
-                    isValid = true;
-                }
-                else
-                {
-                    label3.ForeColor = Color.Red;
-                    label3.Text = "Enter a valid Mobile Number";
-                }
-
+                return true;
             }
-
-            return isValid;
         }
 
         private void TokenGenerator(string service, string tokenNum)
         {
-            DatabaseFile database = new DatabaseFile("Tokens");
-            DatabaseFile personInfo = new DatabaseFile("Customer");
-
             var record = personInfo.LoadRecords<PersonModel>("Personal_Info");
-            bool searching = record.Any(r => r.MobileNumber == textBox1.Text.Trim());
-
-            if(service == "Buy New SIM")
+            if (service == "Buy New SIM")
             {
                 database.InsertRecord("ActiveCounter", new TokenModel
                 {
@@ -95,48 +73,58 @@ namespace Unitel
                 });
 
                 tokenNumber++;
-                label3.ForeColor = Color.Green;
-                timer.Start();
+
+
                 label3.Text = "Token Created";
                 textBox1.Text = "";
+                timer1.Enabled = true;
             }
-            else if (searching && service != "Buy New SIM")
+            else if(record.Count > 0)
             {
+                bool exists = record.Any(r => r.MobileNumber == textBox1.Text.Trim());
+                
+                if (exists)
+                {
+                    var rec = personInfo.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", textBox1.Text.Trim());
+                    database.InsertRecord("ActiveCounter", new TokenModel
+                    {
+                        CustomerName = $"{rec.FirstName} {rec.LastName}",
+                        MobileNumber = rec.MobileNumber,
+                        TypeOfService = service,
+                        TokenNumber = tokenNum,
+                        TokenDigit = tokenNumber
+                    });
 
-                var rec = personInfo.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", textBox1.Text.Trim());
-                database.InsertRecord("ActiveCounter", new TokenModel {
-                     CustomerName = $"{rec.FirstName} {rec.LastName}",
-                     MobileNumber = rec.MobileNumber,
-                     TypeOfService = service,
-                     TokenNumber = tokenNum,
-                     TokenDigit = tokenNumber
-                });
+                    tokenNumber++;
 
-                tokenNumber++;
-                label3.ForeColor = Color.Green;
-                timer.Start();
-                label3.Text = "Token Created";
-                textBox1.Text = "";
+
+                    label3.Text = "Token Created";
+                    timer1.Enabled = true;
+                    textBox1.Text = "";
+                }
+                else
+                {
+                    label3.Text = "User does not exist";
+                    timer1.Enabled = true;
+                }
             }
-            else if (!searching)
+            else
             {
-                label3.ForeColor = Color.Red;
-                label3.Text = "User does not exist";
+                label3.Text = "No user record found";
+                timer1.Enabled = true;
             }
+            
+
+            
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (MobileValidator())
             {
-                TokenGenerator(button2.Text, $"SR{tokenNumber}");
+                TokenGenerator(replaceSim.Text, $"SR{tokenNumber}");
             }
         }
 
@@ -144,7 +132,7 @@ namespace Unitel
         {
             if (MobileValidator())
             {
-                TokenGenerator(button3.Text, $"IR{tokenNumber}");
+                TokenGenerator(roaming.Text, $"IR{tokenNumber}");
             }
 
         }
@@ -152,7 +140,7 @@ namespace Unitel
         private void button1_Click(object sender, EventArgs e)
         {
             
-            TokenGenerator(button1.Text, $"New{tokenNumber}");
+            TokenGenerator(newSim.Text, $"New{tokenNumber}");
             
         }
 
@@ -160,7 +148,7 @@ namespace Unitel
         {
             if (MobileValidator())
             {
-                TokenGenerator(button4.Text, $"Info{tokenNumber}");
+                TokenGenerator(infoDesk.Text, $"Info{tokenNumber}");
             }
         }
 
@@ -168,7 +156,7 @@ namespace Unitel
         {
             if (MobileValidator())
             {
-                TokenGenerator(button6.Text, $"OP{tokenNumber}");
+                TokenGenerator(offerPack.Text, $"OP{tokenNumber}");
             }
         }
 
@@ -176,8 +164,19 @@ namespace Unitel
         {
             if (MobileValidator())
             {
-                TokenGenerator(button5.Text, $"CS{tokenNumber}");
+                TokenGenerator(changeSubs.Text, $"CS{tokenNumber}");
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label3.Text = "";
+            timer1.Stop();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
         }
     }
 }

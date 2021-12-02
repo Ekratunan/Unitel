@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -10,13 +12,22 @@ namespace Unitel
 {
     public partial class AdminLogIn : Form
     {
-        DatabaseFile databaseFile;
+        DatabaseFile databaseFile = new DatabaseFile("Employee");
+        protected List<SecurityModel> record;
         public AdminLogIn()
         {
             InitializeComponent();
             label3.Text = "";
+            var passBook = databaseFile.LoadRecords<SecurityModel>("Emp_Account");
+            record = passBook;
+        }
 
-            databaseFile = new DatabaseFile("Employee");
+
+        private string decodePassword(byte[] sample)
+        {
+            MemoryStream ms = new MemoryStream(sample);
+            StreamReader reader = new StreamReader(ms);
+            return reader.ReadToEnd();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -55,14 +66,14 @@ namespace Unitel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Home form1 = new Home();
             form1.Show();
             this.Close();
         }
 
         private bool AdminVerification(string adminID, string password)
         {
-            var record = databaseFile.LoadRecords<PassBook>("Emp_Account");
+            
             bool initialVerify = false;
             bool exist = false;
 
@@ -70,12 +81,17 @@ namespace Unitel
             {
                 if(rec.EmployeeID == adminID)
                 {
+                    string pass = null;
+                    if(rec.Password != null)
+                    {
+                        pass = decodePassword(rec.Password);
+                    }
                     exist = true;
                     if(rec.AdminStatus == "Admin" && rec.Password != null && textBox2.Text.Trim() == "")
                     {
                         label3.Text = "Please enter password";
                     }
-                    else if (rec.AdminStatus == "Admin" && rec.Password == password)
+                    else if (rec.AdminStatus == "Admin" && pass == password)
                     {
                         initialVerify = true;
                     }  else if (rec.Password == null)
@@ -83,11 +99,11 @@ namespace Unitel
                         PasswordGenerator passwordGenerator = new PasswordGenerator(rec.EmployeeID);
                         passwordGenerator.Show();
                     }
-                    else if (rec.AdminStatus == "Not Admin" && rec.Password == password && rec.Password != null)
+                    else if (rec.AdminStatus == "Not Admin" && pass == password && rec.Password != null)
                     {
                         label3.Text = "You dont have admin access";
                     }
-                    else if (rec.AdminStatus == "Admin" && rec.Password != null && rec.Password != password)
+                    else if (rec.AdminStatus == "Admin" && rec.Password != null && pass != password)
                     {
                         label3.Text = "Incorrect Admin ID or Password";
 
@@ -105,6 +121,15 @@ namespace Unitel
                 label3.Text = "Invalid Employee ID";
             }
             return initialVerify;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(record.Any(p => p.EmployeeID == textBox1.Text.Trim()))
+            {
+                this.ActiveControl = textBox2;
+                textBox2.Focus();
+            }
         }
     }
 }

@@ -1,29 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Unitel
 {
     public partial class AdminDashboard : Form
     {
+        int numOfRec = 0;
+        DatabaseFile tokenSync = new DatabaseFile("Tokens");
         Control ctr1;
 
         public AdminDashboard()
         {
             InitializeComponent();
-            label66.Text = "";
-            label67.Text = "";
-            label74.Text = "";
-            label75.Text = "";
-
-            EmpTabWriteAccess(false);
-            CustomerWriteAccess(false);
-
-            button4.Hide();
-            button3.Hide();
-            button10.Hide();
-            button9.Hide();
-
-            textBox1.Select();
+            DataFetch();
 
         }
 
@@ -31,6 +23,8 @@ namespace Unitel
         {
             if (result)
             {
+                linkLabel2.Show();
+
                 textBox19.ReadOnly = false;
                 textBox18.ReadOnly = false;
                 textBox17.ReadOnly = false;
@@ -74,6 +68,8 @@ namespace Unitel
                 textBox35.ReadOnly = false;
             }else if (!result)
             {
+                linkLabel2.Hide();
+
                 textBox19.ReadOnly = true;
                 textBox18.ReadOnly = true;
                 textBox17.ReadOnly = true;
@@ -142,6 +138,14 @@ namespace Unitel
                 {
                     var simRecord = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", rec.MobileNumber);
 
+                    if(rec.UserImage != null)
+                    {
+                        pictureBox3.Image = binToImage(rec.UserImage);
+                    }
+                    else
+                    {
+                        pictureBox3.Image = Properties.Resources.img_avatar;
+                    }
                     textBox19.Text = rec.FirstName;
                     textBox18.Text = rec.LastName;
                     textBox17.Text = rec.FathersName;
@@ -205,6 +209,8 @@ namespace Unitel
 
                     button4.Show();
                     label74.Text = "";
+                    label75.Text = "";
+                    button11.Enabled = true;
                     recordFound = true;
                     break;
                 }
@@ -213,6 +219,7 @@ namespace Unitel
             if (!recordFound)
             {
                 label74.Text = "No user found";
+                button11.Enabled = true;
             }
         }
 
@@ -228,6 +235,16 @@ namespace Unitel
             {
                 if (rec.EmployeeID == empID)
                 {
+                    if(rec.UserImage != null)
+                    {
+                        pictureBox2.Image = binToImage(rec.UserImage);
+                    }
+                    else
+                    {
+                        pictureBox2.Image = Properties.Resources.img_avatar;
+                    }
+                    
+                    
                     textBox2.Text = rec.FirstName;
                     textBox3.Text = rec.LastName;
                     textBox4.Text = rec.FathersName;
@@ -266,17 +283,23 @@ namespace Unitel
                     textBox11.Text = rec.Designation;
                     textBox12.Text = rec.Salary;
 
-                    label66.Text = "";
+
                     panel13.Hide();
                     button3.Show();
                     validEmp = true;
+                    label66.Text = "";
+                    label67.Text = "";
+
+                    button6.Enabled = true;
                     break;
+
                 }
             }
 
             if (!validEmp)
             {
                 label66.Text = "Employee not found";
+                button6.Enabled = true;
             }
 
 
@@ -288,9 +311,10 @@ namespace Unitel
             newEmployee.Show();
         }
 
+        Home home = new Home();
+
         private void Button5_Click(object sender, EventArgs e)
         {
-            Form1 home = new Form1();
             home.Show();
             this.Close();
         }
@@ -301,13 +325,24 @@ namespace Unitel
             newUser.Show();
         }
 
+        private Image binToImage(byte[] b)
+        {
+            var img = new MemoryStream(b);
+            Image imgFromStream = Image.FromStream(img);
+            return imgFromStream;
+        }
+
+
         private void Button6_Click(object sender, EventArgs e)
         {
-            label67.Text = "";
+            
             string empID = textBox1.Text.Trim();
             if(empID != "")
-            {   
+            {
+                label66.Text = "Searching Employee...";
+                button6.Enabled = false;
                 EmployeeInfoRead(empID);
+
             } else
             {
                 label66.Text = "Please enter a valid Employee ID.";
@@ -322,6 +357,8 @@ namespace Unitel
             }
             else
             {
+                button11.Enabled = false;
+                label74.Text = "Searching User...";
                 CustomerInfoRead(textBox24.Text.Trim());
                 
             }
@@ -337,6 +374,7 @@ namespace Unitel
             {
                 DatabaseFile database = new DatabaseFile("Employee");
                 var record = database.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
+                record.UserImage = pictureCovert(pictureBox2.Image);
                 record.FirstName = textBox2.Text.Trim();
                 record.LastName = textBox3.Text.Trim();
                 record.FathersName = textBox4.Text.Trim();
@@ -390,6 +428,8 @@ namespace Unitel
         {
             if (signal)
             {
+                linkLabel1.Show();
+
                 textBox2.ReadOnly = false;
                 textBox3.ReadOnly = false;
                 textBox4.ReadOnly = false;
@@ -430,6 +470,8 @@ namespace Unitel
             }
             else if (!signal)
             {
+                linkLabel1.Hide();
+
                 textBox2.ReadOnly = true;
                 textBox3.ReadOnly = true;
                 textBox4.ReadOnly = true;
@@ -515,6 +557,7 @@ namespace Unitel
         private void Refresher()
         {
             //Employee Tab
+            pictureBox2.Image = Properties.Resources.img_avatar;
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
@@ -548,6 +591,7 @@ namespace Unitel
 
 
             //Customer Tab
+            pictureBox3.Image = Properties.Resources.img_avatar;
             textBox19.Text = "";
             textBox18.Text = "";
             textBox17.Text = "";
@@ -608,7 +652,7 @@ namespace Unitel
         private int AdminNumber(DatabaseFile databaseFile)
         {
            
-            var numTot = databaseFile.LoadRecords<PassBook>("Emp_Account");
+            var numTot = databaseFile.LoadRecords<SecurityModel>("Emp_Account");
             int tot = 0;
             foreach(var rec in numTot)
             {
@@ -632,9 +676,9 @@ namespace Unitel
                 {
                     
                     var record = databaseFile.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
-                    var passRecord = databaseFile.LoadRecordbyIdentity<PassBook>("Emp_Account", "EmployeeID", textBox8.Text);
+                    var passRecord = databaseFile.LoadRecordbyIdentity<SecurityModel>("Emp_Account", "EmployeeID", textBox8.Text);
                     databaseFile.DeleteRecord<EmployeeModel>("Emp_Personal_Info", record.ID);
-                    databaseFile.DeleteRecord<PassBook>("Emp_Account", passRecord.ID);
+                    databaseFile.DeleteRecord<SecurityModel>("Emp_Account", passRecord.ID);
                     EmpTabWriteAccess(false);
                     label67.Text = "Record Deleted";
                     Refresher();
@@ -685,6 +729,7 @@ namespace Unitel
             var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", textBox23.Text.Trim());
             var recSim = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", textBox23.Text.Trim());
 
+            record.UserImage = pictureCovert(pictureBox3.Image);
             record.FirstName = textBox19.Text.Trim();
             record.LastName = textBox18.Text.Trim();
             record.FathersName = textBox17.Text.Trim();
@@ -749,6 +794,8 @@ namespace Unitel
                 if(e.KeyCode == Keys.Enter)
                 {
                     button11.PerformClick();
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
                     
                 }
             }
@@ -763,7 +810,8 @@ namespace Unitel
                 if (e.KeyCode == Keys.Enter)
                 {
                     button6.PerformClick();
-
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
                 }
             }
         }
@@ -793,6 +841,249 @@ namespace Unitel
             {
                 //Nothing to do
             }
+        }
+
+        private byte[] pictureCovert(Image i)
+        {
+            var ms = new MemoryStream();
+
+            i.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+            var bytes = ms.ToArray();
+
+            return bytes;
+
+        }
+
+        Image image;
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files(*.BMP; *.JPG; *.PNG)|*.BMP; *.JPG; *.PNG";
+
+            DialogResult dr = openFileDialog.ShowDialog();
+
+            if (dr == DialogResult.OK)
+            {
+                image = Image.FromFile(openFileDialog.FileName);
+                pictureBox2.Image = image;
+
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files(*.BMP; *.JPG; *.PNG)|*.BMP; *.JPG; *.PNG";
+
+
+            DialogResult dr = openFileDialog.ShowDialog();
+
+            if (dr == DialogResult.OK)
+            {
+                image = Image.FromFile(openFileDialog.FileName);
+                pictureBox3.Image = image;
+
+            }
+
+        }
+
+        private void AdminDashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            home.Show();
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+            label66.Text = "";
+            label67.Text = "";
+            label74.Text = "";
+            label75.Text = "";
+
+            EmpTabWriteAccess(false);
+            CustomerWriteAccess(false);
+
+            button4.Hide();
+            button3.Hide();
+            button10.Hide();
+            button9.Hide();
+
+            this.ActiveControl = textBox1;
+
+            dataGridView1.Columns[1].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns[2].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns[3].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns[4].Width = (panel11.Width / 100) * 25;
+
+            var counterLoad = tokenSync.LoadRecords<CounterModel>("Counters");
+            counters = counterLoad;
+            foreach (var rec in counters)
+            {
+                    CounterSelect.Items.Add(rec.CounterNumber);
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabControl1.TabPages["Users"])
+            {
+                this.ActiveControl = textBox24;
+            }else if(tabControl1.SelectedTab == tabControl1.TabPages["Employee"])
+            {
+                this.ActiveControl = textBox1;
+            }else if(tabControl1.SelectedTab == tabControl1.TabPages["Queue"])
+            {
+                var counterLoad = tokenSync.LoadRecords<CounterModel>("Counters");
+                counters = counterLoad;
+                DataFetch();
+            }
+        }
+   
+        private void DataFetch()
+        {
+
+            var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
+            numOfRec = record.Count;
+
+            dataGridView1.DataSource = record;
+            dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["TokenDigit"].Visible = false;
+
+            //Modify Headers
+            dataGridView1.Columns["CustomerName"].HeaderText = "Customer Name";
+            dataGridView1.Columns["MobileNumber"].HeaderText = "Mobile Number";
+            dataGridView1.Columns["TokenNumber"].HeaderText = "Token Number";
+            dataGridView1.Columns["TypeOfService"].HeaderText = "Type of Service";
+
+            //Modify Size
+            dataGridView1.Columns["CustomerName"].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns["MobileNumber"].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns["TokenNumber"].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns["TypeOfService"].Width = (panel11.Width / 100) * 25;
+
+
+        }
+
+        private List<CounterModel> counters;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
+            var counterLoad = tokenSync.LoadRecords<CounterModel>("Counters");
+            
+            
+            if(counters.Count != counterLoad.Count)
+            {
+                counters = counterLoad;
+                CounterSelect.Items.Clear();
+                foreach (var rec in counters)
+                {
+                    if (!CounterSelect.Items.Contains(rec.CounterNumber))
+                    {
+                        CounterSelect.Items.Add(rec.CounterNumber);
+                    }
+
+                }
+            }
+            
+           
+
+            
+            int newRec = record.Count;
+
+
+
+            if (numOfRec != newRec)
+            {
+                DataFetch();
+            }
+        }
+
+        private void AdminDashboard_SizeChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Columns["CustomerName"].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns["MobileNumber"].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns["TokenNumber"].Width = (panel11.Width / 100) * 25;
+            dataGridView1.Columns["TypeOfService"].Width = (panel11.Width / 100) * 25;
+        }
+
+        private void CounterSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var rec = counters.Find(p => p.CounterNumber == CounterSelect.Text);
+            textBoxExecutive.Text = rec.ExecutiveName;
+            CounterSelect.Text = rec.CounterNumber;
+
+        }
+
+        private void AdminDashboard_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(tabControl1.SelectedTab == tabControl1.TabPages["Employee"])
+            {
+                if (e.Control && e.KeyCode == Keys.E && button3.Visible)
+                {
+                    button3.PerformClick();
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+                if (e.Control && e.KeyCode == Keys.S && button7.Visible)
+                {
+                    button7.PerformClick();
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+                if(e.Control && e.KeyCode == Keys.D && button8.Visible)
+                {
+                    button8.PerformClick();
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+                
+            }
+
+            if (tabControl1.SelectedTab == tabControl1.TabPages["Users"])
+            {
+                if (e.Control && e.KeyCode == Keys.E && button4.Visible)
+                {
+                    button4.PerformClick();
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+                if (e.Control && e.KeyCode == Keys.S && button10.Visible)
+                {
+                    button10.PerformClick();
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+                if (e.Control && e.KeyCode == Keys.D && button9.Visible)
+                {
+                    button9.PerformClick();
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+
+            }
+
+            if (e.Control && e.KeyCode == Keys.N && e.Alt)
+            {
+                button1.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            
+            if(e.Control && e.KeyCode == Keys.M && e.Alt)
+            {
+                button2.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+
+            if(e.Alt && e.Shift && e.KeyCode == Keys.L)
+            {
+                button5.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+
         }
     }
 }

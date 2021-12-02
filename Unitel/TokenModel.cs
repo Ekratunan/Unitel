@@ -57,4 +57,13 @@ namespace Unitel
         [BsonElement]
         public AddressModel PermanentAddress { get; set; }
     }
+
+    public class CounterModel
+    {
+        [BsonId]
+        public Guid Id { get; set; }
+        public string ExecutiveName { get; set; }
+        public string CounterNumber { get; set; }
+
+    }
 }

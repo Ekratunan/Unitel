@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,23 +8,29 @@ namespace Unitel
 {
     public partial class CustomerInformationPage : Form
     {
+        Form dashboard { get; set; }
         private string Token { get; set; }
-        public CustomerInformationPage(string phoneNum, string token)
+        public CustomerInformationPage(string phoneNum, string token, string typeOfSer, Form dash)
         {
             InitializeComponent();
             ValuePicker(phoneNum);
             button5.Hide();
             label28.Text = "";
+            label29.Text = token;
+            label31.Text = typeOfSer;
+            label16.Text = phoneNum;
             WriteAccess(true);
             button1.Hide();
-            panel2.Hide();
+            panel9.Hide();
             panel6.Hide();
             panel7.Hide();
 
+            dashboard = dash;
             Token = token;
         }
 
-        public CustomerInformationPage(string token)
+        
+        public CustomerInformationPage(string token, string typeOfSer, Form dash)
         {
             InitializeComponent();
             label16.Text = "";
@@ -30,60 +38,74 @@ namespace Unitel
             button1.Hide();
             label28.Text = "";
             WriteAccess(false);
-
+            label29.Text = token;
+            label31.Text = typeOfSer;
             Token = token;
+            dashboard = dash;
         }
 
         DatabaseFile findData = new DatabaseFile("Customer");
-        
+
+        private Image BinToImage(byte[] b)
+        {
+            var img = new MemoryStream(b);
+            Image imgFromStream = Image.FromStream(img);
+            return imgFromStream;
+        }
+
 
         private void ValuePicker(string phoneNum)
         {
                
             DatabaseFile databaseFile = new DatabaseFile("Customer");    
             var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", phoneNum);
-                var simRecord = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", phoneNum);
+            var simRecord = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", phoneNum);
 
-                label16.Text = record.MobileNumber; //Mobile Number
+               
 
-                textBox1.Text = record.FirstName; //First Name
-                textBox4.Text = record.LastName; //Last Name
-                textBox2.Text = record.FathersName; //Fathers Name
-                textBox3.Text = record.MothersName; //Mothers Name
-                textBox6.Text = record.Nationality; //Nationality
-                textBox7.Text = record.NID_Number; //NID or Passport Number
-                textBox13.Text = record.DrivingLicenseNum; //Driving License Number
-                dateTimePicker1.Value = DateTime.ParseExact(record.DateOfBirth, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
-                comboBox4.Text = record.Gender;
-                comboBox7.Text = record.MaritalStatus;
-                textBox15.Text = record.PhoneNumber;
+            if (record.UserImage != null)
+            {
+                pictureBox2.Image = BinToImage(record.UserImage);
+            }
+            else
+            {
+                pictureBox2.Image = Properties.Resources.img_avatar;
+            }
 
-
-                //Present Address
-                textBox22.Text = record.PresentAddress.Street; //Street
-                textBox30.Text = record.PresentAddress.State; //State
-                textBox29.Text = record.PresentAddress.PostCode; //PostCode
-                textBox28.Text = record.PresentAddress.City; //City
-                comboBox5.Text = record.PresentAddress.Country; //Country
-
-                //Permanent Address
-                textBox34.Text = record.PermanentAddress.Street; //Street
-                textBox31.Text = record.PermanentAddress.State; //State
-                textBox32.Text = record.PermanentAddress.PostCode; //PostCode
-                textBox33.Text = record.PermanentAddress.City; //City
-                comboBox6.Text = record.PermanentAddress.Country; //Country
+            mobile.Text = record.MobileNumber;
+            textBox1.Text = record.FirstName; //First Name
+            textBox4.Text = record.LastName; //Last Name
+            textBox2.Text = record.FathersName; //Fathers Name
+            textBox3.Text = record.MothersName; //Mothers Name
+            textBox6.Text = record.Nationality; //Nationality
+            textBox7.Text = record.NID_Number; //NID or Passport Number
+            textBox13.Text = record.DrivingLicenseNum; //Driving License Number
+            dateTimePicker1.Value = DateTime.ParseExact(record.DateOfBirth, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
+            comboBox4.Text = record.Gender;
+            comboBox7.Text = record.MaritalStatus;
+            textBox15.Text = record.PhoneNumber;
 
 
-            
+            //Present Address
+            textBox22.Text = record.PresentAddress.Street; //Street
+            textBox30.Text = record.PresentAddress.State; //State
+            textBox29.Text = record.PresentAddress.PostCode; //PostCode
+            textBox28.Text = record.PresentAddress.City; //City
+            comboBox5.Text = record.PresentAddress.Country; //Country
+
+            //Permanent Address
+            textBox34.Text = record.PermanentAddress.Street; //Street
+            textBox31.Text = record.PermanentAddress.State; //State
+            textBox32.Text = record.PermanentAddress.PostCode; //PostCode
+            textBox33.Text = record.PermanentAddress.City; //City
+            comboBox6.Text = record.PermanentAddress.Country; //Country
+
+
+
             //Customer-SIM Info (Left)
             textBox11.Text = simRecord.simPackage.Balance;
             textBox12.Text = simRecord.simPackage.DataPack;
-                
-            if(simRecord.simPackage.balanceValidity != "N/A")
-            {
-                dateTimePicker3.Value = DateTime.ParseExact(simRecord.simPackage.balanceValidity, "D", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
-            }
-                
+            textBox17.Text = simRecord.simPackage.balanceValidity;
             comboBox2.Text = simRecord.NetworkVersion;
             comboBox3.Text = simRecord.UserLevel;
 
@@ -98,37 +120,14 @@ namespace Unitel
             textBox16.Text = simRecord.DateOfIssue;
 
             button4.Show();
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CustomerInformationPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
+            button1.Hide();
+            this.AcceptButton = null;
 
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void WriteAccess(bool writable)
@@ -150,20 +149,12 @@ namespace Unitel
                 textBox30.ReadOnly = false;
                 textBox29.ReadOnly = false;
                 textBox28.ReadOnly = false;
-                comboBox5.Hide();
 
                 //Permanent Address
                 textBox34.ReadOnly = false;
                 textBox31.ReadOnly = false;
                 textBox32.ReadOnly = false;
                 textBox33.ReadOnly = false;
-               
-
-
-                //Customer-SIM Info (Left)
-                textBox11.ReadOnly = false;
-                textBox12.ReadOnly = false;
-                
 
 
                 //SIM Information tab
@@ -196,15 +187,6 @@ namespace Unitel
                 textBox31.ReadOnly = true;
                 textBox32.ReadOnly = true;
                 textBox33.ReadOnly = true;
-              
-
-
-                //Customer-SIM Info (Left)
-                textBox11.ReadOnly = true;
-                textBox12.ReadOnly = true;
-            
-
-
 
                 //SIM Information tab
 
@@ -213,6 +195,18 @@ namespace Unitel
                 textBox8.ReadOnly = true;
                 textBox14.ReadOnly = true;
             }
+        }
+
+        private byte[] pictureCovert(Image i)
+        {
+            var ms = new MemoryStream();
+
+            i.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+            var bytes = ms.ToArray();
+
+            return bytes;
+
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -226,6 +220,8 @@ namespace Unitel
                     var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", label16.Text.Trim());
                     var sim = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", label16.Text.Trim());
 
+
+                    record.UserImage = pictureCovert(pictureBox2.Image);
                     record.FirstName = textBox1.Text.Trim();
                     record.LastName = textBox4.Text.Trim();
                     record.FathersName = textBox2.Text.Trim();
@@ -257,7 +253,7 @@ namespace Unitel
 
                     sim.simPackage.Balance = textBox11.Text.Trim();
                     sim.simPackage.DataPack = textBox12.Text.Trim();
-                    sim.simPackage.balanceValidity = dateTimePicker3.Text;
+                    sim.simPackage.balanceValidity = textBox11.Text;
                     sim.NetworkVersion = comboBox2.Text;
                     sim.UserLevel = comboBox3.Text;
 
@@ -319,13 +315,11 @@ namespace Unitel
                 if (exists)
                 {
                     ValuePicker(textBox10.Text.Trim()); //This assign the datas at the fields.
+                    label28.Text = "";
                     WriteAccess(true);
-
-                    panel2.Hide();
+                    panel9.Hide();
                     panel6.Hide();
                     panel7.Hide();
-
-                    label28.Text = "";
                 }
                 else
                 {
@@ -561,22 +555,114 @@ namespace Unitel
                 if(label16.Text == "")
                 {
                     Mark_As_Solved();
-                    this.Hide();
                 }
                 else
                 {
-                    Mark_As_Solved(label16.Text);
-                    this.Hide();
+                    Mark_As_Solved(label16.Text); 
                 }
+
+
                 
+                this.Close();
                 
 
-            }else if(dr == DialogResult.No)
+            }
+            else if(dr == DialogResult.No)
             {
                 //Do nothing
             }
         }
 
-       
+
+        Image image;
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files(*.BMP; *.JPG; *.PNG)|*.BMP; *.JPG; *.PNG";
+
+            DialogResult dr = openFileDialog.ShowDialog();
+
+            if (dr == DialogResult.OK)
+            {
+                image = Image.FromFile(openFileDialog.FileName);
+                pictureBox2.Image = image;
+
+                button1.Show();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure tou want to deactivate this account?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DatabaseFile databaseFile = new DatabaseFile("Customer");
+                var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", label16.Text);
+                var recSim = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", label16.Text);
+                databaseFile.DeleteRecord<PersonModel>("Personal_Info", record.ID);
+                databaseFile.DeleteRecord<SIM_Model>("SIM_Info", recSim.ID);
+
+
+                label28.Text = "Record Deleted";
+          
+                panel7.Show();
+                panel9.Show();
+                panel6.Show();
+                button4.Hide();
+                button1.Hide();
+                label16.Text = "";
+            }
+            else if (dr == DialogResult.No)
+            {
+                //Nothing to do
+            }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CustomerInformationPage_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox10;
+            textBox10.Focus();
+        }
+
+        private void textBox10_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                button6.PerformClick();
+            }
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = button6;
+        }
+
+        private void CustomerInformationPage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode == Keys.N)
+            {
+                button5.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+
+            if (e.Control && e.KeyCode == Keys.F)
+            {
+                this.ActiveControl = textBox10;
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void CustomerInformationPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dashboard.ShowInTaskbar = true;
+            dashboard.WindowState = FormWindowState.Normal;
+        }
     }
 }

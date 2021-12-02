@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="18.9" version="18.9" Modules="vsix" RootPath="." Language="en" Id="{3D9DCB98-546D-4349-A6EC-6E50CD31809F}">
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericPropertyComponent">
+    <ROW Name="AllUsers" Value="1" Type="0"/>
+    <ROW Name="Author" Value="Unitel Inc." Type="0"/>
+    <ROW Name="Description" Value="Unitel Cross Platform Application for Customer Care Canter" Type="0" ValueLocId="*"/>
+    <ROW Name="Icon" Value="EXTENSIONS_FOLDER\ProjectTemplates\package_icon_01_fbR_icon.ico" Type="1"/>
+    <ROW Name="Identifier" Value="YourApplication344280601ABF4668A5B5D6027C6356B5" Type="0"/>
+    <ROW Name="Locale" Value="1033" Type="0"/>
+    <ROW Name="Name" Value="Unitel(Alpha)" Type="0" ValueLocId="*"/>
+    <ROW Name="PreviewImage" Value="EXTENSIONS_FOLDER\ProjectTemplates\cus new-07.png" Type="1"/>
+    <ROW Name="Version" Value="1.0.2" Type="0"/>
+    <ROW Name="VsixLanguage" Value="en-US" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;vsix.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;vsix_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericDirectoryComponent">
+    <ROW Id="1" Name="EXTENSIONS_FOLDER" Flags="1"/>
+    <ROW Id="2" Name="ProjectTemplates" Parent="1" Flags="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericFileComponent">
+    <ROW Id="1" Name="Unitel (Alpha).exe" Path="E:\Unitel Alpha\Unitel Alpha 1.0.2\Unitel (Alpha).exe" ParentDir="1"/>
+    <ROW Id="2" Name="Unitel (Alpha).pdb" Path="E:\Unitel Alpha\Unitel Alpha 1.0.2\Unitel (Alpha).pdb" ParentDir="1"/>
+    <ROW Id="3" Name="icon_initial_01_tsX_icon.ico" Path="E:\Project\Desktop UI\icon_initial_01_tsX_icon.ico" ParentDir="1"/>
+    <ROW Id="4" Name="package_icon_01_fbR_icon.ico" Path="E:\Project\Desktop UI\package_icon_01_fbR_icon.ico" ParentDir="2"/>
+    <ROW Id="5" Name="cus new-07.png" Path="E:\Project\Desktop UI\Elements\cus new-07.png" ParentDir="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsixContentComponent">
+    <ATTRIBUTE name="OutputFileName" value="Setup Unitel(Alpha).vsix"/>
+    <ATTRIBUTE name="OutputFolder" value="E:\Unitel Alpha"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsixReferencesComponent">
+    <ROW Id="Microsoft.Framework.NDP" Name="Microsoft .NET Framework" MinVersion="4.5" Flags="2"/>
+    <ROW Id="Microsoft.VisualStudio.Component.CoreEditor" Name="Visual Studio core editor" MinVersion="15.0" MaxVersion="16" Type="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsixSupportedProductComponent">
+    <ROW Name="Community" Version="11.0" MaxVersion="16.0" Type="0"/>
+  </COMPONENT>
+</DOCUMENT>

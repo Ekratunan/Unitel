@@ -1,7 +1,8 @@
 {
   "profiles": {
     "Unitel": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "remoteDebugEnabled": false
     }
   }
 }

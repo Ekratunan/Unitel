@@ -29,6 +29,7 @@ namespace Unitel
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.GroupBox groupBox1;
             System.Windows.Forms.GroupBox groupBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
@@ -41,14 +42,16 @@ namespace Unitel
             this.button11 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Employee = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox55 = new System.Windows.Forms.TextBox();
             this.textBox45 = new System.Windows.Forms.TextBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
@@ -110,12 +113,15 @@ namespace Unitel
             this.label11 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Users = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox56 = new System.Windows.Forms.TextBox();
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.textBox48 = new System.Windows.Forms.TextBox();
@@ -213,48 +219,40 @@ namespace Unitel
             this.label25 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.Queue = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Token = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.queueToken = new System.Windows.Forms.Label();
-            this.queueService = new System.Windows.Forms.Label();
-            this.queueUser = new System.Windows.Forms.Label();
-            this.queuePhone = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBoxExecutive = new System.Windows.Forms.TextBox();
+            this.CounterSelect = new System.Windows.Forms.ComboBox();
+            this.Bandwidth = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.Employee.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.Users.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -262,12 +260,11 @@ namespace Unitel
             this.tabPage7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.Queue.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel10.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.Bandwidth.SuspendLayout();
             this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -328,7 +325,7 @@ namespace Unitel
             // label74
             // 
             this.label74.AutoSize = true;
-            this.label74.ForeColor = System.Drawing.Color.DarkRed;
+            this.label74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.label74.Location = new System.Drawing.Point(7, 98);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(53, 15);
@@ -364,12 +361,11 @@ namespace Unitel
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MistyRose;
-            this.panel1.BackgroundImage = global::Unitel.Properties.Resources.whitebackground_2_01;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
+            this.panel1.BackgroundImage = global::Unitel.Properties.Resources.Admin_Dashboard_03;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -380,51 +376,44 @@ namespace Unitel
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(28)))), ((int)(((byte)(249)))));
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(20, 592);
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(29)))), ((int)(((byte)(145)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.Location = new System.Drawing.Point(106, 608);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(161, 29);
+            this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Log Out";
+            this.button5.Text = "Sign out";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Unitel.Properties.Resources.logo_Unitel_02;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 63);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(8)))), ((int)(((byte)(31)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(211)))), ((int)(((byte)(80)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Linen;
-            this.button2.Location = new System.Drawing.Point(20, 522);
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(20, 511);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 29);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Add New User";
+            this.button2.Text = "Add New Customer";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(8)))), ((int)(((byte)(31)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(211)))), ((int)(((byte)(80)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Linen;
-            this.button1.Location = new System.Drawing.Point(20, 487);
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(20, 480);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 29);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Add Employee";
+            this.button1.Text = "Add New Employee";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -434,39 +423,42 @@ namespace Unitel
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(681, 644);
+            this.panel2.Size = new System.Drawing.Size(896, 644);
             this.panel2.TabIndex = 1;
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.Employee);
+            this.tabControl1.Controls.Add(this.Users);
+            this.tabControl1.Controls.Add(this.Queue);
+            this.tabControl1.Controls.Add(this.Bandwidth);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(681, 644);
+            this.tabControl1.Size = new System.Drawing.Size(896, 644);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // tabPage1
+            // Employee
             // 
-            this.tabPage1.Controls.Add(this.panel4);
-            this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(673, 616);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Employee";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.Employee.Controls.Add(this.panel4);
+            this.Employee.Controls.Add(this.panel3);
+            this.Employee.Location = new System.Drawing.Point(4, 24);
+            this.Employee.Name = "Employee";
+            this.Employee.Padding = new System.Windows.Forms.Padding(3);
+            this.Employee.Size = new System.Drawing.Size(888, 616);
+            this.Employee.TabIndex = 0;
+            this.Employee.Text = "Employee";
+            this.Employee.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.LightGray;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel4.Controls.Add(this.panel13);
+            this.panel4.Controls.Add(this.linkLabel1);
+            this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Controls.Add(this.textBox55);
             this.panel4.Controls.Add(this.textBox45);
             this.panel4.Controls.Add(this.textBox44);
@@ -495,22 +487,63 @@ namespace Unitel
             this.panel4.Controls.Add(this.textBox42);
             this.panel4.Controls.Add(this.label68);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(467, 610);
+            this.panel4.Size = new System.Drawing.Size(682, 610);
             this.panel4.TabIndex = 1;
             // 
             // panel13
             // 
-            this.panel13.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(467, 610);
+            this.panel13.Size = new System.Drawing.Size(682, 610);
             this.panel13.TabIndex = 23;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ButtonFace;
+            this.linkLabel1.Location = new System.Drawing.Point(452, 183);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(81, 15);
+            this.linkLabel1.TabIndex = 72;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Update Image";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(28)))), ((int)(((byte)(249)))));
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(452, 28);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(142, 148);
+            this.tableLayoutPanel1.TabIndex = 71;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::Unitel.Properties.Resources.img_avatar;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(136, 142);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // textBox55
             // 
+            this.textBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox55.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox55.Location = new System.Drawing.Point(226, 128);
             this.textBox55.Name = "textBox55";
             this.textBox55.ReadOnly = true;
@@ -519,6 +552,9 @@ namespace Unitel
             // 
             // textBox45
             // 
+            this.textBox45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox45.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox45.Location = new System.Drawing.Point(11, 282);
             this.textBox45.Name = "textBox45";
             this.textBox45.Size = new System.Drawing.Size(121, 23);
@@ -526,6 +562,9 @@ namespace Unitel
             // 
             // textBox44
             // 
+            this.textBox44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox44.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox44.Location = new System.Drawing.Point(226, 232);
             this.textBox44.Name = "textBox44";
             this.textBox44.Size = new System.Drawing.Size(209, 23);
@@ -544,6 +583,8 @@ namespace Unitel
             // 
             // comboBox9
             // 
+            this.comboBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.comboBox9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Items.AddRange(new object[] {
             "Male",
@@ -585,6 +626,7 @@ namespace Unitel
             this.groupBox5.Controls.Add(this.label55);
             this.groupBox5.Controls.Add(this.textBox34);
             this.groupBox5.Controls.Add(this.label56);
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox5.Location = new System.Drawing.Point(11, 446);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(424, 117);
@@ -594,6 +636,9 @@ namespace Unitel
             // 
             // textBox47
             // 
+            this.textBox47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox47.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox47.Location = new System.Drawing.Point(129, 84);
             this.textBox47.Name = "textBox47";
             this.textBox47.Size = new System.Drawing.Size(166, 23);
@@ -601,6 +646,9 @@ namespace Unitel
             // 
             // textBox31
             // 
+            this.textBox31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox31.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox31.Location = new System.Drawing.Point(301, 39);
             this.textBox31.Name = "textBox31";
             this.textBox31.Size = new System.Drawing.Size(117, 23);
@@ -617,6 +665,8 @@ namespace Unitel
             // 
             // comboBox6
             // 
+            this.comboBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.comboBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Items.AddRange(new object[] {
             "Afghanistan",
@@ -828,6 +878,9 @@ namespace Unitel
             // 
             // textBox32
             // 
+            this.textBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox32.Location = new System.Drawing.Point(301, 84);
             this.textBox32.Name = "textBox32";
             this.textBox32.Size = new System.Drawing.Size(117, 23);
@@ -844,6 +897,9 @@ namespace Unitel
             // 
             // textBox33
             // 
+            this.textBox33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox33.Location = new System.Drawing.Point(6, 84);
             this.textBox33.Name = "textBox33";
             this.textBox33.Size = new System.Drawing.Size(117, 23);
@@ -860,6 +916,9 @@ namespace Unitel
             // 
             // textBox34
             // 
+            this.textBox34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox34.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox34.Location = new System.Drawing.Point(7, 39);
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(288, 23);
@@ -887,6 +946,7 @@ namespace Unitel
             this.groupBox4.Controls.Add(this.label48);
             this.groupBox4.Controls.Add(this.textBox22);
             this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox4.Location = new System.Drawing.Point(11, 315);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(424, 117);
@@ -896,6 +956,9 @@ namespace Unitel
             // 
             // textBox46
             // 
+            this.textBox46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox46.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox46.Location = new System.Drawing.Point(130, 84);
             this.textBox46.Name = "textBox46";
             this.textBox46.Size = new System.Drawing.Size(165, 23);
@@ -903,6 +966,9 @@ namespace Unitel
             // 
             // textBox30
             // 
+            this.textBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox30.Location = new System.Drawing.Point(301, 39);
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(117, 23);
@@ -919,6 +985,8 @@ namespace Unitel
             // 
             // comboBox5
             // 
+            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.comboBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
             "Afghanistan",
@@ -1130,6 +1198,9 @@ namespace Unitel
             // 
             // textBox29
             // 
+            this.textBox29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox29.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox29.Location = new System.Drawing.Point(301, 84);
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(117, 23);
@@ -1146,6 +1217,9 @@ namespace Unitel
             // 
             // textBox28
             // 
+            this.textBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox28.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox28.Location = new System.Drawing.Point(6, 84);
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(117, 23);
@@ -1162,6 +1236,9 @@ namespace Unitel
             // 
             // textBox22
             // 
+            this.textBox22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox22.Location = new System.Drawing.Point(7, 39);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(288, 23);
@@ -1192,6 +1269,9 @@ namespace Unitel
             // 
             // textBox10
             // 
+            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox10.Location = new System.Drawing.Point(226, 183);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(209, 23);
@@ -1226,6 +1306,9 @@ namespace Unitel
             // 
             // textBox7
             // 
+            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox7.Location = new System.Drawing.Point(11, 183);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(209, 23);
@@ -1242,6 +1325,9 @@ namespace Unitel
             // 
             // textBox6
             // 
+            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox6.Location = new System.Drawing.Point(11, 128);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(209, 23);
@@ -1258,6 +1344,9 @@ namespace Unitel
             // 
             // textBox5
             // 
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox5.Location = new System.Drawing.Point(226, 79);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(209, 23);
@@ -1274,6 +1363,9 @@ namespace Unitel
             // 
             // textBox4
             // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox4.Location = new System.Drawing.Point(11, 79);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(209, 23);
@@ -1281,6 +1373,9 @@ namespace Unitel
             // 
             // textBox3
             // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox3.Location = new System.Drawing.Point(226, 28);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(209, 23);
@@ -1306,6 +1401,9 @@ namespace Unitel
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox2.Location = new System.Drawing.Point(11, 28);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(209, 23);
@@ -1313,6 +1411,9 @@ namespace Unitel
             // 
             // textBox42
             // 
+            this.textBox42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox42.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox42.Location = new System.Drawing.Point(11, 232);
             this.textBox42.Name = "textBox42";
             this.textBox42.Size = new System.Drawing.Size(209, 23);
@@ -1329,7 +1430,7 @@ namespace Unitel
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkGray;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(195)))));
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.label67);
             this.panel3.Controls.Add(this.label66);
@@ -1343,7 +1444,7 @@ namespace Unitel
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(groupBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(470, 3);
+            this.panel3.Location = new System.Drawing.Point(685, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 610);
             this.panel3.TabIndex = 0;
@@ -1361,8 +1462,8 @@ namespace Unitel
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.BackColor = System.Drawing.Color.DarkGray;
-            this.label67.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(8)))), ((int)(((byte)(31)))));
+            this.label67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(195)))));
+            this.label67.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.label67.Location = new System.Drawing.Point(12, 446);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(53, 15);
@@ -1372,8 +1473,8 @@ namespace Unitel
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.ForeColor = System.Drawing.Color.Red;
-            this.label66.Location = new System.Drawing.Point(12, 150);
+            this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.label66.Location = new System.Drawing.Point(6, 138);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(53, 15);
             this.label66.TabIndex = 11;
@@ -1432,7 +1533,7 @@ namespace Unitel
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(23, 573);
+            this.button8.Location = new System.Drawing.Point(23, 566);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 4;
@@ -1450,17 +1551,17 @@ namespace Unitel
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
-            // tabPage2
+            // Users
             // 
-            this.tabPage2.Controls.Add(this.panel6);
-            this.tabPage2.Controls.Add(this.panel5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(673, 616);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Users";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Users.Controls.Add(this.panel6);
+            this.Users.Controls.Add(this.panel5);
+            this.Users.Location = new System.Drawing.Point(4, 24);
+            this.Users.Name = "Users";
+            this.Users.Padding = new System.Windows.Forms.Padding(3);
+            this.Users.Size = new System.Drawing.Size(888, 616);
+            this.Users.TabIndex = 1;
+            this.Users.Text = "Users";
+            this.Users.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -1469,7 +1570,7 @@ namespace Unitel
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(467, 610);
+            this.panel6.Size = new System.Drawing.Size(682, 610);
             this.panel6.TabIndex = 1;
             // 
             // tabControl2
@@ -1481,7 +1582,7 @@ namespace Unitel
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(467, 610);
+            this.tabControl2.Size = new System.Drawing.Size(682, 610);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage5
@@ -1490,15 +1591,17 @@ namespace Unitel
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(459, 582);
+            this.tabPage5.Size = new System.Drawing.Size(674, 582);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Personal Info";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.LightGray;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel7.Controls.Add(this.panel14);
+            this.panel7.Controls.Add(this.linkLabel2);
+            this.panel7.Controls.Add(this.tableLayoutPanel2);
             this.panel7.Controls.Add(this.textBox56);
             this.panel7.Controls.Add(this.textBox49);
             this.panel7.Controls.Add(this.textBox48);
@@ -1527,22 +1630,63 @@ namespace Unitel
             this.panel7.Controls.Add(this.textBox43);
             this.panel7.Controls.Add(this.label69);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(453, 576);
+            this.panel7.Size = new System.Drawing.Size(668, 576);
             this.panel7.TabIndex = 0;
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(453, 576);
+            this.panel14.Size = new System.Drawing.Size(668, 576);
             this.panel14.TabIndex = 39;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkColor = System.Drawing.SystemColors.ButtonFace;
+            this.linkLabel2.Location = new System.Drawing.Point(479, 136);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(81, 15);
+            this.linkLabel2.TabIndex = 73;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Update Image";
+            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(28)))), ((int)(((byte)(249)))));
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox3, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(479, 27);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(109, 105);
+            this.tableLayoutPanel2.TabIndex = 72;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = global::Unitel.Properties.Resources.img_avatar;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(103, 99);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // textBox56
             // 
+            this.textBox56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox56.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox56.Location = new System.Drawing.Point(229, 127);
             this.textBox56.Name = "textBox56";
             this.textBox56.ReadOnly = true;
@@ -1551,6 +1695,9 @@ namespace Unitel
             // 
             // textBox49
             // 
+            this.textBox49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox49.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox49.Location = new System.Drawing.Point(14, 274);
             this.textBox49.Name = "textBox49";
             this.textBox49.Size = new System.Drawing.Size(121, 23);
@@ -1558,6 +1705,9 @@ namespace Unitel
             // 
             // textBox48
             // 
+            this.textBox48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox48.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox48.Location = new System.Drawing.Point(229, 230);
             this.textBox48.Name = "textBox48";
             this.textBox48.Size = new System.Drawing.Size(209, 23);
@@ -1617,6 +1767,7 @@ namespace Unitel
             this.groupBox6.Controls.Add(this.label59);
             this.groupBox6.Controls.Add(this.textBox37);
             this.groupBox6.Controls.Add(this.label60);
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox6.Location = new System.Drawing.Point(14, 452);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(424, 117);
@@ -1626,6 +1777,9 @@ namespace Unitel
             // 
             // textBox51
             // 
+            this.textBox51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox51.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox51.Location = new System.Drawing.Point(129, 84);
             this.textBox51.Name = "textBox51";
             this.textBox51.Size = new System.Drawing.Size(166, 23);
@@ -1633,6 +1787,9 @@ namespace Unitel
             // 
             // textBox20
             // 
+            this.textBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox20.Location = new System.Drawing.Point(301, 39);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(117, 23);
@@ -1860,6 +2017,9 @@ namespace Unitel
             // 
             // textBox35
             // 
+            this.textBox35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox35.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox35.Location = new System.Drawing.Point(301, 84);
             this.textBox35.Name = "textBox35";
             this.textBox35.Size = new System.Drawing.Size(117, 23);
@@ -1876,6 +2036,9 @@ namespace Unitel
             // 
             // textBox36
             // 
+            this.textBox36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox36.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox36.Location = new System.Drawing.Point(6, 84);
             this.textBox36.Name = "textBox36";
             this.textBox36.Size = new System.Drawing.Size(117, 23);
@@ -1892,6 +2055,9 @@ namespace Unitel
             // 
             // textBox37
             // 
+            this.textBox37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox37.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox37.Location = new System.Drawing.Point(7, 39);
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(288, 23);
@@ -1919,6 +2085,7 @@ namespace Unitel
             this.groupBox7.Controls.Add(this.label64);
             this.groupBox7.Controls.Add(this.textBox41);
             this.groupBox7.Controls.Add(this.label65);
+            this.groupBox7.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox7.Location = new System.Drawing.Point(14, 329);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(424, 117);
@@ -1928,6 +2095,9 @@ namespace Unitel
             // 
             // textBox50
             // 
+            this.textBox50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox50.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox50.Location = new System.Drawing.Point(129, 84);
             this.textBox50.Name = "textBox50";
             this.textBox50.Size = new System.Drawing.Size(165, 23);
@@ -1935,6 +2105,9 @@ namespace Unitel
             // 
             // textBox38
             // 
+            this.textBox38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox38.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox38.Location = new System.Drawing.Point(301, 39);
             this.textBox38.Name = "textBox38";
             this.textBox38.Size = new System.Drawing.Size(117, 23);
@@ -2162,6 +2335,9 @@ namespace Unitel
             // 
             // textBox39
             // 
+            this.textBox39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox39.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox39.Location = new System.Drawing.Point(301, 84);
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(117, 23);
@@ -2178,6 +2354,9 @@ namespace Unitel
             // 
             // textBox40
             // 
+            this.textBox40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox40.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox40.Location = new System.Drawing.Point(6, 84);
             this.textBox40.Name = "textBox40";
             this.textBox40.Size = new System.Drawing.Size(117, 23);
@@ -2194,6 +2373,9 @@ namespace Unitel
             // 
             // textBox41
             // 
+            this.textBox41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox41.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox41.Location = new System.Drawing.Point(7, 39);
             this.textBox41.Name = "textBox41";
             this.textBox41.Size = new System.Drawing.Size(288, 23);
@@ -2222,6 +2404,9 @@ namespace Unitel
             // 
             // textBox13
             // 
+            this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox13.Location = new System.Drawing.Point(229, 182);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(209, 23);
@@ -2256,6 +2441,9 @@ namespace Unitel
             // 
             // textBox14
             // 
+            this.textBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox14.Location = new System.Drawing.Point(14, 182);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(209, 23);
@@ -2272,6 +2460,9 @@ namespace Unitel
             // 
             // textBox15
             // 
+            this.textBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox15.Location = new System.Drawing.Point(14, 127);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(209, 23);
@@ -2288,6 +2479,9 @@ namespace Unitel
             // 
             // textBox16
             // 
+            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox16.Location = new System.Drawing.Point(229, 78);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(209, 23);
@@ -2304,6 +2498,9 @@ namespace Unitel
             // 
             // textBox17
             // 
+            this.textBox17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox17.Location = new System.Drawing.Point(14, 78);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(209, 23);
@@ -2311,6 +2508,9 @@ namespace Unitel
             // 
             // textBox18
             // 
+            this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox18.Location = new System.Drawing.Point(229, 27);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(209, 23);
@@ -2336,6 +2536,9 @@ namespace Unitel
             // 
             // textBox19
             // 
+            this.textBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox19.Location = new System.Drawing.Point(14, 27);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(209, 23);
@@ -2343,6 +2546,9 @@ namespace Unitel
             // 
             // textBox43
             // 
+            this.textBox43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox43.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox43.Location = new System.Drawing.Point(14, 230);
             this.textBox43.Name = "textBox43";
             this.textBox43.Size = new System.Drawing.Size(209, 23);
@@ -2363,14 +2569,14 @@ namespace Unitel
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(459, 582);
+            this.tabPage6.Size = new System.Drawing.Size(674, 582);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "SIM Info";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.LightGray;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel8.Controls.Add(this.panel15);
             this.panel8.Controls.Add(this.label43);
             this.panel8.Controls.Add(this.textBox9);
@@ -2383,18 +2589,19 @@ namespace Unitel
             this.panel8.Controls.Add(this.label27);
             this.panel8.Controls.Add(this.textBox25);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(453, 576);
+            this.panel8.Size = new System.Drawing.Size(668, 576);
             this.panel8.TabIndex = 0;
             // 
             // panel15
             // 
-            this.panel15.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(453, 576);
+            this.panel15.Size = new System.Drawing.Size(668, 576);
             this.panel15.TabIndex = 37;
             // 
             // label43
@@ -2408,6 +2615,9 @@ namespace Unitel
             // 
             // textBox9
             // 
+            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox9.Location = new System.Drawing.Point(60, 292);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(326, 23);
@@ -2424,6 +2634,9 @@ namespace Unitel
             // 
             // textBox27
             // 
+            this.textBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox27.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox27.Location = new System.Drawing.Point(62, 228);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(326, 23);
@@ -2440,6 +2653,9 @@ namespace Unitel
             // 
             // textBox26
             // 
+            this.textBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox26.Location = new System.Drawing.Point(61, 162);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(326, 23);
@@ -2456,6 +2672,9 @@ namespace Unitel
             // 
             // textBox21
             // 
+            this.textBox21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox21.Location = new System.Drawing.Point(62, 100);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(326, 23);
@@ -2472,6 +2691,9 @@ namespace Unitel
             // 
             // textBox25
             // 
+            this.textBox25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.textBox25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox25.Location = new System.Drawing.Point(61, 44);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(328, 23);
@@ -2482,14 +2704,14 @@ namespace Unitel
             this.tabPage7.Controls.Add(this.panel9);
             this.tabPage7.Location = new System.Drawing.Point(4, 24);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(459, 582);
+            this.tabPage7.Size = new System.Drawing.Size(674, 582);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Packages";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.LightGray;
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel9.Controls.Add(this.panel16);
             this.panel9.Controls.Add(this.ttValidity);
             this.panel9.Controls.Add(this.ttPack);
@@ -2508,18 +2730,19 @@ namespace Unitel
             this.panel9.Controls.Add(this.label31);
             this.panel9.Controls.Add(this.label30);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(459, 582);
+            this.panel9.Size = new System.Drawing.Size(674, 582);
             this.panel9.TabIndex = 0;
             // 
             // panel16
             // 
-            this.panel16.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(459, 582);
+            this.panel16.Size = new System.Drawing.Size(674, 582);
             this.panel16.TabIndex = 16;
             // 
             // ttValidity
@@ -2676,7 +2899,7 @@ namespace Unitel
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(195)))));
             this.panel5.Controls.Add(this.textBox54);
             this.panel5.Controls.Add(this.textBox53);
             this.panel5.Controls.Add(this.textBox52);
@@ -2694,7 +2917,7 @@ namespace Unitel
             this.panel5.Controls.Add(this.button10);
             this.panel5.Controls.Add(groupBox2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(470, 3);
+            this.panel5.Location = new System.Drawing.Point(685, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 610);
             this.panel5.TabIndex = 0;
@@ -2726,7 +2949,7 @@ namespace Unitel
             // label75
             // 
             this.label75.AutoSize = true;
-            this.label75.ForeColor = System.Drawing.Color.DarkRed;
+            this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.label75.Location = new System.Drawing.Point(12, 440);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(59, 15);
@@ -2846,16 +3069,16 @@ namespace Unitel
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
-            // tabPage4
+            // Queue
             // 
-            this.tabPage4.Controls.Add(this.panel11);
-            this.tabPage4.Controls.Add(this.panel10);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(673, 616);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Queue";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.Queue.Controls.Add(this.panel11);
+            this.Queue.Controls.Add(this.panel10);
+            this.Queue.Location = new System.Drawing.Point(4, 24);
+            this.Queue.Name = "Queue";
+            this.Queue.Size = new System.Drawing.Size(888, 616);
+            this.Queue.TabIndex = 3;
+            this.Queue.Text = "Queue";
+            this.Queue.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
@@ -2864,201 +3087,86 @@ namespace Unitel
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(230, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(443, 616);
+            this.panel11.Size = new System.Drawing.Size(658, 616);
             this.panel11.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Phone,
-            this.userName,
-            this.Service,
-            this.Token});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 616);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(658, 616);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Phone
-            // 
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
-            // 
-            // userName
-            // 
-            this.userName.HeaderText = "User Name";
-            this.userName.Name = "userName";
-            this.userName.ReadOnly = true;
-            // 
-            // Service
-            // 
-            this.Service.HeaderText = "Type of Service";
-            this.Service.Name = "Service";
-            this.Service.ReadOnly = true;
-            // 
-            // Token
-            // 
-            this.Token.HeaderText = "Token Number";
-            this.Token.Name = "Token";
-            this.Token.ReadOnly = true;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.LightGray;
-            this.panel10.Controls.Add(this.button12);
-            this.panel10.Controls.Add(this.groupBox3);
+            this.panel10.Controls.Add(this.label36);
             this.panel10.Controls.Add(this.label35);
-            this.panel10.Controls.Add(this.comboBox1);
+            this.panel10.Controls.Add(this.textBoxExecutive);
+            this.panel10.Controls.Add(this.CounterSelect);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(230, 616);
             this.panel10.TabIndex = 0;
             // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(141, 38);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 3;
-            this.button12.Text = "Search";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.queueToken);
-            this.groupBox3.Controls.Add(this.queueService);
-            this.groupBox3.Controls.Add(this.queueUser);
-            this.groupBox3.Controls.Add(this.queuePhone);
-            this.groupBox3.Controls.Add(this.label39);
-            this.groupBox3.Controls.Add(this.label38);
-            this.groupBox3.Controls.Add(this.label37);
-            this.groupBox3.Controls.Add(this.label36);
-            this.groupBox3.Location = new System.Drawing.Point(5, 145);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(220, 181);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Active Service";
-            // 
-            // queueToken
-            // 
-            this.queueToken.AutoSize = true;
-            this.queueToken.Location = new System.Drawing.Point(101, 124);
-            this.queueToken.Name = "queueToken";
-            this.queueToken.Size = new System.Drawing.Size(44, 15);
-            this.queueToken.TabIndex = 7;
-            this.queueToken.Text = "label40";
-            // 
-            // queueService
-            // 
-            this.queueService.AutoSize = true;
-            this.queueService.Location = new System.Drawing.Point(101, 96);
-            this.queueService.Name = "queueService";
-            this.queueService.Size = new System.Drawing.Size(44, 15);
-            this.queueService.TabIndex = 6;
-            this.queueService.Text = "label42";
-            // 
-            // queueUser
-            // 
-            this.queueUser.AutoSize = true;
-            this.queueUser.Location = new System.Drawing.Point(101, 72);
-            this.queueUser.Name = "queueUser";
-            this.queueUser.Size = new System.Drawing.Size(44, 15);
-            this.queueUser.TabIndex = 5;
-            this.queueUser.Text = "label43";
-            // 
-            // queuePhone
-            // 
-            this.queuePhone.AutoSize = true;
-            this.queuePhone.Location = new System.Drawing.Point(101, 47);
-            this.queuePhone.Name = "queuePhone";
-            this.queuePhone.Size = new System.Drawing.Size(44, 15);
-            this.queuePhone.TabIndex = 4;
-            this.queuePhone.Text = "label46";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(7, 124);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(85, 15);
-            this.label39.TabIndex = 3;
-            this.label39.Text = "Token Number";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(7, 96);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(44, 15);
-            this.label38.TabIndex = 2;
-            this.label38.Text = "Service";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(7, 72);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(65, 15);
-            this.label37.TabIndex = 1;
-            this.label37.Text = "User Name";
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(7, 47);
+            this.label36.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label36.Location = new System.Drawing.Point(24, 64);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(88, 15);
-            this.label36.TabIndex = 0;
-            this.label36.Text = "Phone Number";
+            this.label36.Size = new System.Drawing.Size(93, 15);
+            this.label36.TabIndex = 3;
+            this.label36.Text = "Active Executive";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(20, 17);
+            this.label35.Location = new System.Drawing.Point(24, 14);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(84, 15);
-            this.label35.TabIndex = 1;
+            this.label35.TabIndex = 2;
             this.label35.Text = "Select Counter";
             // 
-            // comboBox1
+            // textBoxExecutive
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "R02",
-            "R02",
-            "R03",
-            "R04",
-            "N01",
-            "N02",
-            "N03",
-            "N04",
-            "N05",
-            "I01",
-            "I02",
-            "I03"});
-            this.comboBox1.Location = new System.Drawing.Point(20, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(115, 23);
-            this.comboBox1.TabIndex = 0;
+            this.textBoxExecutive.Location = new System.Drawing.Point(24, 86);
+            this.textBoxExecutive.Name = "textBoxExecutive";
+            this.textBoxExecutive.ReadOnly = true;
+            this.textBoxExecutive.Size = new System.Drawing.Size(183, 23);
+            this.textBoxExecutive.TabIndex = 1;
             // 
-            // tabPage3
+            // CounterSelect
             // 
-            this.tabPage3.Controls.Add(this.panel12);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(673, 616);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Bandwidth";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.CounterSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CounterSelect.FormattingEnabled = true;
+            this.CounterSelect.Location = new System.Drawing.Point(24, 34);
+            this.CounterSelect.Name = "CounterSelect";
+            this.CounterSelect.Size = new System.Drawing.Size(183, 23);
+            this.CounterSelect.TabIndex = 0;
+            this.CounterSelect.SelectedIndexChanged += new System.EventHandler(this.CounterSelect_SelectedIndexChanged);
+            // 
+            // Bandwidth
+            // 
+            this.Bandwidth.Controls.Add(this.panel12);
+            this.Bandwidth.Location = new System.Drawing.Point(4, 24);
+            this.Bandwidth.Name = "Bandwidth";
+            this.Bandwidth.Size = new System.Drawing.Size(888, 616);
+            this.Bandwidth.TabIndex = 2;
+            this.Bandwidth.Text = "Bandwidth";
+            this.Bandwidth.UseVisualStyleBackColor = true;
             // 
             // panel12
             // 
@@ -3068,7 +3176,7 @@ namespace Unitel
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(673, 616);
+            this.panel12.Size = new System.Drawing.Size(888, 616);
             this.panel12.TabIndex = 0;
             // 
             // label42
@@ -3094,43 +3202,56 @@ namespace Unitel
             this.label40.TabIndex = 0;
             this.label40.Text = "OOPS! Something Wrong :(";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 644);
+            this.ClientSize = new System.Drawing.Size(1096, 644);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(897, 683);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unitel - Dashboard (Admin Panel)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDashboard_FormClosing);
+            this.Load += new System.EventHandler(this.AdminDashboard_Load);
+            this.SizeChanged += new System.EventHandler(this.AdminDashboard_SizeChanged);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminDashboard_KeyDown);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.Employee.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.Users.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -3143,14 +3264,12 @@ namespace Unitel
             this.panel9.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
+            this.Queue.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.Bandwidth.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.ResumeLayout(false);
@@ -3161,12 +3280,11 @@ namespace Unitel
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage Employee;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
@@ -3195,7 +3313,7 @@ namespace Unitel
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage Users;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage5;
@@ -3221,8 +3339,8 @@ namespace Unitel
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage Queue;
+        private System.Windows.Forms.TabPage Bandwidth;
         private System.Windows.Forms.Label ttValidity;
         private System.Windows.Forms.Label ttPack;
         private System.Windows.Forms.Label label44;
@@ -3241,22 +3359,7 @@ namespace Unitel
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Service;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Token;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label queueToken;
-        private System.Windows.Forms.Label queueService;
-        private System.Windows.Forms.Label queueUser;
-        private System.Windows.Forms.Label queuePhone;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label40;
@@ -3363,6 +3466,16 @@ namespace Unitel
         private System.Windows.Forms.TextBox textBox53;
         private System.Windows.Forms.TextBox textBox55;
         private System.Windows.Forms.TextBox textBox56;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox textBoxExecutive;
+        private System.Windows.Forms.ComboBox CounterSelect;
     }
 }

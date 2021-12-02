@@ -29,42 +29,44 @@ namespace Unitel
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QueueScreen));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.line1CN = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.line1TN = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.line6CN = new System.Windows.Forms.Label();
+            this.line5CN = new System.Windows.Forms.Label();
+            this.line4CN = new System.Windows.Forms.Label();
+            this.line3CN = new System.Windows.Forms.Label();
+            this.line2CN = new System.Windows.Forms.Label();
+            this.line6TN = new System.Windows.Forms.Label();
+            this.line5TN = new System.Windows.Forms.Label();
+            this.line3TN = new System.Windows.Forms.Label();
+            this.line4TN = new System.Windows.Forms.Label();
+            this.line2TN = new System.Windows.Forms.Label();
+            this.blinkerTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gold;
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.line1CN);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.line1TN);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -72,17 +74,17 @@ namespace Unitel
             this.panel1.Size = new System.Drawing.Size(847, 142);
             this.panel1.TabIndex = 0;
             // 
-            // label4
+            // line1CN
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label4.Location = new System.Drawing.Point(505, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 32);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Counter#";
+            this.line1CN.AutoSize = true;
+            this.line1CN.BackColor = System.Drawing.Color.Transparent;
+            this.line1CN.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line1CN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
+            this.line1CN.Location = new System.Drawing.Point(505, 52);
+            this.line1CN.Name = "line1CN";
+            this.line1CN.Size = new System.Drawing.Size(121, 32);
+            this.line1CN.TabIndex = 3;
+            this.line1CN.Text = "Counter#";
             // 
             // label3
             // 
@@ -95,18 +97,17 @@ namespace Unitel
             this.label3.TabIndex = 2;
             this.label3.Text = "Counter Number";
             // 
-            // label2
+            // line1TN
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label2.Location = new System.Drawing.Point(242, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(257, 86);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ticket#";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.line1TN.AutoSize = true;
+            this.line1TN.BackColor = System.Drawing.Color.Transparent;
+            this.line1TN.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line1TN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
+            this.line1TN.Location = new System.Drawing.Point(242, 24);
+            this.line1TN.Name = "line1TN";
+            this.line1TN.Size = new System.Drawing.Size(257, 86);
+            this.line1TN.TabIndex = 1;
+            this.line1TN.Text = "Ticket#";
             // 
             // label1
             // 
@@ -130,45 +131,61 @@ namespace Unitel
             this.panel2.Size = new System.Drawing.Size(847, 364);
             this.panel2.TabIndex = 1;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
+            this.panel3.BackgroundImage = global::Unitel.Properties.Resources.tC_back;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(648, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(199, 364);
+            this.panel3.TabIndex = 13;
+            // 
             // label17
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Location = new System.Drawing.Point(9, 14);
+            this.label17.Location = new System.Drawing.Point(6, 47);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(187, 105);
             this.label17.TabIndex = 12;
             this.label17.Text = "Please check your\r\nticket and visit the\r\ncorresponding counter.\r\nThanks for your\r" +
     "\npatience :)";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Unitel.Properties.Resources.logo_Unitel_02;
             this.pictureBox1.Location = new System.Drawing.Point(12, 289);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(182, 63);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.line6CN);
+            this.groupBox1.Controls.Add(this.line5CN);
+            this.groupBox1.Controls.Add(this.line4CN);
+            this.groupBox1.Controls.Add(this.line3CN);
+            this.groupBox1.Controls.Add(this.line2CN);
+            this.groupBox1.Controls.Add(this.line6TN);
+            this.groupBox1.Controls.Add(this.line5TN);
+            this.groupBox1.Controls.Add(this.line3TN);
+            this.groupBox1.Controls.Add(this.line4TN);
+            this.groupBox1.Controls.Add(this.line2TN);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -182,8 +199,9 @@ namespace Unitel
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(353, 36);
+            this.label15.Location = new System.Drawing.Point(344, 56);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(209, 32);
             this.label15.TabIndex = 11;
@@ -193,142 +211,141 @@ namespace Unitel
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 36);
+            this.label16.Location = new System.Drawing.Point(64, 56);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(187, 32);
             this.label16.TabIndex = 10;
             this.label16.Text = "Ticket Number";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // line6CN
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.Yellow;
-            this.label14.Location = new System.Drawing.Point(412, 196);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(90, 32);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "label14";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line6CN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.line6CN.AutoSize = true;
+            this.line6CN.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line6CN.ForeColor = System.Drawing.Color.Yellow;
+            this.line6CN.Location = new System.Drawing.Point(461, 304);
+            this.line6CN.Name = "line6CN";
+            this.line6CN.Size = new System.Drawing.Size(90, 32);
+            this.line6CN.TabIndex = 9;
+            this.line6CN.Text = "label14";
+            this.line6CN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label13
+            // line5CN
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.Color.Yellow;
-            this.label13.Location = new System.Drawing.Point(413, 164);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 32);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "label13";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line5CN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.line5CN.AutoSize = true;
+            this.line5CN.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line5CN.ForeColor = System.Drawing.Color.Yellow;
+            this.line5CN.Location = new System.Drawing.Point(462, 261);
+            this.line5CN.Name = "line5CN";
+            this.line5CN.Size = new System.Drawing.Size(89, 32);
+            this.line5CN.TabIndex = 8;
+            this.line5CN.Text = "label13";
+            this.line5CN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label12
+            // line4CN
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.Yellow;
-            this.label12.Location = new System.Drawing.Point(413, 132);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 32);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "label12";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line4CN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.line4CN.AutoSize = true;
+            this.line4CN.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line4CN.ForeColor = System.Drawing.Color.Yellow;
+            this.line4CN.Location = new System.Drawing.Point(462, 213);
+            this.line4CN.Name = "line4CN";
+            this.line4CN.Size = new System.Drawing.Size(89, 32);
+            this.line4CN.TabIndex = 7;
+            this.line4CN.Text = "label12";
+            this.line4CN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label11
+            // line3CN
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.Yellow;
-            this.label11.Location = new System.Drawing.Point(414, 100);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 32);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "label11";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line3CN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.line3CN.AutoSize = true;
+            this.line3CN.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line3CN.ForeColor = System.Drawing.Color.Yellow;
+            this.line3CN.Location = new System.Drawing.Point(465, 166);
+            this.line3CN.Name = "line3CN";
+            this.line3CN.Size = new System.Drawing.Size(86, 32);
+            this.line3CN.TabIndex = 6;
+            this.line3CN.Text = "label11";
+            this.line3CN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label10
+            // line2CN
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.Yellow;
-            this.label10.Location = new System.Drawing.Point(413, 68);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 32);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "label10";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line2CN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.line2CN.AutoSize = true;
+            this.line2CN.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line2CN.ForeColor = System.Drawing.Color.Yellow;
+            this.line2CN.Location = new System.Drawing.Point(462, 120);
+            this.line2CN.Name = "line2CN";
+            this.line2CN.Size = new System.Drawing.Size(89, 32);
+            this.line2CN.TabIndex = 5;
+            this.line2CN.Text = "label10";
+            this.line2CN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label9
+            // line6TN
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.Gold;
-            this.label9.Location = new System.Drawing.Point(58, 196);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 32);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "label9";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line6TN.AutoSize = true;
+            this.line6TN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line6TN.ForeColor = System.Drawing.Color.Gold;
+            this.line6TN.Location = new System.Drawing.Point(69, 304);
+            this.line6TN.Name = "line6TN";
+            this.line6TN.Size = new System.Drawing.Size(83, 32);
+            this.line6TN.TabIndex = 4;
+            this.line6TN.Text = "label9";
+            this.line6TN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // line5TN
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.Gold;
-            this.label8.Location = new System.Drawing.Point(58, 164);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 32);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "label8";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line5TN.AutoSize = true;
+            this.line5TN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line5TN.ForeColor = System.Drawing.Color.Gold;
+            this.line5TN.Location = new System.Drawing.Point(69, 261);
+            this.line5TN.Name = "line5TN";
+            this.line5TN.Size = new System.Drawing.Size(83, 32);
+            this.line5TN.TabIndex = 3;
+            this.line5TN.Text = "label8";
+            this.line5TN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // line3TN
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.Gold;
-            this.label7.Location = new System.Drawing.Point(58, 100);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 32);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "label7";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line3TN.AutoSize = true;
+            this.line3TN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line3TN.ForeColor = System.Drawing.Color.Gold;
+            this.line3TN.Location = new System.Drawing.Point(69, 166);
+            this.line3TN.Name = "line3TN";
+            this.line3TN.Size = new System.Drawing.Size(83, 32);
+            this.line3TN.TabIndex = 2;
+            this.line3TN.Text = "label7";
+            this.line3TN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // line4TN
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.Gold;
-            this.label6.Location = new System.Drawing.Point(58, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 32);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line4TN.AutoSize = true;
+            this.line4TN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line4TN.ForeColor = System.Drawing.Color.Gold;
+            this.line4TN.Location = new System.Drawing.Point(69, 213);
+            this.line4TN.Name = "line4TN";
+            this.line4TN.Size = new System.Drawing.Size(83, 32);
+            this.line4TN.TabIndex = 1;
+            this.line4TN.Text = "label6";
+            this.line4TN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // line2TN
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.Gold;
-            this.label5.Location = new System.Drawing.Point(58, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 32);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "label5";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.line2TN.AutoSize = true;
+            this.line2TN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.line2TN.ForeColor = System.Drawing.Color.Gold;
+            this.line2TN.Location = new System.Drawing.Point(69, 120);
+            this.line2TN.Name = "line2TN";
+            this.line2TN.Size = new System.Drawing.Size(82, 32);
+            this.line2TN.TabIndex = 0;
+            this.line2TN.Text = "Line 2";
+            this.line2TN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel3
+            // blinkerTimer
             // 
-            this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(648, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(199, 364);
-            this.panel3.TabIndex = 13;
+            this.blinkerTimer.Tick += new System.EventHandler(this.BlinkerTimer_Tick);
             // 
             // QueueScreen
             // 
@@ -338,19 +355,19 @@ namespace Unitel
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(863, 545);
             this.Name = "QueueScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unitel- Customer Queue";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            this.Load += new System.EventHandler(this.QueueScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -358,26 +375,27 @@ namespace Unitel
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label line1CN;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label line1TN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label line6CN;
+        private System.Windows.Forms.Label line5CN;
+        private System.Windows.Forms.Label line4CN;
+        private System.Windows.Forms.Label line3CN;
+        private System.Windows.Forms.Label line2CN;
+        private System.Windows.Forms.Label line6TN;
+        private System.Windows.Forms.Label line5TN;
+        private System.Windows.Forms.Label line3TN;
+        private System.Windows.Forms.Label line4TN;
+        private System.Windows.Forms.Label line2TN;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Timer blinkerTimer;
     }
 }

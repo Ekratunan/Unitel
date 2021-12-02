@@ -2,27 +2,31 @@
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Runtime.InteropServices;
 
 namespace Unitel
 {
     internal class DatabaseFile
     {
-        readonly IMongoDatabase database;
+        IMongoDatabase database;
+
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int description, int reserved);
 
         public DatabaseFile(string databaseName)
         {
-            try
+        ConnectDatabase:
+            if (InternetGetConnectedState(out _, 0))
             {
                 var client = new MongoClient("mongodb+srv://ekraHossain:ekraHossain17@unitel.m8yxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
                 database = client.GetDatabase(databaseName);
             }
-            catch(Exception)
+            else
             {
-                Console.WriteLine("Connection Failed");
-            }
+                goto ConnectDatabase;
 
-            
-            
+            }
         }
 
         public void InsertRecord<T>(string table, T record)
@@ -32,7 +36,7 @@ namespace Unitel
                 var collection = database.GetCollection<T>(table);
                 collection.InsertOne(record);
             }
-            catch (MongoConnectionException)
+            catch (Exception)
             {
                 Console.WriteLine("Insertion Error");
             }
@@ -54,7 +58,7 @@ namespace Unitel
             return collection.Find(filter).FirstOrDefault();
         }
 
-    
+        
         public void UpsertRecord<T>(string table, Guid Id , T record)
         {
             var collection = database.GetCollection<T>(table);
@@ -66,7 +70,7 @@ namespace Unitel
                 record,
                 new ReplaceOptions { IsUpsert = true });
             }
-            catch(MongoConnectionException)
+            catch(Exception)
             {
                 Console.WriteLine("Writing Error");
             }
@@ -80,5 +84,9 @@ namespace Unitel
             collection.DeleteOne(filter);
         }
 
+        internal string Any()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

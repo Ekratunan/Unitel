@@ -118,34 +118,73 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CusInfo_Page-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CusInfo_Page-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dashboard-05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dashboard-05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="whitebackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\whitebackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CusInfo_Page-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CusInfo_Page-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cus new-07" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cus new-07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="whitebackground 2-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\whitebackground 2-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whitebackground-011" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\whitebackground-011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo Unitel-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo Unitel-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whitebackground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\whitebackground1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whitebackground-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\whitebackground-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo Unitel-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo Unitel-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo Unitel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo Unitel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="admin log in screen-04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin log in screen-04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo-Unitel-FOR-HOMEPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-Unitel-FOR-HOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whitebackground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whitebackground1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whitebackground-011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whitebackground-011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_avatar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_avatar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo Unitel-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo Unitel-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Emp new-061" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Emp new-061.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="admin log in back-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin log in back-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo Unitel-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo Unitel-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Admin Dashboard-03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Admin Dashboard-03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo Unitel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo Unitel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Splash Screen-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splash Screen-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tC back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tC back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whitebackground-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whitebackground-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Emp new-06" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Emp new-06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button continue-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button continue-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
