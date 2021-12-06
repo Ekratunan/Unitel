@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Unitel
@@ -19,6 +14,7 @@ namespace Unitel
         {
             InitializeComponent();
             label3.Text = "";
+
 
             DatabaseFile databaseFile = new DatabaseFile("Tokens");
             var record = databaseFile.LoadRecords<TokenModel>("ActiveCounter");
@@ -113,10 +109,6 @@ namespace Unitel
                 label3.Text = "No user record found";
                 timer1.Enabled = true;
             }
-            
-
-            
-
         }
 
 

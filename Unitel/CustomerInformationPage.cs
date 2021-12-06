@@ -10,6 +10,8 @@ namespace Unitel
     {
         Form dashboard { get; set; }
         private string Token { get; set; }
+        DatabaseFile findData = new DatabaseFile("Customer");
+
         public CustomerInformationPage(string phoneNum, string token, string typeOfSer, Form dash)
         {
             InitializeComponent();
@@ -44,7 +46,12 @@ namespace Unitel
             dashboard = dash;
         }
 
-        DatabaseFile findData = new DatabaseFile("Customer");
+        public CustomerInformationPage()
+        {
+            InitializeComponent();
+        }
+
+        
 
         private Image BinToImage(byte[] b)
         {
@@ -644,7 +651,7 @@ namespace Unitel
 
         private void CustomerInformationPage_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Control && e.KeyCode == Keys.N)
+            if(e.Control && e.KeyCode == Keys.N && e.Alt)
             {
                 button5.PerformClick();
                 e.Handled = true;
@@ -657,12 +664,75 @@ namespace Unitel
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
+
+            if(e.Control && e.KeyCode == Keys.S && button1.Visible)
+            {
+                button1.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+
+            if(e.Control && e.KeyCode == Keys.D && button4.Visible)
+            {
+                button4.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+
+            if(e.Control && e.KeyCode == Keys.K)
+            {
+                button2.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }else if(e.Control && e.KeyCode == Keys.J)
+            {
+                button3.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+            
         }
 
         private void CustomerInformationPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             dashboard.ShowInTaskbar = true;
             dashboard.WindowState = FormWindowState.Normal;
+        }
+
+        private void button5_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button5, "Ctrl+Alt+N");
+        }
+
+        private void button6_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button6, "Enter");
+        }
+
+        private void button1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!panel7.Visible)
+            {
+                toolTip1.SetToolTip(button1, "Save(Ctrl+S)");
+            }
+        }
+
+        private void button4_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!panel7.Visible)
+            {
+                toolTip1.SetToolTip(button4, "Remove(Ctrl+D)");
+            }
+        }
+
+        private void button2_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button2, "Ctrl+K");
+        }
+
+        private void button3_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button3, "Ctrl+J");
         }
     }
 }

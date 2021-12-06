@@ -17,10 +17,12 @@ namespace Unitel
             InitializeComponent();
             this.empId = empId;
             label4.Text = "";
-
-            
         }
 
+        public PasswordGenerator()
+        {
+            InitializeComponent();
+        }
 
         private byte[] encodePassword(string sample)
         {

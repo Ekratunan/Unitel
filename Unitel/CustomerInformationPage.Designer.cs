@@ -29,6 +29,7 @@ namespace Unitel
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
@@ -44,14 +45,6 @@ namespace Unitel
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.mobile = new System.Windows.Forms.TextBox();
@@ -60,14 +53,20 @@ namespace Unitel
             this.label22 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.personalInformation = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -78,6 +77,7 @@ namespace Unitel
             this.label26 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
@@ -103,6 +103,7 @@ namespace Unitel
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -139,10 +140,11 @@ namespace Unitel
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -150,9 +152,9 @@ namespace Unitel
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.personalInformation.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -161,8 +163,8 @@ namespace Unitel
             this.groupBox4.SuspendLayout();
             this.simInformation.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -201,6 +203,7 @@ namespace Unitel
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
+            this.toolTip1.SetToolTip(this.groupBox2, "Search a User");
             // 
             // button6
             // 
@@ -212,6 +215,7 @@ namespace Unitel
             this.button6.Text = "Search";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button6_MouseMove);
             // 
             // textBox10
             // 
@@ -219,6 +223,7 @@ namespace Unitel
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(168, 23);
             this.textBox10.TabIndex = 0;
+            this.textBox10.Text = "012";
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             this.textBox10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox10_KeyDown);
             // 
@@ -230,13 +235,14 @@ namespace Unitel
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
-            this.button5.Location = new System.Drawing.Point(19, 654);
+            this.button5.Location = new System.Drawing.Point(19, 649);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(178, 33);
             this.button5.TabIndex = 1;
             this.button5.Text = "Add New Customer";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button5_MouseMove);
             // 
             // pictureBox1
             // 
@@ -244,7 +250,8 @@ namespace Unitel
             this.pictureBox1.Image = global::Unitel.Properties.Resources.CusInfo_Page_01;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 74);
+            this.pictureBox1.Size = new System.Drawing.Size(216, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.UseWaitCursor = true;
@@ -258,16 +265,186 @@ namespace Unitel
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.panel2);
             this.splitContainer1.Panel1.Controls.Add(this.panel4);
+            this.splitContainer1.Panel1.Controls.Add(this.panel2);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1128, 653);
+            this.splitContainer1.Size = new System.Drawing.Size(1128, 563);
             this.splitContainer1.SplitterDistance = 371;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.panel4.Controls.Add(this.panel7);
+            this.panel4.Controls.Add(this.mobile);
+            this.panel4.Controls.Add(this.label33);
+            this.panel4.Controls.Add(this.textBox17);
+            this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.comboBox3);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.comboBox2);
+            this.panel4.Controls.Add(this.textBox12);
+            this.panel4.Controls.Add(this.textBox11);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.label18);
+            this.panel4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 151);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(371, 412);
+            this.panel4.TabIndex = 0;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.MaximumSize = new System.Drawing.Size(375, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(371, 412);
+            this.panel7.TabIndex = 58;
+            // 
+            // mobile
+            // 
+            this.mobile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mobile.Location = new System.Drawing.Point(147, 14);
+            this.mobile.Name = "mobile";
+            this.mobile.ReadOnly = true;
+            this.mobile.Size = new System.Drawing.Size(204, 23);
+            this.mobile.TabIndex = 66;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label33.Location = new System.Drawing.Point(23, 17);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(103, 17);
+            this.label33.TabIndex = 64;
+            this.label33.Text = "Mobile Number";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox17.Location = new System.Drawing.Point(147, 111);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
+            this.textBox17.Size = new System.Drawing.Size(204, 23);
+            this.textBox17.TabIndex = 63;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label22.Location = new System.Drawing.Point(23, 175);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(69, 17);
+            this.label22.TabIndex = 55;
+            this.label22.Text = "User Level";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Regular",
+            "Bronze",
+            "SIlver",
+            "Gold",
+            "Platinum",
+            "Star"});
+            this.comboBox3.Location = new System.Drawing.Point(147, 175);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(204, 23);
+            this.comboBox3.TabIndex = 54;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(23, 143);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 17);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "Network Version";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "2G",
+            "3G",
+            "4G",
+            "5G"});
+            this.comboBox2.Location = new System.Drawing.Point(147, 143);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(204, 23);
+            this.comboBox2.TabIndex = 52;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // textBox12
+            // 
+            this.textBox12.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
+            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox12.Location = new System.Drawing.Point(147, 79);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
+            this.textBox12.Size = new System.Drawing.Size(204, 23);
+            this.textBox12.TabIndex = 4;
+            // 
+            // textBox11
+            // 
+            this.textBox11.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
+            this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox11.Location = new System.Drawing.Point(147, 47);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(204, 23);
+            this.textBox11.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label20.Location = new System.Drawing.Point(23, 114);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(89, 17);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Last recharge";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label19.Location = new System.Drawing.Point(23, 82);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(86, 17);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Data Balance";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label18.Location = new System.Drawing.Point(23, 50);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 17);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Current Balance";
             // 
             // panel2
             // 
@@ -277,7 +454,6 @@ namespace Unitel
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.MaximumSize = new System.Drawing.Size(371, 151);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(371, 151);
             this.panel2.TabIndex = 1;
@@ -364,185 +540,6 @@ namespace Unitel
             this.label32.TabIndex = 61;
             this.label32.Text = "Type of Service :";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
-            this.panel4.Controls.Add(this.panel7);
-            this.panel4.Controls.Add(this.mobile);
-            this.panel4.Controls.Add(this.label33);
-            this.panel4.Controls.Add(this.textBox17);
-            this.panel4.Controls.Add(this.label22);
-            this.panel4.Controls.Add(this.comboBox3);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.comboBox2);
-            this.panel4.Controls.Add(this.textBox12);
-            this.panel4.Controls.Add(this.textBox11);
-            this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.label19);
-            this.panel4.Controls.Add(this.label18);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.MaximumSize = new System.Drawing.Size(375, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(371, 653);
-            this.panel4.TabIndex = 0;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.MaximumSize = new System.Drawing.Size(375, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(371, 653);
-            this.panel7.TabIndex = 58;
-            // 
-            // mobile
-            // 
-            this.mobile.Location = new System.Drawing.Point(152, 183);
-            this.mobile.Name = "mobile";
-            this.mobile.ReadOnly = true;
-            this.mobile.Size = new System.Drawing.Size(200, 23);
-            this.mobile.TabIndex = 66;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label33.Location = new System.Drawing.Point(24, 186);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(103, 17);
-            this.label33.TabIndex = 64;
-            this.label33.Text = "Mobile Number";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(152, 280);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(200, 23);
-            this.textBox17.TabIndex = 63;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label22.Location = new System.Drawing.Point(24, 344);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 17);
-            this.label22.TabIndex = 55;
-            this.label22.Text = "User Level";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(148, 344);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 23);
-            this.comboBox3.TabIndex = 54;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(24, 312);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 17);
-            this.label11.TabIndex = 53;
-            this.label11.Text = "Network Version";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(201, 515);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Deactivate";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(148, 312);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 23);
-            this.comboBox2.TabIndex = 52;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // textBox12
-            // 
-            this.textBox12.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Location = new System.Drawing.Point(148, 248);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(200, 23);
-            this.textBox12.TabIndex = 4;
-            // 
-            // textBox11
-            // 
-            this.textBox11.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
-            this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox11.Location = new System.Drawing.Point(148, 216);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(200, 23);
-            this.textBox11.TabIndex = 3;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label20.Location = new System.Drawing.Point(24, 283);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 17);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Last recharge";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label19.Location = new System.Drawing.Point(24, 251);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(86, 17);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Data Balance";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label18.Location = new System.Drawing.Point(24, 219);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(104, 17);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Current Balance";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(24, 515);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.personalInformation);
@@ -552,7 +549,7 @@ namespace Unitel
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(753, 653);
+            this.tabControl1.Size = new System.Drawing.Size(753, 563);
             this.tabControl1.TabIndex = 0;
             // 
             // personalInformation
@@ -565,11 +562,13 @@ namespace Unitel
             this.personalInformation.Controls.Add(this.label26);
             this.personalInformation.Controls.Add(this.label24);
             this.personalInformation.Controls.Add(this.label25);
+            this.personalInformation.Controls.Add(this.button4);
             this.personalInformation.Controls.Add(this.comboBox4);
             this.personalInformation.Controls.Add(this.groupBox5);
             this.personalInformation.Controls.Add(this.groupBox4);
             this.personalInformation.Controls.Add(this.comboBox7);
             this.personalInformation.Controls.Add(this.label21);
+            this.personalInformation.Controls.Add(this.button1);
             this.personalInformation.Controls.Add(this.textBox13);
             this.personalInformation.Controls.Add(this.textBox4);
             this.personalInformation.Controls.Add(this.textBox7);
@@ -588,7 +587,7 @@ namespace Unitel
             this.personalInformation.Location = new System.Drawing.Point(4, 24);
             this.personalInformation.Name = "personalInformation";
             this.personalInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.personalInformation.Size = new System.Drawing.Size(745, 625);
+            this.personalInformation.Size = new System.Drawing.Size(745, 535);
             this.personalInformation.TabIndex = 0;
             this.personalInformation.Text = "Personal Information";
             // 
@@ -597,7 +596,7 @@ namespace Unitel
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(739, 619);
+            this.panel9.Size = new System.Drawing.Size(739, 529);
             this.panel9.TabIndex = 70;
             // 
             // linkLabel1
@@ -673,6 +672,18 @@ namespace Unitel
             this.label25.Size = new System.Drawing.Size(79, 15);
             this.label25.TabIndex = 66;
             this.label25.Text = "Marital Status";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Location = new System.Drawing.Point(13, 506);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(141, 23);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Deactivate";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button4_MouseMove);
             // 
             // comboBox4
             // 
@@ -1307,6 +1318,18 @@ namespace Unitel
             this.label21.TabIndex = 41;
             this.label21.Text = "Driving License";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(664, 506);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
+            // 
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(13, 160);
@@ -1468,7 +1491,7 @@ namespace Unitel
             this.simInformation.Location = new System.Drawing.Point(4, 24);
             this.simInformation.Name = "simInformation";
             this.simInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.simInformation.Size = new System.Drawing.Size(745, 625);
+            this.simInformation.Size = new System.Drawing.Size(745, 535);
             this.simInformation.TabIndex = 1;
             this.simInformation.Text = "SIM Information";
             // 
@@ -1477,7 +1500,7 @@ namespace Unitel
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(739, 619);
+            this.panel6.Size = new System.Drawing.Size(739, 529);
             this.panel6.TabIndex = 57;
             // 
             // textBox16
@@ -1659,16 +1682,6 @@ namespace Unitel
             this.panel1.Size = new System.Drawing.Size(1128, 68);
             this.panel1.TabIndex = 0;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
-            this.panel5.Controls.Add(this.groupBox1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(216, 631);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1128, 90);
-            this.panel5.TabIndex = 3;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1693,6 +1706,7 @@ namespace Unitel
             this.button3.Text = "Pass to other";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
+            this.button3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button3_MouseMove);
             // 
             // button2
             // 
@@ -1705,18 +1719,29 @@ namespace Unitel
             this.button2.Text = "Mark as Solved";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button2_MouseMove);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(152)))), ((int)(((byte)(120)))));
+            this.panel5.Controls.Add(this.groupBox1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(216, 631);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1128, 90);
+            this.panel5.TabIndex = 3;
             // 
             // CustomerInformationPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1344, 721);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -1737,11 +1762,11 @@ namespace Unitel
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.personalInformation.ResumeLayout(false);
             this.personalInformation.PerformLayout();
@@ -1755,8 +1780,8 @@ namespace Unitel
             this.simInformation.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1801,10 +1826,6 @@ namespace Unitel
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label22;
@@ -1869,5 +1890,10 @@ namespace Unitel
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox mobile;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel5;
     }
 }

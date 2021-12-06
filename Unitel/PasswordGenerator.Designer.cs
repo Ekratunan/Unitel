@@ -42,6 +42,8 @@ namespace Unitel
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -75,6 +77,7 @@ namespace Unitel
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
             this.button2.Text = "Cancel";
+            this.toolTip2.SetToolTip(this.button2, "Cancel (Esc)");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -103,6 +106,7 @@ namespace Unitel
             this.button1.TabIndex = 12;
             this.button1.TabStop = false;
             this.button1.Text = "Confirm";
+            this.toolTip2.SetToolTip(this.button1, "Create password (Enter)");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -158,6 +162,7 @@ namespace Unitel
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(218, 23);
             this.textBox2.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.textBox2, "Enter the same password as above.");
             this.textBox2.UseSystemPasswordChar = true;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
@@ -170,6 +175,8 @@ namespace Unitel
             this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(218, 23);
             this.textBox1.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.textBox1, "Choose a password that contains at least one character(s),\r\none special character" +
+        "(s) and one digit(s).");
             this.textBox1.UseSystemPasswordChar = true;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
@@ -179,6 +186,17 @@ namespace Unitel
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 0;
+            this.toolTip1.AutoPopDelay = 10000;
+            this.toolTip1.InitialDelay = 0;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 20000;
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "How to choose stronge Password?";
             // 
             // PasswordGenerator
             // 
@@ -220,5 +238,7 @@ namespace Unitel
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

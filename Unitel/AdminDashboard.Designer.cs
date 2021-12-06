@@ -30,14 +30,10 @@ namespace Unitel
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.GroupBox groupBox1;
             System.Windows.Forms.GroupBox groupBox2;
+            System.Windows.Forms.GroupBox groupBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.label74 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.textBox24 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -102,6 +98,8 @@ namespace Unitel
             this.textBox42 = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.empEmailTextbox = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label67 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
@@ -232,9 +230,11 @@ namespace Unitel
             this.label42 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
-            groupBox1.SuspendLayout();
+            groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -266,104 +266,56 @@ namespace Unitel
             this.panel10.SuspendLayout();
             this.Bandwidth.SuspendLayout();
             this.panel12.SuspendLayout();
+            groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(this.label1);
-            groupBox1.Controls.Add(this.textBox1);
-            groupBox1.Controls.Add(this.button6);
-            groupBox1.ForeColor = System.Drawing.Color.Black;
-            groupBox1.Location = new System.Drawing.Point(6, 16);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(188, 119);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Search Employee";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Enter Employee ID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(107, 84);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 25);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Search";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(this.label74);
-            groupBox2.Controls.Add(this.label26);
             groupBox2.Controls.Add(this.textBox24);
             groupBox2.Controls.Add(this.button11);
             groupBox2.ForeColor = System.Drawing.Color.Black;
             groupBox2.Location = new System.Drawing.Point(6, 16);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(188, 119);
+            groupBox2.Size = new System.Drawing.Size(188, 112);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Search User";
+            groupBox2.Text = "Search Customer";
             // 
             // label74
             // 
             this.label74.AutoSize = true;
             this.label74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
-            this.label74.Location = new System.Drawing.Point(7, 98);
+            this.label74.Location = new System.Drawing.Point(6, 82);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(53, 15);
             this.label74.TabIndex = 3;
             this.label74.Text = "Message";
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 17);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(121, 15);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Enter Mobile Number";
-            // 
             // textBox24
             // 
-            this.textBox24.Location = new System.Drawing.Point(6, 35);
+            this.textBox24.Location = new System.Drawing.Point(6, 21);
             this.textBox24.Name = "textBox24";
+            this.textBox24.PlaceholderText = "Enter a Mobile Number";
             this.textBox24.Size = new System.Drawing.Size(176, 23);
             this.textBox24.TabIndex = 0;
             this.textBox24.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox24_KeyDown);
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(107, 64);
+            this.button11.Location = new System.Drawing.Point(107, 50);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 25);
             this.button11.TabIndex = 1;
             this.button11.Text = "Search";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.Button11_Click);
+            this.button11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button11_MouseMove);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(54)))));
             this.panel1.BackgroundImage = global::Unitel.Properties.Resources.Admin_Dashboard_03;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button2);
@@ -376,6 +328,7 @@ namespace Unitel
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(29)))), ((int)(((byte)(145)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -388,9 +341,11 @@ namespace Unitel
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
+            this.button5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button5_MouseMove);
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(211)))), ((int)(((byte)(80)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -402,9 +357,11 @@ namespace Unitel
             this.button2.Text = "Add New Customer";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button2_MouseMove);
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(211)))), ((int)(((byte)(80)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -416,6 +373,7 @@ namespace Unitel
             this.button1.Text = "Add New Employee";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
             // panel2
             // 
@@ -1431,9 +1389,10 @@ namespace Unitel
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(195)))));
+            this.panel3.Controls.Add(this.empEmailTextbox);
+            this.panel3.Controls.Add(this.label37);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.label67);
-            this.panel3.Controls.Add(this.label66);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textBox12);
@@ -1449,22 +1408,40 @@ namespace Unitel
             this.panel3.Size = new System.Drawing.Size(200, 610);
             this.panel3.TabIndex = 0;
             // 
+            // empEmailTextbox
+            // 
+            this.empEmailTextbox.Location = new System.Drawing.Point(12, 253);
+            this.empEmailTextbox.Name = "empEmailTextbox";
+            this.empEmailTextbox.PlaceholderText = "example@email.com";
+            this.empEmailTextbox.Size = new System.Drawing.Size(182, 23);
+            this.empEmailTextbox.TabIndex = 15;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(12, 234);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(81, 15);
+            this.label37.TabIndex = 14;
+            this.label37.Text = "Email Address";
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(104, 382);
+            this.button3.Location = new System.Drawing.Point(104, 405);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 13;
             this.button3.Text = "Edit";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
+            this.button3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button3_MouseMove);
             // 
             // label67
             // 
             this.label67.AutoSize = true;
             this.label67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(195)))));
             this.label67.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
-            this.label67.Location = new System.Drawing.Point(12, 446);
+            this.label67.Location = new System.Drawing.Point(12, 469);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(53, 15);
             this.label67.TabIndex = 12;
@@ -1474,7 +1451,7 @@ namespace Unitel
             // 
             this.label66.AutoSize = true;
             this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
-            this.label66.Location = new System.Drawing.Point(6, 138);
+            this.label66.Location = new System.Drawing.Point(6, 82);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(53, 15);
             this.label66.TabIndex = 11;
@@ -1483,7 +1460,7 @@ namespace Unitel
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 315);
+            this.label13.Location = new System.Drawing.Point(12, 336);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(38, 15);
             this.label13.TabIndex = 10;
@@ -1492,7 +1469,7 @@ namespace Unitel
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 263);
+            this.label12.Location = new System.Drawing.Point(12, 284);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 15);
             this.label12.TabIndex = 9;
@@ -1500,14 +1477,14 @@ namespace Unitel
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(12, 332);
+            this.textBox12.Location = new System.Drawing.Point(12, 353);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(182, 23);
             this.textBox12.TabIndex = 8;
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(12, 282);
+            this.textBox11.Location = new System.Drawing.Point(12, 303);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(182, 23);
             this.textBox11.TabIndex = 7;
@@ -1516,7 +1493,7 @@ namespace Unitel
             // 
             this.textBox8.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.textBox8.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox8.Location = new System.Drawing.Point(12, 230);
+            this.textBox8.Location = new System.Drawing.Point(12, 205);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(182, 23);
@@ -1525,7 +1502,7 @@ namespace Unitel
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 211);
+            this.label11.Location = new System.Drawing.Point(12, 186);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 15);
             this.label11.TabIndex = 5;
@@ -1540,16 +1517,18 @@ namespace Unitel
             this.button8.Text = "Remove";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
+            this.button8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button8_MouseMove);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(23, 382);
+            this.button7.Location = new System.Drawing.Point(23, 405);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 3;
             this.button7.Text = "Update";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
+            this.button7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button7_MouseMove);
             // 
             // Users
             // 
@@ -2924,23 +2903,23 @@ namespace Unitel
             // 
             // textBox54
             // 
-            this.textBox54.Location = new System.Drawing.Point(13, 346);
+            this.textBox54.Location = new System.Drawing.Point(12, 346);
             this.textBox54.Name = "textBox54";
             this.textBox54.ReadOnly = true;
-            this.textBox54.Size = new System.Drawing.Size(181, 23);
+            this.textBox54.Size = new System.Drawing.Size(182, 23);
             this.textBox54.TabIndex = 27;
             // 
             // textBox53
             // 
-            this.textBox53.Location = new System.Drawing.Point(13, 289);
+            this.textBox53.Location = new System.Drawing.Point(12, 290);
             this.textBox53.Name = "textBox53";
             this.textBox53.ReadOnly = true;
-            this.textBox53.Size = new System.Drawing.Size(181, 23);
+            this.textBox53.Size = new System.Drawing.Size(182, 23);
             this.textBox53.TabIndex = 26;
             // 
             // textBox52
             // 
-            this.textBox52.Location = new System.Drawing.Point(12, 233);
+            this.textBox52.Location = new System.Drawing.Point(12, 234);
             this.textBox52.Name = "textBox52";
             this.textBox52.ReadOnly = true;
             this.textBox52.Size = new System.Drawing.Size(182, 23);
@@ -2965,6 +2944,7 @@ namespace Unitel
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.button4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button4_MouseMove);
             // 
             // comboBox4
             // 
@@ -3058,6 +3038,7 @@ namespace Unitel
             this.button9.Text = "Remove";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.Button9_Click);
+            this.button9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button9_MouseMove);
             // 
             // button10
             // 
@@ -3068,6 +3049,7 @@ namespace Unitel
             this.button10.Text = "Update";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
+            this.button10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button10_MouseMove);
             // 
             // Queue
             // 
@@ -3117,6 +3099,8 @@ namespace Unitel
             this.panel10.Controls.Add(this.CounterSelect);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.MaximumSize = new System.Drawing.Size(230, 0);
+            this.panel10.MinimumSize = new System.Drawing.Size(230, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(230, 616);
             this.panel10.TabIndex = 0;
@@ -3208,6 +3192,40 @@ namespace Unitel
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(107, 50);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 25);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Search";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            this.button6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button6_MouseMove);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Enter an Employee ID";
+            this.textBox1.Size = new System.Drawing.Size(176, 23);
+            this.textBox1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.textBox1, "Enter a valid Employee ID, then press <Enter> to Search");
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(this.textBox1);
+            groupBox1.Controls.Add(this.button6);
+            groupBox1.Controls.Add(this.label66);
+            groupBox1.ForeColor = System.Drawing.Color.Black;
+            groupBox1.Location = new System.Drawing.Point(6, 16);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(188, 109);
+            groupBox1.TabIndex = 2;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Search Employee";
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -3226,8 +3244,6 @@ namespace Unitel
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.SizeChanged += new System.EventHandler(this.AdminDashboard_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminDashboard_KeyDown);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -3272,6 +3288,8 @@ namespace Unitel
             this.Bandwidth.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3310,9 +3328,6 @@ namespace Unitel
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TabPage Users;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TabControl tabControl2;
@@ -3336,7 +3351,6 @@ namespace Unitel
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TabPage Queue;
@@ -3477,5 +3491,10 @@ namespace Unitel
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox textBoxExecutive;
         private System.Windows.Forms.ComboBox CounterSelect;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox empEmailTextbox;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button6;
     }
 }

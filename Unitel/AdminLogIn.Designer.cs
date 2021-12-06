@@ -29,6 +29,7 @@ namespace Unitel
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLogIn));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,7 @@ namespace Unitel
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +53,7 @@ namespace Unitel
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 171);
             this.panel1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.panel1, "Sign in to Admin Panel");
             // 
             // groupBox1
             // 
@@ -98,6 +101,7 @@ namespace Unitel
             this.button2.Size = new System.Drawing.Size(52, 29);
             this.button2.TabIndex = 5;
             this.button2.Text = "Back";
+            this.toolTip1.SetToolTip(this.button2, "Back (Esc)");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -110,6 +114,7 @@ namespace Unitel
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(205, 27);
             this.textBox2.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.textBox2, "Enter your password");
             this.textBox2.UseSystemPasswordChar = true;
             // 
             // textBox1
@@ -120,6 +125,7 @@ namespace Unitel
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(205, 27);
             this.textBox1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.textBox1, "Enter an Employee ID\r\nthat has access in Admin Panel");
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
@@ -132,7 +138,6 @@ namespace Unitel
             this.label2.Size = new System.Drawing.Size(76, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -144,7 +149,6 @@ namespace Unitel
             this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Admin ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -157,6 +161,7 @@ namespace Unitel
             this.button1.Size = new System.Drawing.Size(92, 29);
             this.button1.TabIndex = 2;
             this.button1.Text = "Sign in";
+            this.toolTip1.SetToolTip(this.button1, "Sign in (Enter)");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -165,7 +170,7 @@ namespace Unitel
             this.AcceptButton = this.button1;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Unitel.Properties.Resources.admin_log_in_screen_04;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(300, 250);
             this.ControlBox = false;
@@ -197,5 +202,6 @@ namespace Unitel
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -16,7 +15,12 @@ namespace Unitel
         DatabaseFile databaseFile = null;
         protected List<SecurityModel> Record{ get; set; }
         readonly AdminLogIn adminLogIn = new AdminLogIn();
-        
+        TicketGen ticketGen = new TicketGen();
+        QueueScreen queueScreen = new QueueScreen();
+        PasswordResetPage ps = new PasswordResetPage();
+        PasswordGenerator pass = new PasswordGenerator();
+        AutoCompleteStringCollection acsc = new AutoCompleteStringCollection();
+
         public Home()
         {
             InitializeComponent();
@@ -29,10 +33,10 @@ namespace Unitel
             this.ActiveControl = textBox1;
             if (InternetGetConnectedState(out _, 0))
             {
-                textBox1.Focus();
                 label4.Text = "";
                 Db_Load();
                 CounterUpdate();
+
             }
             else
             {
@@ -41,6 +45,7 @@ namespace Unitel
                 label4.Text = "No Internet Connection";
                 timer1.Start();
             }
+
             
         }
 
@@ -50,6 +55,8 @@ namespace Unitel
             databaseFile = new DatabaseFile("Employee");
             var passRecord = databaseFile.LoadRecords<SecurityModel>("Emp_Account");
             Record = passRecord;
+            acsc.AddRange(Record.Select(p => p.EmployeeID).ToArray());
+            textBox1.AutoCompleteCustomSource = acsc;
         }
 
         private void CounterUpdate()
@@ -111,31 +118,12 @@ namespace Unitel
             }
             else
             {
-                label4.ForeColor = Color.Red;
                 label4.Text = "No Internet";
             }
-
-
-
-
-
-
-
 
             return inVerify;
 
         }
-
-        
-
-
-       
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         
 
         public void Button1_Click(object sender, EventArgs e)
@@ -170,10 +158,6 @@ namespace Unitel
                     this.Hide();
                 }
             }
-            
-           
-
-            
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -218,6 +202,7 @@ namespace Unitel
                 button1.Show();
                 pictureBox1.Hide();
                 linkLabel4.Hide();
+                forgotPassButton.Show();
                 this.ActiveControl = textBox2;
                 this.AcceptButton = null;
                 
@@ -231,6 +216,7 @@ namespace Unitel
                 button1.Hide();
                 linkLabel4.Show();
                 pictureBox1.Show();
+                forgotPassButton.Hide();
                 this.AcceptButton = linkLabel4;
             }
             
@@ -295,13 +281,6 @@ namespace Unitel
         }
         
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-           
-
-        }
-
         private void Timer1_Tick(object sender, EventArgs e)
         {
             if (InternetGetConnectedState(out _, 0))
@@ -328,15 +307,9 @@ namespace Unitel
 
                     if (newUser)
                     {
-                        PasswordGenerator pass = new PasswordGenerator(user.EmployeeID);
-                        DialogResult dr = pass.ShowDialog();
-
-                        if (dr == DialogResult.Yes)
-                        {
-                            var passRecord = databaseFile.LoadRecords<SecurityModel>("Emp_Account");
-                            Record = passRecord;
-                            StepTwo(true);
-                        }
+                        pass = new PasswordGenerator(user.EmployeeID);
+                        pass.Show();
+                        syncTimer.Enabled = true;
                     }
                     else if (!newUser)
                     {
@@ -429,25 +402,56 @@ namespace Unitel
 
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            TicketGen ticketGen = new TicketGen();
-            ticketGen.Show();
-            this.Hide();
-            this.ShowInTaskbar = false;
-            notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(2000);
+            if (ticketGen.IsDisposed)
+            {
+                ticketGen = new TicketGen();
+            }
+
+            if (!ticketGen.Visible)
+            {
+                ticketGen.Show();
+                
+                this.Hide();
+                this.ShowInTaskbar = false;
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(2000);
+            }
+            else
+            {
+                MessageBox.Show("Ticket Generator is already opened", "Unable to open TG", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void LinkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            QueueScreen queueScreen = new QueueScreen();
-            queueScreen.Show();
-            this.Hide();
-            this.ShowInTaskbar = false;
-            notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(2000);
+            if (queueScreen.IsDisposed)
+            {
+                queueScreen = new QueueScreen();
+            }
+
+
+            if (!queueScreen.Visible)
+            {
+                queueScreen.Show();
+                this.Hide();
+                this.ShowInTaskbar = false;
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(2000);
+            }
+            else
+            {
+                MessageBox.Show("Queue Screen is already opened", "Unable to open QS", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void NotifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            Appender();
+        }
+
+        private void Appender()
         {
             this.Show();
             this.ShowInTaskbar = true;
@@ -462,6 +466,105 @@ namespace Unitel
         private void LinkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             EID_Verifier();
+        }
+
+        private void openQueueGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ticketGen.IsDisposed)
+            {
+                ticketGen = new TicketGen();
+            }
+
+            if (!ticketGen.Visible)
+            {
+                ticketGen.Show();
+            }
+        }
+
+        private void openQueueDisplayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (queueScreen.IsDisposed)
+            {
+                queueScreen = new QueueScreen();
+            }
+
+            if (!queueScreen.Visible)
+            {
+                queueScreen.Show();
+            }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void signInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Appender();
+        }
+
+        private void closeToolStripMenuItem_DoubleClick(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            if(!ps.Visible)
+            {
+                ps.Show();
+                textBox1.Clear();
+                textBox2.Clear();
+                StepTwo(false);
+                syncTimer.Enabled = true;
+            }
+        }
+
+        private void syncTimer_Tick(object sender, EventArgs e)
+        {
+            if (InternetGetConnectedState(out _, 0))
+            {
+                if (ps.IsDisposed)
+                {
+                    label4.Text = "";
+                    var passRecord = databaseFile.LoadRecords<SecurityModel>("Emp_Account");
+                    Record = passRecord;
+                    ps = new PasswordResetPage();
+                    this.ActiveControl = textBox1;
+                    syncTimer.Stop();
+                }
+
+                if (pass.IsDisposed)
+                {
+                    var passRecord = databaseFile.LoadRecords<SecurityModel>("Emp_Account");
+                    Record = passRecord;
+                    pass = new PasswordGenerator();
+                    StepTwo(true);
+                    syncTimer.Stop();
+                }
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (queueScreen.Visible)
+            {
+                contextMenuStrip1.Items[3].Enabled = false;
+            }
+            else
+            {
+                contextMenuStrip1.Items[3].Enabled = true;
+            }
+
+            if (ticketGen.Visible)
+            {
+                contextMenuStrip1.Items[2].Enabled = false;
+            }
+            else
+            {
+                contextMenuStrip1.Items[2].Enabled = true;
+            }
         }
     }
 }

@@ -10,7 +10,10 @@ namespace Unitel
     {
         int numOfRec = 0;
         DatabaseFile tokenSync = new DatabaseFile("Tokens");
+        readonly Home home = new Home();
         Control ctr1;
+        Image image;
+        private List<CounterModel> counters;
 
         public AdminDashboard()
         {
@@ -243,8 +246,8 @@ namespace Unitel
                     {
                         pictureBox2.Image = Properties.Resources.img_avatar;
                     }
-                    
-                    
+
+                    empEmailTextbox.Text = rec.EmailAddress;
                     textBox2.Text = rec.FirstName;
                     textBox3.Text = rec.LastName;
                     textBox4.Text = rec.FathersName;
@@ -311,8 +314,6 @@ namespace Unitel
             newEmployee.Show();
         }
 
-        Home home = new Home();
-
         private void Button5_Click(object sender, EventArgs e)
         {
             home.Show();
@@ -331,7 +332,6 @@ namespace Unitel
             Image imgFromStream = Image.FromStream(img);
             return imgFromStream;
         }
-
 
         private void Button6_Click(object sender, EventArgs e)
         {
@@ -362,8 +362,6 @@ namespace Unitel
                 CustomerInfoRead(textBox24.Text.Trim());
                 
             }
-            
-            
 
         }
 
@@ -376,6 +374,7 @@ namespace Unitel
                 var record = database.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
                 record.UserImage = pictureCovert(pictureBox2.Image);
                 record.FirstName = textBox2.Text.Trim();
+                record.EmailAddress = empEmailTextbox.Text.Trim();
                 record.LastName = textBox3.Text.Trim();
                 record.FathersName = textBox4.Text.Trim();
                 record.MothersName = textBox5.Text.Trim();
@@ -443,7 +442,7 @@ namespace Unitel
                 textBox7.ReadOnly = false;
                 textBox45.ReadOnly = false;
                 textBox45.Hide();
-
+                empEmailTextbox.ReadOnly = false;
                 textBox11.ReadOnly = false;
                 textBox12.ReadOnly = false;
 
@@ -488,7 +487,7 @@ namespace Unitel
                 textBox45.ReadOnly = true;
                 textBox45.Text = comboBox9.Text.Trim();
                 textBox45.Show();
-
+                empEmailTextbox.ReadOnly = true;
                 textBox55.Text = dateTimePicker1.Text;
                 textBox55.Show();
 
@@ -588,7 +587,7 @@ namespace Unitel
             textBox12.Text = "";
             label66.Text = "";
             label67.Text = "";
-
+            empEmailTextbox.Text = "";
 
             //Customer Tab
             pictureBox3.Image = Properties.Resources.img_avatar;
@@ -854,8 +853,7 @@ namespace Unitel
             return bytes;
 
         }
-
-        Image image;
+        
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -964,8 +962,6 @@ namespace Unitel
 
         }
 
-        private List<CounterModel> counters;
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
@@ -1001,10 +997,22 @@ namespace Unitel
 
         private void AdminDashboard_SizeChanged(object sender, EventArgs e)
         {
-            dataGridView1.Columns["CustomerName"].Width = (panel11.Width / 100) * 25;
-            dataGridView1.Columns["MobileNumber"].Width = (panel11.Width / 100) * 25;
-            dataGridView1.Columns["TokenNumber"].Width = (panel11.Width / 100) * 25;
-            dataGridView1.Columns["TypeOfService"].Width = (panel11.Width / 100) * 25;
+            try
+            {
+                if (tabControl1.SelectedTab == tabControl1.TabPages["Queue"])
+                {
+                    dataGridView1.Columns["CustomerName"].Width = (panel11.Width / 100) * 25;
+                    dataGridView1.Columns["MobileNumber"].Width = (panel11.Width / 100) * 25;
+                    dataGridView1.Columns["TokenNumber"].Width = (panel11.Width / 100) * 25;
+                    dataGridView1.Columns["TypeOfService"].Width = (panel11.Width / 100) * 25;
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Loading Error");
+            }
+            
+            
         }
 
         private void CounterSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -1017,7 +1025,7 @@ namespace Unitel
 
         private void AdminDashboard_KeyDown(object sender, KeyEventArgs e)
         {
-            if(tabControl1.SelectedTab == tabControl1.TabPages["Employee"])
+            
             {
                 if (e.Control && e.KeyCode == Keys.E && button3.Visible)
                 {
@@ -1084,6 +1092,61 @@ namespace Unitel
                 e.SuppressKeyPress = true;
             }
 
+        }
+
+        private void button8_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button8, "Ctrl+D");
+        }
+
+        private void button7_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button7, "Ctrl+S");
+        }
+
+        private void button3_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button3, "Ctrl+E");
+        }
+
+        private void button6_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button6, "Enter");
+        }
+
+        private void button1_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button1, "Ctrl+Alt+N");
+        }
+
+        private void button2_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button2, "Ctrl+Alt+M");
+        }
+
+        private void button5_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button5, "Shift+Alt+L");
+        }
+
+        private void button11_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button11, "Enter");
+        }
+
+        private void button4_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button4, "Ctrl+E");
+        }
+
+        private void button10_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button10, "Ctrl+S");
+        }
+
+        private void button9_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button9, "Ctrl+D");
         }
     }
 }

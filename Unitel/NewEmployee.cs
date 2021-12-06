@@ -53,6 +53,7 @@ namespace Unitel
                     UserImage = null,
 
                     EmployeeID = employeeId,
+                    EmailAddress = emailTextBox.Text.Trim(),
                     FirstName = firstName,
                     LastName = lastName,
                     PhoneNumber = phoneNumber,
@@ -225,6 +226,28 @@ namespace Unitel
             else
             {
                 errorProvider1.SetError(textBox1, "");
+            }
+        }
+
+        private void emailTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(emailTextBox.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(emailTextBox, "Enter an email address");
+            }else if(!emailTextBox.Text.Contains("@") || !emailTextBox.Text.Contains("."))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(emailTextBox, "Please enter a valid email address");
+            }else if(persons.Any(p => p.EmailAddress == emailTextBox.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(emailTextBox, "An account with this email address is already exists");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(emailTextBox, "");
             }
         }
     }

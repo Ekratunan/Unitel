@@ -10,6 +10,7 @@ namespace Unitel
         readonly QueueScreen queueScreen = new QueueScreen();
         private int numOfRec = 0;
         readonly DatabaseFile db = new DatabaseFile("Employee");
+        CustomerInformationPage cip = new CustomerInformationPage();
 
 
         public Dashboard(string empId, string counter, int num)
@@ -81,8 +82,12 @@ namespace Unitel
          
         private void Button3_Click(object sender, EventArgs e)
         {
+            if (cip.Visible)
+            {
+                cip.Close();
+            }
             button3.Enabled = false;
-            LogOut();
+            LogOut();  
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -92,7 +97,7 @@ namespace Unitel
                 string typeOfSer = dataGridView1.CurrentRow.Cells["TypeOfService"].Value.ToString();
                 string phoneNum = dataGridView1.CurrentRow.Cells["MobileNumber"].Value.ToString();
                 string token = dataGridView1.CurrentRow.Cells["TokenNumber"].Value.ToString();
-                CustomerInformationPage cip;
+                
 
 
                 this.WindowState = FormWindowState.Minimized;
@@ -143,6 +148,11 @@ namespace Unitel
 
         private void NotifyIcon1_DoubleClick(object sender, EventArgs e)
         {
+            BringToNormalState();
+        }
+
+        private void BringToNormalState()
+        {
             this.WindowState = FormWindowState.Normal;
             notifyIcon1.Visible = false;
             ShowInTaskbar = true;
@@ -173,9 +183,9 @@ namespace Unitel
                 }
 
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException n)
             {
-
+                Console.WriteLine(n);
             }
         }
 
@@ -186,6 +196,45 @@ namespace Unitel
                 ExecutiveName = label3.Text,
                 CounterNumber = label4.Text
             });
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure that you want to log out of this session?", "Confirmation", MessageBoxButtons.YesNo);
+
+            if(dr == DialogResult.Yes)
+            {
+                if (cip.Visible)
+                {
+                    cip.Close();
+                }
+                LogOut(); 
+            }
+        }
+
+        private void openDashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BringToNormalState();   
+        }
+
+        private void Dashboard_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                button2.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }else if(e.Control && e.Shift && e.KeyCode == Keys.C)
+            {
+                button1.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }else if(e.Alt && e.KeyCode == Keys.L)
+            {
+                button3.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

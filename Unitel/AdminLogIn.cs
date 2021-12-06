@@ -30,11 +30,6 @@ namespace Unitel
             return reader.ReadToEnd();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string adminName = textBox1.Text.Trim().ToString();
@@ -51,16 +46,6 @@ namespace Unitel
                 this.Close();
 
             }
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 

@@ -10,9 +10,9 @@
     <SignAssembly>false</SignAssembly>
     <ApplicationIcon>icon_01_VbH_icon.ico</ApplicationIcon>
     <Win32Resource />
-    <StartupObject />
-    <PackageId>Unitel Alpha</PackageId>
-    <Version>1.0.3</Version>
+    <StartupObject>Unitel.Program</StartupObject>
+    <PackageId>UnitelAlpha</PackageId>
+    <Version>1.0.4</Version>
     <Company>Unitel PTO</Company>
     <NeutralLanguage>en-UM</NeutralLanguage>
     <PackageReleaseNotes>022/12/2021 Release version:
@@ -23,7 +23,7 @@
     <Description>Unitel is a universal customer service application that can be use at any Service Center for Mobile Operator, Bank, Device After Service Provider, Hospital and so on. This project is under consultation on porject group 'Unitel' for University of Development Alternative(UODA). Owners: Ekra Hossain, Abir Hossain,Nowshin Atia Sarker, Md. Rezwan Ibna Akram, Md. Saiful Islam Rafid, Md. Nasir Islam Sharif &amp; Md. Monir Hossain.</Description>
     <AssemblyName>Unitel (Alpha)</AssemblyName>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIcon>Icon-01.png</PackageIcon>
     <PackageIconUrl />
     <Nullable>disable</Nullable>
@@ -32,7 +32,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath></OutputPath>
   </PropertyGroup>
 

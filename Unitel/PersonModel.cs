@@ -125,6 +125,8 @@ namespace Unitel
         [BsonElement]
         public string EmployeeID { get; set; }
         [BsonElement]
+        public string EmailAddress { get; set; }
+        [BsonElement]
         public string Designation { get; set; }
         [BsonElement]
         public string Salary { get; set; }

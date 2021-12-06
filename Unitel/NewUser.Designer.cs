@@ -44,15 +44,8 @@ namespace Unitel
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.permDivision = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.permCountry = new System.Windows.Forms.ComboBox();
@@ -63,6 +56,14 @@ namespace Unitel
             this.label59 = new System.Windows.Forms.Label();
             this.permStreet = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.preDivision = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
@@ -91,7 +92,7 @@ namespace Unitel
             this.label21 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -103,9 +104,11 @@ namespace Unitel
             // panel1
             // 
             this.panel1.BackgroundImage = global::Unitel.Properties.Resources.cus_new_07;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.MaximumSize = new System.Drawing.Size(816, 127);
+            this.panel1.MinimumSize = new System.Drawing.Size(816, 127);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(816, 127);
             this.panel1.TabIndex = 0;
@@ -133,6 +136,7 @@ namespace Unitel
             this.label2.Size = new System.Drawing.Size(147, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "sample number";
+            this.toolTip1.SetToolTip(this.label2, "Current registration to this Mobile Number");
             // 
             // label1
             // 
@@ -188,8 +192,10 @@ namespace Unitel
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Location = new System.Drawing.Point(0, 127);
+            this.panel2.MaximumSize = new System.Drawing.Size(816, 429);
+            this.panel2.MinimumSize = new System.Drawing.Size(816, 429);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(816, 419);
+            this.panel2.Size = new System.Drawing.Size(816, 429);
             this.panel2.TabIndex = 1;
             // 
             // linkLabel1
@@ -203,6 +209,7 @@ namespace Unitel
             this.linkLabel1.TabIndex = 71;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Upload Image";
+            this.toolTip1.SetToolTip(this.linkLabel1, "Open an image to choose profile picture");
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(28)))), ((int)(((byte)(249)))));
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
@@ -261,6 +268,7 @@ namespace Unitel
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(146, 23);
             this.comboBox4.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.comboBox4, "Package Type");
             this.comboBox4.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox4_Validating);
             // 
             // comboBox3
@@ -279,6 +287,7 @@ namespace Unitel
             this.comboBox3.Size = new System.Drawing.Size(146, 23);
             this.comboBox3.TabIndex = 66;
             this.comboBox3.Text = "5G";
+            this.toolTip1.SetToolTip(this.comboBox3, "Network Version");
             this.comboBox3.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox3_Validating);
             // 
             // textBox1
@@ -290,102 +299,8 @@ namespace Unitel
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(145, 23);
             this.textBox1.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.textBox1, "Phone Number");
             this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 104);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 15);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "Phone Number (Optional)";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(478, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 15);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Gender";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(327, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 15);
-            this.label4.TabIndex = 62;
-            this.label4.Text = "Marital Status";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Other"});
-            this.comboBox2.Location = new System.Drawing.Point(478, 122);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(146, 23);
-            this.comboBox2.TabIndex = 61;
-            this.comboBox2.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox2_Validating);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Married",
-            "Unmarried"});
-            this.comboBox1.Location = new System.Drawing.Point(327, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 23);
-            this.comboBox1.TabIndex = 60;
-            this.comboBox1.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox1_Validating);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(673, 303);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "label3";
-            // 
-            // button2
-            // 
-            this.button2.CausesValidation = false;
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(673, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(211)))), ((int)(((byte)(80)))));
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(673, 339);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 32);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "Add User";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox6
             // 
@@ -408,6 +323,17 @@ namespace Unitel
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Permanent Address";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(7, 120);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(272, 19);
+            this.checkBox1.TabIndex = 72;
+            this.checkBox1.Text = "Present Address is same as Permanent Address";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // permDivision
             // 
             this.permDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
@@ -417,6 +343,7 @@ namespace Unitel
             this.permDivision.Name = "permDivision";
             this.permDivision.Size = new System.Drawing.Size(140, 23);
             this.permDivision.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.permDivision, "Division/State");
             this.permDivision.Validating += new System.ComponentModel.CancelEventHandler(this.textBox20_Validating);
             // 
             // label22
@@ -632,6 +559,7 @@ namespace Unitel
             this.permCountry.Name = "permCountry";
             this.permCountry.Size = new System.Drawing.Size(166, 23);
             this.permCountry.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.permCountry, "Customer\'s Country");
             this.permCountry.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox7_Validating);
             // 
             // label57
@@ -652,6 +580,7 @@ namespace Unitel
             this.permPostcode.Name = "permPostcode";
             this.permPostcode.Size = new System.Drawing.Size(140, 23);
             this.permPostcode.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.permPostcode, "Postcode");
             this.permPostcode.Validating += new System.ComponentModel.CancelEventHandler(this.textBox35_Validating);
             // 
             // label58
@@ -672,6 +601,7 @@ namespace Unitel
             this.permCity.Name = "permCity";
             this.permCity.Size = new System.Drawing.Size(117, 23);
             this.permCity.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.permCity, "City/Village Name");
             this.permCity.Validating += new System.ComponentModel.CancelEventHandler(this.textBox36_Validating);
             // 
             // label59
@@ -692,6 +622,7 @@ namespace Unitel
             this.permStreet.Name = "permStreet";
             this.permStreet.Size = new System.Drawing.Size(288, 23);
             this.permStreet.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.permStreet, "Road Number/Street Name");
             this.permStreet.Validating += new System.ComponentModel.CancelEventHandler(this.textBox37_Validating);
             // 
             // label60
@@ -702,6 +633,105 @@ namespace Unitel
             this.label60.Size = new System.Drawing.Size(37, 15);
             this.label60.TabIndex = 0;
             this.label60.Text = "Street";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(145, 15);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Phone Number (Optional)";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(478, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 15);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Gender";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(327, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 15);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Marital Status";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Other"});
+            this.comboBox2.Location = new System.Drawing.Point(478, 122);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(146, 23);
+            this.comboBox2.TabIndex = 61;
+            this.toolTip1.SetToolTip(this.comboBox2, "Gender");
+            this.comboBox2.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox2_Validating);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Married",
+            "Unmarried"});
+            this.comboBox1.Location = new System.Drawing.Point(327, 75);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(145, 23);
+            this.comboBox1.TabIndex = 60;
+            this.toolTip1.SetToolTip(this.comboBox1, "Marital Status");
+            this.comboBox1.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox1_Validating);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(673, 303);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "label3";
+            // 
+            // button2
+            // 
+            this.button2.CausesValidation = false;
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(673, 376);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Cancel";
+            this.toolTip1.SetToolTip(this.button2, "Cancel (Esc)");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(211)))), ((int)(((byte)(80)))));
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(673, 339);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 32);
+            this.button1.TabIndex = 57;
+            this.button1.Text = "Add User";
+            this.toolTip1.SetToolTip(this.button1, "Create new customer (Enter)");
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox7
             // 
@@ -1024,6 +1054,7 @@ namespace Unitel
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(146, 23);
             this.dateTimePicker2.TabIndex = 54;
+            this.toolTip1.SetToolTip(this.dateTimePicker2, "Date of birth");
             this.dateTimePicker2.Value = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Validating += new System.ComponentModel.CancelEventHandler(this.dateTimePicker2_Validating);
             // 
@@ -1036,15 +1067,16 @@ namespace Unitel
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(145, 23);
             this.textBox13.TabIndex = 53;
+            this.toolTip1.SetToolTip(this.textBox13, "Driving License Number");
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(326, 104);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(134, 15);
+            this.label14.Size = new System.Drawing.Size(144, 15);
             this.label14.TabIndex = 52;
-            this.label14.Text = "Driving License Number";
+            this.label14.Text = "Driving License (Optional)";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label15
@@ -1067,6 +1099,8 @@ namespace Unitel
             // 
             // textBox14
             // 
+            this.textBox14.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox14.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.textBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox14.ForeColor = System.Drawing.SystemColors.Control;
@@ -1074,6 +1108,7 @@ namespace Unitel
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(145, 23);
             this.textBox14.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.textBox14, "NID or Passport Number");
             this.textBox14.Validating += new System.ComponentModel.CancelEventHandler(this.textBox14_Validating);
             // 
             // label17
@@ -1095,6 +1130,7 @@ namespace Unitel
             this.textBox15.Size = new System.Drawing.Size(145, 23);
             this.textBox15.TabIndex = 47;
             this.textBox15.Text = "Bangladeshi";
+            this.toolTip1.SetToolTip(this.textBox15, "Nationality");
             this.textBox15.Validating += new System.ComponentModel.CancelEventHandler(this.textBox15_Validating);
             // 
             // label18
@@ -1115,6 +1151,7 @@ namespace Unitel
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(145, 23);
             this.textBox16.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.textBox16, "Mother\'s Name");
             this.textBox16.Validating += new System.ComponentModel.CancelEventHandler(this.textBox16_Validating);
             // 
             // label19
@@ -1135,6 +1172,7 @@ namespace Unitel
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(145, 23);
             this.textBox17.TabIndex = 43;
+            this.toolTip1.SetToolTip(this.textBox17, "Father\'s Name");
             this.textBox17.Validating += new System.ComponentModel.CancelEventHandler(this.textBox17_Validating);
             // 
             // textBox18
@@ -1146,6 +1184,7 @@ namespace Unitel
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(145, 23);
             this.textBox18.TabIndex = 42;
+            this.toolTip1.SetToolTip(this.textBox18, "Last Name");
             this.textBox18.Validating += new System.ComponentModel.CancelEventHandler(this.textBox18_Validating);
             // 
             // label20
@@ -1175,6 +1214,7 @@ namespace Unitel
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(145, 23);
             this.textBox19.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.textBox19, "First name");
             this.textBox19.Validating += new System.ComponentModel.CancelEventHandler(this.textBox19_Validating);
             // 
             // errorProvider1
@@ -1183,17 +1223,6 @@ namespace Unitel
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(7, 120);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(272, 19);
-            this.checkBox1.TabIndex = 72;
-            this.checkBox1.Text = "Present Address is same as Permanent Address";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // NewUser
             // 
             this.AcceptButton = this.button1;
@@ -1201,7 +1230,7 @@ namespace Unitel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(816, 546);
+            this.ClientSize = new System.Drawing.Size(816, 556);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -1209,7 +1238,9 @@ namespace Unitel
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(832, 595);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(832, 595);
             this.Name = "NewUser";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1292,5 +1323,6 @@ namespace Unitel
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
