@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -56,6 +57,8 @@ namespace Unitel
 
         private void TokenGenerator(string service, string tokenNum)
         {
+            TokenPage tokenPage = new TokenPage(tokenNum);
+            tokenPage.Show();
             var record = personInfo.LoadRecords<PersonModel>("Personal_Info");
             if (service == "Buy New SIM")
             {
@@ -69,7 +72,7 @@ namespace Unitel
                 });
 
                 tokenNumber++;
-
+                
 
                 label3.Text = "Token Created";
                 textBox1.Text = "";
@@ -92,7 +95,7 @@ namespace Unitel
                     });
 
                     tokenNumber++;
-
+                    
 
                     label3.Text = "Token Created";
                     timer1.Enabled = true;
@@ -111,6 +114,7 @@ namespace Unitel
             }
         }
 
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -170,5 +174,7 @@ namespace Unitel
         {
             textBox1.Text = "";
         }
+
+        
     }
 }

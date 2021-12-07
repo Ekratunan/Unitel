@@ -459,8 +459,7 @@ namespace Unitel
             // Home
             // 
             this.AcceptButton = this.linkLabel4;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImage = global::Unitel.Properties.Resources.whitebackground1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

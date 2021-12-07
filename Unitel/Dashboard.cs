@@ -59,12 +59,12 @@ namespace Unitel
             dataGridView1.Columns["TypeOfService"].HeaderText = "Type of Service";
             
             //Modify Size
-            dataGridView1.Columns["CustomerName"].Width = 220;
-            dataGridView1.Columns["MobileNumber"].Width = 200;
-            dataGridView1.Columns["TokenNumber"].Width = 200;
-            dataGridView1.Columns["TypeOfService"].Width = 264;
-            
-            
+            dataGridView1.Columns["CustomerName"].Width = (panel2.Width / 100) * 30;
+            dataGridView1.Columns["MobileNumber"].Width = (panel2.Width / 100) * 30;
+            dataGridView1.Columns["TokenNumber"].Width = (panel2.Width / 100) * 18;
+            dataGridView1.Columns["TypeOfService"].Width = (panel2.Width / 100) * 30;
+
+
         }
 
         private void LogOut()

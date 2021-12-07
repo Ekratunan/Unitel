@@ -21,6 +21,7 @@ namespace Unitel
             employees = rec;
         }
 
+        //Send email using gmail account
         private void EmailSender(string recipient, string otp)
         {
             string hostEmail = "unitelnetworksup@gmail.com";
@@ -33,9 +34,23 @@ namespace Unitel
                     Credentials = new NetworkCredential(hostEmail, "unitel@5000"),
                     EnableSsl = true,
 
+
+                };
+
+                ServicePointManager.ServerCertificateValidationCallback = delegate (object s,
+                         System.Security.Cryptography.X509Certificates.X509Certificate certificate,
+                         System.Security.Cryptography.X509Certificates.X509Chain chain,
+                         System.Net.Security.SslPolicyErrors sslPolicyErrors)
+                {
+                    return true;
                 };
 
                 smtpCLient.Send(hostEmail, recipient, "Password Reset for Unitel Account", $"Your OTP for password reset is {otp}. Please enter this OTP to verify your identity");
+
+                otpPanel.Visible = true;
+                otpPanel.BringToFront();
+                this.ActiveControl = textBox2;
+                this.AcceptButton = otpVerifierButton;
             }
             catch (Exception)
             {
@@ -43,7 +58,7 @@ namespace Unitel
                 sendButton.Enabled = true;
                 sendButton.Text = "Send OTP";
             }
-            
+
         }
 
         private bool VerificationTask(string employeeID)
@@ -74,11 +89,6 @@ namespace Unitel
                 sendButton.Text = "Sending...";
                 sendButton.Enabled = false;
                 EmailSender(existingUser.EmailAddress, OTPGenerator());
-                
-                otpPanel.Visible = true;
-                otpPanel.BringToFront();
-                this.ActiveControl = textBox2;
-                this.AcceptButton = otpVerifierButton;
             }
             else
             {
@@ -105,6 +115,11 @@ namespace Unitel
                 MessageBox.Show("OTP Does not match", "Error", MessageBoxButtons.OK);
                 textBox2.Clear();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

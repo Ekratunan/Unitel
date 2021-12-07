@@ -36,6 +36,9 @@ namespace Unitel
             this.label74 = new System.Windows.Forms.Label();
             this.textBox24 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label66 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -102,7 +105,6 @@ namespace Unitel
             this.label37 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label67 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -231,11 +233,10 @@ namespace Unitel
             this.label40 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -266,7 +267,6 @@ namespace Unitel
             this.panel10.SuspendLayout();
             this.Bandwidth.SuspendLayout();
             this.panel12.SuspendLayout();
-            groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -311,6 +311,50 @@ namespace Unitel
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.Button11_Click);
             this.button11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button11_MouseMove);
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(this.textBox1);
+            groupBox1.Controls.Add(this.button6);
+            groupBox1.Controls.Add(this.label66);
+            groupBox1.ForeColor = System.Drawing.Color.Black;
+            groupBox1.Location = new System.Drawing.Point(6, 16);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(188, 109);
+            groupBox1.TabIndex = 2;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Search Employee";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Enter an Employee ID";
+            this.textBox1.Size = new System.Drawing.Size(176, 23);
+            this.textBox1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.textBox1, "Enter a valid Employee ID, then press <Enter> to Search");
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(107, 50);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 25);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Search";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            this.button6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button6_MouseMove);
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
+            this.label66.Location = new System.Drawing.Point(6, 82);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(53, 15);
+            this.label66.TabIndex = 11;
+            this.label66.Text = "Message";
             // 
             // panel1
             // 
@@ -1446,16 +1490,6 @@ namespace Unitel
             this.label67.Size = new System.Drawing.Size(53, 15);
             this.label67.TabIndex = 12;
             this.label67.Text = "Message";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
-            this.label66.Location = new System.Drawing.Point(6, 82);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(53, 15);
-            this.label66.TabIndex = 11;
-            this.label66.Text = "Message";
             // 
             // label13
             // 
@@ -3192,44 +3226,9 @@ namespace Unitel
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(107, 50);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 25);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Search";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
-            this.button6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button6_MouseMove);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Enter an Employee ID";
-            this.textBox1.Size = new System.Drawing.Size(176, 23);
-            this.textBox1.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.textBox1, "Enter a valid Employee ID, then press <Enter> to Search");
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(this.textBox1);
-            groupBox1.Controls.Add(this.button6);
-            groupBox1.Controls.Add(this.label66);
-            groupBox1.ForeColor = System.Drawing.Color.Black;
-            groupBox1.Location = new System.Drawing.Point(6, 16);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(188, 109);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Search Employee";
-            // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1096, 644);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -3246,6 +3245,8 @@ namespace Unitel
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminDashboard_KeyDown);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -3288,8 +3289,6 @@ namespace Unitel
             this.Bandwidth.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

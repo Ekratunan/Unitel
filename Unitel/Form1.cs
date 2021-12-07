@@ -107,6 +107,7 @@ namespace Unitel
                                 label4.Text = "";
                                 textBox2.Text = "";
                                 comboBox1.Text = "";
+                                button1.Text = "Sign in";
                             }
                         }
                     }

@@ -32,6 +32,7 @@ namespace Unitel
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordResetPage));
             this.backPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.otpPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@ namespace Unitel
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.sendButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.backPanel.SuspendLayout();
             this.otpPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.emailPanel.SuspendLayout();
@@ -53,11 +55,26 @@ namespace Unitel
             // 
             this.backPanel.BackgroundImage = global::Unitel.Properties.Resources.admin_log_in_screen_04;
             this.backPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.backPanel.Controls.Add(this.button1);
             this.backPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.backPanel.Location = new System.Drawing.Point(0, 0);
             this.backPanel.Name = "backPanel";
-            this.backPanel.Size = new System.Drawing.Size(264, 84);
+            this.backPanel.Size = new System.Drawing.Size(263, 77);
             this.backPanel.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(240, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 0;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // otpPanel
             // 
@@ -135,7 +152,7 @@ namespace Unitel
             this.emailPanel.Controls.Add(this.tableLayoutPanel1);
             this.emailPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.emailPanel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.emailPanel.Location = new System.Drawing.Point(0, 84);
+            this.emailPanel.Location = new System.Drawing.Point(0, 77);
             this.emailPanel.MaximumSize = new System.Drawing.Size(264, 109);
             this.emailPanel.MinimumSize = new System.Drawing.Size(264, 109);
             this.emailPanel.Name = "emailPanel";
@@ -204,23 +221,23 @@ namespace Unitel
             // PasswordResetPage
             // 
             this.AcceptButton = this.sendButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 193);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(263, 186);
             this.Controls.Add(this.emailPanel);
             this.Controls.Add(this.backPanel);
             this.Controls.Add(this.otpPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(280, 232);
+            this.MaximumSize = new System.Drawing.Size(263, 186);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(280, 232);
+            this.MinimumSize = new System.Drawing.Size(263, 186);
             this.Name = "PasswordResetPage";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PasswordResetPage";
+            this.Text = "Reset Password";
             this.TopMost = true;
+            this.backPanel.ResumeLayout(false);
             this.otpPanel.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -245,5 +262,6 @@ namespace Unitel
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button otpVerifierButton;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
     }
 }
