@@ -24,19 +24,11 @@ namespace Unitel
         public Home()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            StepTwo(false);
-            button1.Enabled = false;
-            this.ActiveControl = textBox1;
             if (InternetGetConnectedState(out _, 0))
             {
                 label4.Text = "";
                 Db_Load();
                 CounterUpdate();
-
             }
             else
             {
@@ -45,8 +37,13 @@ namespace Unitel
                 label4.Text = "No Internet Connection";
                 timer1.Start();
             }
+        }
 
-            
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StepTwo(false);
+            button1.Enabled = false;
+            this.ActiveControl = textBox1;
         }
 
 
@@ -148,7 +145,7 @@ namespace Unitel
                     x = 0;
                 }
 
-                label4.Text = "Logging in...";
+                button1.Text = "Signing in..";
                 if (VerificationTask())
                 {
                     Dashboard dashboard = new Dashboard(textBox1.Text.Trim(), comboBox1.Text.Trim(), x);
@@ -391,7 +388,6 @@ namespace Unitel
                 if (e.KeyCode == Keys.Enter)
                 {
                     comboBox1.DroppedDown = true;
-                    comboBox1.Focus();
                     e.Handled = true;
                     e.SuppressKeyPress = true;
                 }

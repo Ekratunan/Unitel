@@ -136,9 +136,6 @@
   <data name="cus new-07" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cus new-07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whitebackground 2-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\whitebackground 2-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="admin log in screen-04" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin log in screen-04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -162,9 +159,6 @@
   </data>
   <data name="Emp new-061" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Emp new-061.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="admin log in back-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\admin log in back-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo Unitel-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo Unitel-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

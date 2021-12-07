@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Unitel
     class TokenModel
     {
         [BsonId]
-        public Guid Id { get; set; }
+        public BsonObjectId Id { get; set; }
         public string CustomerName { get; set; }
         public string MobileNumber { get; set; }
         public string TokenNumber { get; set; }
@@ -19,12 +20,11 @@ namespace Unitel
     public class ServiceRecord_Model
     {
         [BsonId]
-        public Guid Id { get; set; }
+        public BsonObjectId Id { get; set; }
         public string CustomerName { get; set; }
         public string MobileNumber { get; set; }
         public string TokenNumber { get; set; }
         public string TypeOfService { get; set; }
-        
         [BsonElement]
         public PersonRecord CustomerInfo { get; set; }
         [BsonElement]
@@ -61,7 +61,7 @@ namespace Unitel
     public class CounterModel
     {
         [BsonId]
-        public Guid Id { get; set; }
+        public BsonObjectId Id { get; set; }
         public string ExecutiveName { get; set; }
         public string CounterNumber { get; set; }
 

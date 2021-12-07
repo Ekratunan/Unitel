@@ -39,6 +39,7 @@ namespace Unitel
             catch (Exception)
             {
                 Console.WriteLine("Insertion Error");
+                
             }
             
             
@@ -59,7 +60,7 @@ namespace Unitel
         }
 
         
-        public void UpsertRecord<T>(string table, Guid Id , T record)
+        public void UpsertRecord<T>(string table, BsonObjectId Id , T record)
         {
             var collection = database.GetCollection<T>(table);
 
@@ -76,7 +77,7 @@ namespace Unitel
             }
         }
 
-        public void DeleteRecord<T>(string table, Guid Id)
+        public void DeleteRecord<T>(string table, BsonObjectId Id)
         {
             var collection = database.GetCollection<T>(table);
             

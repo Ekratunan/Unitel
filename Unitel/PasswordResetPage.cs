@@ -41,6 +41,7 @@ namespace Unitel
             {
                 MessageBox.Show("Failed to send OTP. Try Again)", "Error", MessageBoxButtons.OK);
                 sendButton.Enabled = true;
+                sendButton.Text = "Send OTP";
             }
             
         }
@@ -70,6 +71,7 @@ namespace Unitel
         {
             if (VerificationTask(textBox1.Text.Trim()))
             {
+                sendButton.Text = "Sending...";
                 sendButton.Enabled = false;
                 EmailSender(existingUser.EmailAddress, OTPGenerator());
                 

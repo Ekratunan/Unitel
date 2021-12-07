@@ -73,16 +73,6 @@ namespace Unitel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap admin_log_in_back_01 {
-            get {
-                object obj = ResourceManager.GetObject("admin log in back-01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap admin_log_in_screen_04 {
             get {
                 object obj = ResourceManager.GetObject("admin log in screen-04", resourceCulture);
@@ -276,16 +266,6 @@ namespace Unitel.Properties {
         internal static System.Drawing.Bitmap whitebackground_011 {
             get {
                 object obj = ResourceManager.GetObject("whitebackground-011", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap whitebackground_2_01 {
-            get {
-                object obj = ResourceManager.GetObject("whitebackground 2-01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

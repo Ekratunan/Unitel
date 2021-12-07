@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 
 namespace Unitel
@@ -6,7 +7,7 @@ namespace Unitel
     class PersonModel
     {
         [BsonId]
-        public Guid ID { get; set; }
+        public BsonObjectId ID { get; set; }
         [BsonElement]
         public byte[] UserImage { get; set; }
         [BsonElement]
@@ -42,7 +43,7 @@ namespace Unitel
     public class SIM_Model
     {
         [BsonId]
-        public Guid ID { get; set; }
+        public BsonObjectId ID { get; set; }
         [BsonElement]
         public string MobileNumber { get; set; }
         [BsonElement]
@@ -104,7 +105,7 @@ namespace Unitel
     public class SecurityModel
     {
         [BsonId]
-        public Guid ID { get; set; }
+        public BsonObjectId ID { get; set; }
         [BsonElement]
         public string EmployeeID { get; set; }
         [BsonElement]
@@ -117,7 +118,7 @@ namespace Unitel
     public class EmployeeModel
     {
         [BsonId]
-        public Guid ID { get; set; }
+        public BsonObjectId ID { get; set; }
         [BsonElement]
         public byte[] UserImage { get; set; }
         [BsonElement]
