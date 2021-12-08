@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Unitel
 {
@@ -12,7 +13,8 @@ namespace Unitel
         readonly DatabaseFile db = new DatabaseFile("Employee");
         CustomerInformationPage cip = new CustomerInformationPage();
 
-
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int description, int reserved);
         public Dashboard(string empId, string counter, int num)
         {
             InitializeComponent();
@@ -171,15 +173,44 @@ namespace Unitel
                 button2.Enabled = false;
             }
 
-
+            ConnectAgain:
             try
             {
-                var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
-                int newRec = record.Count;
-
-                if (numOfRec != newRec)
+               if(InternetGetConnectedState(out _, 0))
                 {
-                    DataFetch();
+                    if (!timer1.Enabled)
+                    {
+                        timer1.Start();
+                    }
+
+                    var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
+                    int newRec = record.Count;
+
+                    if (numOfRec != newRec)
+                    {
+                        DataFetch();
+                    }
+                }
+                else
+                {
+                    timer1.Stop();
+                    DialogResult dr = MessageBox.Show("No internet connection", "Error", MessageBoxButtons.OK);
+                    int waitingTime = 0;
+
+                    if (dr == DialogResult.OK) { }
+                    {
+                        UseWaitCursor = true;
+                        while (!InternetGetConnectedState(out _, 0))
+                        {
+                            waitingTime++;
+                        }
+
+                        Console.WriteLine(waitingTime);
+
+                        UseWaitCursor = false;
+                        goto ConnectAgain;
+                    }
+                    
                 }
 
             }

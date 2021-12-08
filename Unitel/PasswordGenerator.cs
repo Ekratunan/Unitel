@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -9,6 +10,9 @@ namespace Unitel
 {
     public partial class PasswordGenerator : Form
     {
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int description, int reserved);
+
         private readonly string empId;
 
         DatabaseFile databaseFile = new DatabaseFile("Employee");
@@ -34,39 +38,21 @@ namespace Unitel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            if(InternetGetConnectedState(out _, 0))
             {
-                label4.Text = "Updating Password...";
-                var record = databaseFile.LoadRecordbyIdentity<SecurityModel>("Emp_Account", "EmployeeID", empId);
-                record.Password = encodePassword(textBox1.Text);
-                databaseFile.UpsertRecord("Emp_Account", record.ID, record);
-                this.Close();
-            }
-
-
-           /*     bool isBlank = textBox1.Text.Trim() == "" && textBox2.Text.Trim() == "";
-            bool firstBlank = textBox1.Text.Trim() == "";
-            bool notComfirm = textBox2.Text.Trim() == "" && textBox1.Text.Trim() != "";
-            bool passMatch = PasswordValidator();
-
-            if(!isBlank && passMatch)
-            {
-                
-
-                if (passMatch)
+                if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    
+                    label4.Text = "Updating Password...";
+                    var record = databaseFile.LoadRecordbyIdentity<SecurityModel>("Emp_Account", "EmployeeID", empId);
+                    record.Password = encodePassword(textBox1.Text);
+                    databaseFile.UpsertRecord("Emp_Account", record.ID, record);
+                    this.Close();
                 }
-            }else if (isBlank || firstBlank)
-            {
-                label4.Text = "Please enter a password!";
-
-            } else if (notComfirm)
-            {
-                label4.Text = "Please confirm your password!";
             }
-            */
-
+            else
+            {
+                label4.Text = "No internet!";
+            }
             
         }
 
@@ -83,9 +69,6 @@ namespace Unitel
             bool hasLetter = textBox1.Text.Any(char.IsLetter);
             bool hasNumber = textBox1.Text.Any(char.IsDigit);
             bool hasSpeChar = textBox1.Text.Any(p => !char.IsLetterOrDigit(p));
-
-            errorProvider1.SetIconAlignment(textBox1, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox1, -20);
 
             if (textBox1.Text.Trim() == "" || string.IsNullOrEmpty(textBox1.Text.Trim()))
             {
@@ -115,12 +98,10 @@ namespace Unitel
 
         private void textBox2_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox2, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox2, -20);
             if (string.IsNullOrEmpty(textBox2.Text.Trim()))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(textBox2, "Please cpnfirm your password");
+                errorProvider1.SetError(textBox2, "Please confirm your password");
             }
             else if(textBox1.Text != textBox2.Text)
             {
@@ -142,9 +123,11 @@ namespace Unitel
                     this.AcceptButton = button1;
                     button1.Enabled = true;
                     errorProvider1.SetError(textBox2, "");
+                    label4.Text = "";
                 }
                 else if(textBox2.Text.Length < 4 || textBox1.Text != textBox2.Text)
-                {
+                { 
+                    label4.Text = "Password does not match!";
                     button1.Enabled = false;
                 }
             }

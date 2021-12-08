@@ -11,19 +11,31 @@ namespace Unitel
     {
         IMongoDatabase database;
 
+        string databaseNameGlobal;
+
         [DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int description, int reserved);
 
+        int waitingCountDown = 0;
+
         public DatabaseFile(string databaseName)
         {
+            databaseNameGlobal = databaseName;
         ConnectDatabase:
-            if (InternetGetConnectedState(out _, 0))
+            try
             {
                 var client = new MongoClient("mongodb+srv://ekraHossain:ekraHossain17@unitel.m8yxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
                 database = client.GetDatabase(databaseName);
             }
-            else
+            catch (Exception)
             {
+                while (!InternetGetConnectedState(out _, 0))
+                {
+                    waitingCountDown++;
+                }
+
+
+                Console.WriteLine(waitingCountDown);
                 goto ConnectDatabase;
 
             }
@@ -36,8 +48,18 @@ namespace Unitel
                 var collection = database.GetCollection<T>(table);
                 collection.InsertOne(record);
             }
-            catch (Exception)
+            catch (NullReferenceException)
             {
+                tryConAgain:
+                if(InternetGetConnectedState(out _, 0))
+                {
+                    var client = new MongoClient("mongodb+srv://ekraHossain:ekraHossain17@unitel.m8yxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+                    database = client.GetDatabase(databaseNameGlobal);
+                }
+                else
+                {
+                    goto tryConAgain;
+                }
                 Console.WriteLine("Insertion Error");
                 
             }
@@ -47,25 +69,48 @@ namespace Unitel
 
         public List<T> LoadRecords<T>(string table)
         {
-            var collection = database.GetCollection<T>(table);
-            return collection.Find(new BsonDocument()).ToList();
+            try
+            {
+                var collection = database.GetCollection<T>(table);
+                return collection.Find(new BsonDocument()).ToList();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
         }
 
         public T LoadRecordbyIdentity<T>(string table, string field, string value)
         {
-            var collection = database.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq(field, value);
+            tryCon:
+            try
+            {
+                var collection = database.GetCollection<T>(table);
+                var filter = Builders<T>.Filter.Eq(field, value);
 
-            return collection.Find(filter).FirstOrDefault();
+                return collection.Find(filter).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                waitingCountDown = 0;
+
+                while(!InternetGetConnectedState(out _, 0))
+                {
+                    waitingCountDown++;
+                }
+
+                goto tryCon;
+            }
         }
 
         
         public void UpsertRecord<T>(string table, BsonObjectId Id , T record)
         {
-            var collection = database.GetCollection<T>(table);
-
+            tryCon:
             try
             {
+                var collection = database.GetCollection<T>(table);
                 collection.ReplaceOne(
                 new BsonDocument("_id", Id),
                 record,
@@ -74,20 +119,37 @@ namespace Unitel
             catch(Exception)
             {
                 Console.WriteLine("Writing Error");
+                waitingCountDown = 0;
+
+                while (!InternetGetConnectedState(out _, 0))
+                {
+                    waitingCountDown++;
+                }
+
+                goto tryCon;
             }
         }
 
         public void DeleteRecord<T>(string table, BsonObjectId Id)
         {
-            var collection = database.GetCollection<T>(table);
-            
-            var filter = Builders<T>.Filter.Eq("_id", Id);
-            collection.DeleteOne(filter);
-        }
+        tryCon:
+            try
+            {
+                var collection = database.GetCollection<T>(table);
 
-        internal string Any()
-        {
-            throw new NotImplementedException();
+                var filter = Builders<T>.Filter.Eq("_id", Id);
+                collection.DeleteOne(filter);
+            }
+            catch (Exception)
+            {
+                waitingCountDown = 0;
+                while (!InternetGetConnectedState(out _, 0))
+                {
+                    waitingCountDown++;
+                }
+
+                goto tryCon;
+            }
         }
     }
 }

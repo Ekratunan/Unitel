@@ -542,5 +542,15 @@ namespace Unitel
                 prePostcode.Text = "";
             }
         }
+
+        private void copyNumberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(label2.Text);
+        }
+
+        private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

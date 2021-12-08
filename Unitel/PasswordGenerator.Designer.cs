@@ -86,7 +86,7 @@ namespace Unitel
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Maroon;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(28)))), ((int)(((byte)(249)))));
             this.label4.Location = new System.Drawing.Point(14, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(140, 15);
@@ -157,6 +157,7 @@ namespace Unitel
             // 
             // textBox2
             // 
+            this.errorProvider1.SetIconPadding(this.textBox2, -20);
             this.textBox2.Location = new System.Drawing.Point(124, 89);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
@@ -170,6 +171,7 @@ namespace Unitel
             // 
             // textBox1
             // 
+            this.errorProvider1.SetIconPadding(this.textBox1, -20);
             this.textBox1.Location = new System.Drawing.Point(124, 60);
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '*';

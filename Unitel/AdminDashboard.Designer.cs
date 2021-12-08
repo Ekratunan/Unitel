@@ -3050,6 +3050,7 @@ namespace Unitel
             // 
             this.textBox23.Location = new System.Drawing.Point(12, 182);
             this.textBox23.Name = "textBox23";
+            this.textBox23.PlaceholderText = "012xxxxxxxx";
             this.textBox23.ReadOnly = true;
             this.textBox23.Size = new System.Drawing.Size(182, 23);
             this.textBox23.TabIndex = 15;

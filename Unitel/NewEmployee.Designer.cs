@@ -95,6 +95,7 @@ namespace Unitel
             this.emailTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emailTextBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.errorProvider1.SetIconPadding(this.emailTextBox, -20);
             this.emailTextBox.Location = new System.Drawing.Point(270, 219);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(243, 23);

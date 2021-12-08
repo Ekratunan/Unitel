@@ -3,12 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Unitel
 {
     public partial class AdminDashboard : Form
     {
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int description, int reserved);
+
         int numOfRec = 0;
         DatabaseFile tokenSync = new DatabaseFile("Tokens");
         readonly Home home = new Home();
@@ -336,92 +340,114 @@ namespace Unitel
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            
-            string empID = textBox1.Text.Trim();
-            if(empID != "")
+            if(InternetGetConnectedState(out _, 0))
             {
-                label66.Text = "Searching Employee...";
-                button6.Enabled = false;
-                EmployeeInfoRead(empID);
+                string empID = textBox1.Text.Trim();
+                if (empID != "")
+                {
+                    label66.Text = "Searching Employee...";
+                    button6.Enabled = false;
+                    EmployeeInfoRead(empID);
 
-            } else
-            {
-                label66.Text = "Please enter a valid Employee ID.";
-            }
-        }
-
-        private void Button11_Click(object sender, EventArgs e)
-        { 
-            if (textBox24.Text.Trim() == "")
-            {
-                label74.Text = "Please enter a mobile number";
+                }
+                else
+                {
+                    label66.Text = "Please enter a valid Employee ID.";
+                }
             }
             else
             {
-                button11.Enabled = false;
-                label74.Text = "Searching User...";
-                CustomerInfoRead(textBox24.Text.Trim());
-                
+                label66.Text = "No internet!";
             }
+            
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            if (InternetGetConnectedState(out _, 0))
+            {
+
+                if (textBox24.Text.Trim() == "")
+                {
+                    label74.Text = "Please enter a mobile number";
+                }
+                else
+                {
+                    button11.Enabled = false;
+                    label74.Text = "Searching User...";
+                    CustomerInfoRead(textBox24.Text.Trim());
+
+                }
+            }
+            else
+            {
+                label74.Text = "No internet!";
+            }
+
 
         }
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Save Changes?", "Confirmation", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
+            if(InternetGetConnectedState(out _, 0))
             {
-                DatabaseFile database = new DatabaseFile("Employee");
-                var record = database.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
-                record.UserImage = pictureCovert(pictureBox2.Image);
-                record.FirstName = textBox2.Text.Trim();
-                record.EmailAddress = empEmailTextbox.Text.Trim();
-                record.LastName = textBox3.Text.Trim();
-                record.FathersName = textBox4.Text.Trim();
-                record.MothersName = textBox5.Text.Trim();
-                record.Nationality = textBox6.Text.Trim();
-                record.NID_Number = textBox7.Text.Trim();
-                record.MaritalStatus = comboBox12.Text.Trim();
-                record.Gender = comboBox9.Text.Trim();
-                record.PhoneNumber = textBox10.Text.Trim();
-                record.DrivingLicenseNum = textBox42.Text.Trim();
-                record.DateOfBirth = dateTimePicker1.Text;
-                record.Designation = textBox11.Text.Trim();
-                record.Salary = textBox12.Text.Trim();
-                record.EmployeeID = textBox8.Text.Trim();
-                record.PresentAddress = new AddressModel
+                DialogResult dr = MessageBox.Show("Save Changes?", "Confirmation", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
                 {
-                    Street = textBox22.Text.Trim(),
-                    State = textBox30.Text.Trim(),
-                    City = textBox28.Text.Trim(),
-                    PostCode = textBox29.Text.Trim(),
-                    Country = comboBox5.Text.Trim()
-                };
-                record.PermanentAddress = new AddressModel
+                    DatabaseFile database = new DatabaseFile("Employee");
+                    var record = database.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
+                    record.UserImage = pictureCovert(pictureBox2.Image);
+                    record.FirstName = textBox2.Text.Trim();
+                    record.EmailAddress = empEmailTextbox.Text.Trim();
+                    record.LastName = textBox3.Text.Trim();
+                    record.FathersName = textBox4.Text.Trim();
+                    record.MothersName = textBox5.Text.Trim();
+                    record.Nationality = textBox6.Text.Trim();
+                    record.NID_Number = textBox7.Text.Trim();
+                    record.MaritalStatus = comboBox12.Text.Trim();
+                    record.Gender = comboBox9.Text.Trim();
+                    record.PhoneNumber = textBox10.Text.Trim();
+                    record.DrivingLicenseNum = textBox42.Text.Trim();
+                    record.DateOfBirth = dateTimePicker1.Text;
+                    record.Designation = textBox11.Text.Trim();
+                    record.Salary = textBox12.Text.Trim();
+                    record.EmployeeID = textBox8.Text.Trim();
+                    record.PresentAddress = new AddressModel
+                    {
+                        Street = textBox22.Text.Trim(),
+                        State = textBox30.Text.Trim(),
+                        City = textBox28.Text.Trim(),
+                        PostCode = textBox29.Text.Trim(),
+                        Country = comboBox5.Text.Trim()
+                    };
+                    record.PermanentAddress = new AddressModel
+                    {
+                        Street = textBox34.Text.Trim(),
+                        State = textBox31.Text.Trim(),
+                        City = textBox33.Text.Trim(),
+                        PostCode = textBox32.Text.Trim(),
+                        Country = comboBox6.Text.Trim()
+                    };
+
+                    database.UpsertRecord("Emp_Personal_Info", record.ID, record);
+                    label67.Text = "Saved Successfully!";
+
+                    EmpTabWriteAccess(false);
+
+                    button7.Hide();
+                    button8.Hide();
+
+                    button3.Text = "Edit";
+                }
+                else if (dr == DialogResult.No)
                 {
-                    Street = textBox34.Text.Trim(),
-                    State = textBox31.Text.Trim(),
-                    City = textBox33.Text.Trim(),
-                    PostCode = textBox32.Text.Trim(),
-                    Country = comboBox6.Text.Trim()
-                };
-
-                database.UpsertRecord("Emp_Personal_Info", record.ID, record);
-                label67.Text = "Saved Successfully!";
-
-                EmpTabWriteAccess(false);
-
-                button7.Hide();
-                button8.Hide();
-
-                button3.Text = "Edit";
+                    //Nothing to do
+                }
             }
-            else if (dr == DialogResult.No)
+            else
             {
-                //Nothing to do
+                label67.Text = "No internet!";
             }
-
-            
         }
 
         private void EmpTabWriteAccess(bool signal)
@@ -667,24 +693,59 @@ namespace Unitel
 
         private void Button8_Click(object sender, EventArgs e)
         {
-            DatabaseFile databaseFile = new DatabaseFile("Employee");
-
-            if (AdminNumber(databaseFile) > 1)
+            if(InternetGetConnectedState(out _, 0))
             {
-                DialogResult dr = MessageBox.Show("Are you sure to delete the record?", "Confirmation", MessageBoxButtons.YesNo);
+                DatabaseFile databaseFile = new DatabaseFile("Employee");
+
+                if (AdminNumber(databaseFile) > 1)
+                {
+                    DialogResult dr = MessageBox.Show("Are you sure to delete the record?", "Confirmation", MessageBoxButtons.YesNo);
+                    if (dr == DialogResult.Yes)
+                    {
+
+                        var record = databaseFile.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
+                        var passRecord = databaseFile.LoadRecordbyIdentity<SecurityModel>("Emp_Account", "EmployeeID", textBox8.Text);
+                        databaseFile.DeleteRecord<EmployeeModel>("Emp_Personal_Info", record.ID);
+                        databaseFile.DeleteRecord<SecurityModel>("Emp_Account", passRecord.ID);
+                        EmpTabWriteAccess(false);
+                        label67.Text = "Record Deleted";
+                        Refresher();
+                        panel13.Show();
+                        button3.Text = "Edit";
+                        button3.Hide();
+                    }
+                    else if (dr == DialogResult.No)
+                    {
+                        //Nothing to do
+                    }
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("Cannot delete. Insufficient Admin", "Warning", MessageBoxButtons.OK);
+                    if (dr == DialogResult.OK)
+                    {
+                        //Do nothing
+                    }
+                }
+            }
+            else
+            {
+                label67.Text = "No internet!";
+            }
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            if(InternetGetConnectedState(out _, 0))
+            {
+                DialogResult dr = MessageBox.Show("Save changes?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    
-                    var record = databaseFile.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
-                    var passRecord = databaseFile.LoadRecordbyIdentity<SecurityModel>("Emp_Account", "EmployeeID", textBox8.Text);
-                    databaseFile.DeleteRecord<EmployeeModel>("Emp_Personal_Info", record.ID);
-                    databaseFile.DeleteRecord<SecurityModel>("Emp_Account", passRecord.ID);
-                    EmpTabWriteAccess(false);
-                    label67.Text = "Record Deleted";
-                    Refresher();
-                    panel13.Show();
-                    button3.Text = "Edit";
-                    button3.Hide();
+                    UpdateInfo();
+                    CustomerWriteAccess(false);
+                    button10.Hide();
+                    button9.Hide();
+                    button4.Text = "Edit";
                 }
                 else if (dr == DialogResult.No)
                 {
@@ -693,33 +754,10 @@ namespace Unitel
             }
             else
             {
-                DialogResult dr = MessageBox.Show("Cannot delete. Insufficient Admin", "Warning", MessageBoxButtons.OK);
-                if (dr == DialogResult.OK)
-                { 
-                    //Do nothing
-                }
+                label75.Text = "No internet!";
             }
-
-
             
-
-        }
-
-        private void Button10_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Save changes?", "Confirmation", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-            {
-                UpdateInfo();
-                CustomerWriteAccess(false);
-                button10.Hide();
-                button9.Hide();
-                button4.Text = "Edit";
-            }
-            else if (dr == DialogResult.No)
-            {
-                //Nothing to do
-            }
+           
 
         }
 
@@ -818,28 +856,35 @@ namespace Unitel
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure to delete the record?", "Confirmation", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
+            if(InternetGetConnectedState(out _, 0))
             {
-                DatabaseFile databaseFile = new DatabaseFile("Customer");
-                var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", textBox23.Text);
-                var recSim = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", textBox23.Text);
-                databaseFile.DeleteRecord<PersonModel>("Personal_Info", record.ID);
-                databaseFile.DeleteRecord<SIM_Model>("SIM_Info", recSim.ID);
+                DialogResult dr = MessageBox.Show("Are you sure to delete the record?", "Confirmation", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    DatabaseFile databaseFile = new DatabaseFile("Customer");
+                    var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", textBox23.Text);
+                    var recSim = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", textBox23.Text);
+                    databaseFile.DeleteRecord<PersonModel>("Personal_Info", record.ID);
+                    databaseFile.DeleteRecord<SIM_Model>("SIM_Info", recSim.ID);
 
-                CustomerWriteAccess(false);
-                
-                label75.Text = "Record Deleted";
-                Refresher();
-                panel14.Show();
-                panel15.Show();
-                panel16.Show();
-                button4.Text = "Edit";
-                button4.Hide();
+                    CustomerWriteAccess(false);
+
+                    label75.Text = "Record Deleted";
+                    Refresher();
+                    panel14.Show();
+                    panel15.Show();
+                    panel16.Show();
+                    button4.Text = "Edit";
+                    button4.Hide();
+                }
+                else if (dr == DialogResult.No)
+                {
+                    //Nothing to do
+                }
             }
-            else if (dr == DialogResult.No)
+            else
             {
-                //Nothing to do
+                label75.Text = "No internet!";
             }
         }
 
@@ -965,35 +1010,30 @@ namespace Unitel
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
-            var counterLoad = tokenSync.LoadRecords<CounterModel>("Counters");
-            
-            
-            if(counters.Count != counterLoad.Count)
+            if(InternetGetConnectedState(out _, 0))
             {
-                counters = counterLoad;
-                CounterSelect.Items.Clear();
-                foreach (var rec in counters)
+                var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
+                var counterLoad = tokenSync.LoadRecords<CounterModel>("Counters");
+                if (counters.Count != counterLoad.Count)
                 {
-                    if (!CounterSelect.Items.Contains(rec.CounterNumber))
+                    counters = counterLoad;
+                    CounterSelect.Items.Clear();
+                    foreach (var rec in counters)
                     {
-                        CounterSelect.Items.Add(rec.CounterNumber);
+                        if (!CounterSelect.Items.Contains(rec.CounterNumber))
+                        {
+                            CounterSelect.Items.Add(rec.CounterNumber);
+                        }
+
                     }
-
                 }
-            }
-            
-           
 
-            
-            int newRec = record.Count;
-
-
-
-            if (numOfRec != newRec)
-            {
-                DataFetch();
-            }
+                int newRec = record.Count;
+                if (numOfRec != newRec)
+                {
+                    DataFetch();
+                }
+            } 
         }
 
         private void AdminDashboard_SizeChanged(object sender, EventArgs e)

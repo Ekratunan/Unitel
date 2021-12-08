@@ -29,6 +29,11 @@ namespace Unitel
                 label4.Text = "";
                 Db_Load();
                 CounterUpdate();
+
+                if (Record.Count == 0)
+                {
+                    new NewEmployee().Show();
+                }
             }
             else
             {
@@ -37,6 +42,8 @@ namespace Unitel
                 label4.Text = "No Internet Connection";
                 timer1.Start();
             }
+
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -168,6 +175,11 @@ namespace Unitel
 
         private void TextBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if (Record.Count == 0)
+            {
+                new NewEmployee().Show();
+            }
+
             errorProvider1.SetIconAlignment(textBox1, ErrorIconAlignment.MiddleRight);
             errorProvider1.SetIconPadding(this.textBox1, -20);
 

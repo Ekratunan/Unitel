@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Unitel
@@ -11,6 +12,8 @@ namespace Unitel
         Form dashboard { get; set; }
         private string Token { get; set; }
         DatabaseFile findData = new DatabaseFile("Customer");
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int description, int reserved);
 
         public CustomerInformationPage(string phoneNum, string token, string typeOfSer, Form dash)
         {
@@ -556,28 +559,36 @@ namespace Unitel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure this ticket has been solved?", "Confirmation", MessageBoxButtons.YesNo);
-            if(dr == DialogResult.Yes)
+            if(InternetGetConnectedState(out _, 0))
             {
-                if(label16.Text == "")
+                DialogResult dr = MessageBox.Show("Are you sure this ticket has been solved?", "Confirmation", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
                 {
-                    Mark_As_Solved();
+                    if (label16.Text == "")
+                    {
+                        Mark_As_Solved();
+                    }
+                    else
+                    {
+                        Mark_As_Solved(label16.Text);
+                    }
+
+
+
+                    this.Close();
+
+
                 }
-                else
+                else if (dr == DialogResult.No)
                 {
-                    Mark_As_Solved(label16.Text); 
+                    //Do nothing
                 }
-
-
-                
-                this.Close();
-                
-
             }
-            else if(dr == DialogResult.No)
+            else
             {
-                //Do nothing
+                MessageBox.Show("No internet. Make sure you are connected to the internet", "Network Disconnected", MessageBoxButtons.OK);
             }
+            
         }
 
 
