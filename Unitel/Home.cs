@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace Unitel
 {
@@ -13,7 +13,7 @@ namespace Unitel
         private extern static bool InternetGetConnectedState(out int description, int reserved);
 
         DatabaseFile databaseFile = null;
-        protected List<SecurityModel> Record{ get; set; }
+        protected List<SecurityModel> Record { get; set; }
         readonly AdminLogIn adminLogIn = new AdminLogIn();
         TicketGen ticketGen = new TicketGen();
         QueueScreen queueScreen = new QueueScreen();
@@ -23,16 +23,16 @@ namespace Unitel
 
         public Home()
         {
-            InitializeComponent();
             if (InternetGetConnectedState(out _, 0))
             {
+                InitializeComponent();
                 label4.Text = "";
                 Db_Load();
                 CounterUpdate();
 
                 if (Record.Count == 0)
                 {
-                    new NewEmployee().Show();
+                    new NewEmployee().ShowDialog();
                 }
             }
             else
@@ -42,8 +42,8 @@ namespace Unitel
                 label4.Text = "No Internet Connection";
                 timer1.Start();
             }
-
             
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Unitel
             DatabaseFile databaseFile = new DatabaseFile("Tokens");
             var rec = databaseFile.LoadRecords<CounterModel>("Counters");
 
-            foreach(var r in rec)
+            foreach (var r in rec)
             {
                 if (comboBox1.Items.Contains(r.CounterNumber))
                 {
@@ -77,7 +77,7 @@ namespace Unitel
 
             }
 
-            
+
         }
 
 
@@ -109,7 +109,7 @@ namespace Unitel
                         else
                         {
                             DialogResult dr = MessageBox.Show($"Incorrect Password for E-ID: {rec.EmployeeID}", "Error", MessageBoxButtons.OK);
-                            if(dr == DialogResult.OK)
+                            if (dr == DialogResult.OK)
                             {
                                 label4.Text = "";
                                 textBox2.Text = "";
@@ -129,11 +129,11 @@ namespace Unitel
             return inVerify;
 
         }
-        
+
 
         public void Button1_Click(object sender, EventArgs e)
         {
-            
+
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 int x;
@@ -141,10 +141,12 @@ namespace Unitel
                 if (checkBox1.Checked && checkBox2.Checked)
                 {
                     x = 3;
-                }else if (checkBox2.Checked)
+                }
+                else if (checkBox2.Checked)
                 {
                     x = 2;
-                }else if (checkBox1.Checked)
+                }
+                else if (checkBox1.Checked)
                 {
                     x = 1;
                 }
@@ -156,8 +158,17 @@ namespace Unitel
                 button1.Text = "Signing in..";
                 if (VerificationTask())
                 {
-                    Dashboard dashboard = new Dashboard(textBox1.Text.Trim(), comboBox1.Text.Trim(), x);
-                    
+                    string empId = textBox1.Text.Trim();
+                    string counter = comboBox1.Text.Trim();
+                    int num = x;
+
+                    Dashboard dashboard = new Dashboard(empId, counter, num, true);
+                    Properties.Settings.Default.EmployeeID_Active = empId;
+                    Properties.Settings.Default.LoggedIn = true;
+                    Properties.Settings.Default.Counter = counter;
+                    Properties.Settings.Default.Number = num;
+                    Properties.Settings.Default.Save();
+
                     dashboard.Show();
 
                     this.Hide();
@@ -166,12 +177,12 @@ namespace Unitel
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        { 
+        {
             adminLogIn.Show();
             this.Hide();
         }
 
-        
+
 
         private void TextBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -188,7 +199,8 @@ namespace Unitel
                 e.Cancel = true;
                 textBox1.Focus();
                 errorProvider1.SetError(textBox1, "Please Enter Employee ID");
-            }else if(!Record.Any(p => p.EmployeeID == textBox1.Text.Trim()))
+            }
+            else if (!Record.Any(p => p.EmployeeID == textBox1.Text.Trim()))
             {
                 e.Cancel = true;
                 textBox1.Focus();
@@ -215,7 +227,7 @@ namespace Unitel
                 forgotPassButton.Show();
                 this.ActiveControl = textBox2;
                 this.AcceptButton = null;
-                
+
             }
             else
             {
@@ -229,7 +241,7 @@ namespace Unitel
                 forgotPassButton.Hide();
                 this.AcceptButton = linkLabel4;
             }
-            
+
         }
 
 
@@ -240,27 +252,20 @@ namespace Unitel
             errorProvider1.SetIconPadding(this.textBox2, -20);
             if (!string.IsNullOrEmpty(textBox1.Text.Trim()))
             {
-                
 
-                  var rec = Record.Find(p => p.EmployeeID == textBox1.Text.Trim());
-                    if (textBox2.Text.Trim() == "" && rec.Password != null)
-                    {
-                        e.Cancel = true;
-                        errorProvider1.SetError(textBox2, "Enter Password");
-                    }
-                    else
-                    {
-                        e.Cancel = false;
-                        errorProvider1.SetError(textBox2, null);
-                    }
 
-                
-                
-                
-
+                var rec = Record.Find(p => p.EmployeeID == textBox1.Text.Trim());
+                if (textBox2.Text.Trim() == "" && rec.Password != null)
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(textBox2, "Enter Password");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(textBox2, null);
+                }
             }
-            
-            
         }
 
         private void ComboBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -281,15 +286,15 @@ namespace Unitel
                     errorProvider1.SetError(comboBox1, null);
 
                 }
-            }            
-            
+            }
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-        
+
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -358,7 +363,8 @@ namespace Unitel
 
         private void TextBox1_TextChanged_1(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox1.Text.Trim()) && !string.IsNullOrEmpty(textBox2.Text.Trim()) && !string.IsNullOrEmpty(comboBox1.Text.Trim())){
+            if (!string.IsNullOrEmpty(textBox1.Text.Trim()) && !string.IsNullOrEmpty(textBox2.Text.Trim()) && !string.IsNullOrEmpty(comboBox1.Text.Trim()))
+            {
                 button1.Enabled = true;
             }
             else
@@ -407,7 +413,7 @@ namespace Unitel
             }
         }
 
-        
+
 
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -419,7 +425,7 @@ namespace Unitel
             if (!ticketGen.Visible)
             {
                 ticketGen.Show();
-                
+
                 this.Hide();
                 this.ShowInTaskbar = false;
                 notifyIcon1.Visible = true;
@@ -429,7 +435,7 @@ namespace Unitel
             {
                 MessageBox.Show("Ticket Generator is already opened", "Unable to open TG", MessageBoxButtons.OK);
             }
-            
+
         }
 
         private void LinkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -452,7 +458,7 @@ namespace Unitel
             {
                 MessageBox.Show("Queue Screen is already opened", "Unable to open QS", MessageBoxButtons.OK);
             }
-            
+
         }
 
         private void NotifyIcon1_DoubleClick(object sender, EventArgs e)
@@ -520,7 +526,7 @@ namespace Unitel
 
         private void label8_Click(object sender, EventArgs e)
         {
-            if(!ps.Visible)
+            if (!ps.Visible)
             {
                 ps.Show();
                 textBox1.Clear();
@@ -574,6 +580,11 @@ namespace Unitel
             {
                 contextMenuStrip1.Items[2].Enabled = true;
             }
+        }
+
+        private void Home_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            new AboutBox1().Show();
         }
     }
 }

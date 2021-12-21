@@ -16,16 +16,6 @@ namespace Unitel
             label8.Text = "";
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
@@ -94,7 +84,7 @@ namespace Unitel
                     this.Close();
                 }
             }
-            
+
         }
 
 
@@ -105,8 +95,6 @@ namespace Unitel
 
         private void textBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox1, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox1, -20);
             if (persons.Any(p => p.EmployeeID == textBox1.Text.Trim()))
             {
                 e.Cancel = true;
@@ -121,8 +109,6 @@ namespace Unitel
 
         private void textBox2_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox2, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox2, -20);
             if (string.IsNullOrEmpty(textBox2.Text.Trim()))
             {
                 e.Cancel = true;
@@ -137,8 +123,6 @@ namespace Unitel
 
         private void textBox3_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox3, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox3, -20);
             if (string.IsNullOrEmpty(textBox3.Text.Trim()))
             {
                 e.Cancel = true;
@@ -154,10 +138,7 @@ namespace Unitel
 
         private void textBox4_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox4, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox4, -20);
-            
-            
+
             if (string.IsNullOrEmpty(textBox4.Text.Trim()))
             {
                 e.Cancel = true;
@@ -177,8 +158,6 @@ namespace Unitel
 
         private void textBox6_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox6, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox6, -20);
             if (string.IsNullOrEmpty(textBox6.Text.Trim()))
             {
                 e.Cancel = true;
@@ -193,8 +172,6 @@ namespace Unitel
 
         private void textBox5_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox5, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox5, -20);
             if (string.IsNullOrEmpty(textBox5.Text.Trim()))
             {
                 e.Cancel = true;
@@ -217,10 +194,8 @@ namespace Unitel
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox1, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox1, -20);
             if (persons.Any(p => p.EmployeeID == textBox1.Text.Trim()))
-            {  
+            {
                 errorProvider1.SetError(textBox1, "This employee ID already exist");
             }
             else
@@ -235,11 +210,13 @@ namespace Unitel
             {
                 e.Cancel = true;
                 errorProvider1.SetError(emailTextBox, "Enter an email address");
-            }else if(!emailTextBox.Text.Contains("@") || !emailTextBox.Text.Contains("."))
+            }
+            else if (!emailTextBox.Text.Contains("@") || !emailTextBox.Text.Contains("."))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(emailTextBox, "Please enter a valid email address");
-            }else if(persons.Any(p => p.EmailAddress == emailTextBox.Text))
+            }
+            else if (persons.Any(p => p.EmailAddress == emailTextBox.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(emailTextBox, "An account with this email address is already exists");

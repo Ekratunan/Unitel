@@ -34,6 +34,10 @@ namespace Unitel
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -93,17 +97,13 @@ namespace Unitel
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.copyNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,6 +143,36 @@ namespace Unitel
             this.label2.TabIndex = 5;
             this.label2.Text = "sample number";
             this.toolTip1.SetToolTip(this.label2, "Current registration to this Mobile Number");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyNumberToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.cancelToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 54);
+            // 
+            // copyNumberToolStripMenuItem
+            // 
+            this.copyNumberToolStripMenuItem.Name = "copyNumberToolStripMenuItem";
+            this.copyNumberToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyNumberToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.copyNumberToolStripMenuItem.Text = "Copy Number";
+            this.copyNumberToolStripMenuItem.Click += new System.EventHandler(this.copyNumberToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
+            // 
+            // cancelToolStripMenuItem
+            // 
+            this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
+            this.cancelToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cancelToolStripMenuItem.Text = "Cancel";
+            this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -212,7 +242,7 @@ namespace Unitel
             this.linkLabel1.Location = new System.Drawing.Point(643, 227);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(81, 15);
-            this.linkLabel1.TabIndex = 71;
+            this.linkLabel1.TabIndex = 25;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Upload Image";
             this.toolTip1.SetToolTip(this.linkLabel1, "Open an image to choose profile picture");
@@ -267,13 +297,14 @@ namespace Unitel
             this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.comboBox4.FormattingEnabled = true;
+            this.errorProvider1.SetIconPadding(this.comboBox4, -40);
             this.comboBox4.Items.AddRange(new object[] {
             "Prepaid",
             "Postpaid"});
             this.comboBox4.Location = new System.Drawing.Point(478, 376);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(146, 23);
-            this.comboBox4.TabIndex = 67;
+            this.comboBox4.TabIndex = 24;
             this.toolTip1.SetToolTip(this.comboBox4, "Package Type");
             this.comboBox4.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox4_Validating);
             // 
@@ -283,6 +314,7 @@ namespace Unitel
             this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.comboBox3.FormattingEnabled = true;
+            this.errorProvider1.SetIconPadding(this.comboBox3, -40);
             this.comboBox3.Items.AddRange(new object[] {
             "2G",
             "3G",
@@ -291,7 +323,7 @@ namespace Unitel
             this.comboBox3.Location = new System.Drawing.Point(478, 329);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(146, 23);
-            this.comboBox3.TabIndex = 66;
+            this.comboBox3.TabIndex = 23;
             this.comboBox3.Text = "5G";
             this.toolTip1.SetToolTip(this.comboBox3, "Network Version");
             this.comboBox3.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox3_Validating);
@@ -301,10 +333,11 @@ namespace Unitel
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.textBox1, -20);
             this.textBox1.Location = new System.Drawing.Point(24, 122);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(145, 23);
-            this.textBox1.TabIndex = 65;
+            this.textBox1.TabIndex = 7;
             this.toolTip1.SetToolTip(this.textBox1, "Phone Number");
             this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
@@ -335,7 +368,7 @@ namespace Unitel
             this.checkBox1.Location = new System.Drawing.Point(7, 120);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(272, 19);
-            this.checkBox1.TabIndex = 72;
+            this.checkBox1.TabIndex = 17;
             this.checkBox1.Text = "Present Address is same as Permanent Address";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -345,10 +378,11 @@ namespace Unitel
             this.permDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.permDivision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.permDivision.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.permDivision, -20);
             this.permDivision.Location = new System.Drawing.Point(301, 39);
             this.permDivision.Name = "permDivision";
             this.permDivision.Size = new System.Drawing.Size(140, 23);
-            this.permDivision.TabIndex = 25;
+            this.permDivision.TabIndex = 13;
             this.toolTip1.SetToolTip(this.permDivision, "Division/State");
             this.permDivision.Validating += new System.ComponentModel.CancelEventHandler(this.textBox20_Validating);
             // 
@@ -367,6 +401,7 @@ namespace Unitel
             this.permCountry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.permCountry.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.permCountry.FormattingEnabled = true;
+            this.errorProvider1.SetIconPadding(this.permCountry, -40);
             this.permCountry.Items.AddRange(new object[] {
             "Afghanistan",
             "Albania",
@@ -564,7 +599,7 @@ namespace Unitel
             this.permCountry.Location = new System.Drawing.Point(129, 84);
             this.permCountry.Name = "permCountry";
             this.permCountry.Size = new System.Drawing.Size(166, 23);
-            this.permCountry.TabIndex = 23;
+            this.permCountry.TabIndex = 15;
             this.toolTip1.SetToolTip(this.permCountry, "Customer\'s Country");
             this.permCountry.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox7_Validating);
             // 
@@ -582,10 +617,11 @@ namespace Unitel
             this.permPostcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.permPostcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.permPostcode.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.permPostcode, -20);
             this.permPostcode.Location = new System.Drawing.Point(301, 84);
             this.permPostcode.Name = "permPostcode";
             this.permPostcode.Size = new System.Drawing.Size(140, 23);
-            this.permPostcode.TabIndex = 5;
+            this.permPostcode.TabIndex = 16;
             this.toolTip1.SetToolTip(this.permPostcode, "Postcode");
             this.permPostcode.Validating += new System.ComponentModel.CancelEventHandler(this.textBox35_Validating);
             // 
@@ -603,10 +639,11 @@ namespace Unitel
             this.permCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.permCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.permCity.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.permCity, -20);
             this.permCity.Location = new System.Drawing.Point(6, 84);
             this.permCity.Name = "permCity";
             this.permCity.Size = new System.Drawing.Size(117, 23);
-            this.permCity.TabIndex = 3;
+            this.permCity.TabIndex = 14;
             this.toolTip1.SetToolTip(this.permCity, "City/Village Name");
             this.permCity.Validating += new System.ComponentModel.CancelEventHandler(this.textBox36_Validating);
             // 
@@ -624,10 +661,11 @@ namespace Unitel
             this.permStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.permStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.permStreet.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.permStreet, -20);
             this.permStreet.Location = new System.Drawing.Point(7, 39);
             this.permStreet.Name = "permStreet";
             this.permStreet.Size = new System.Drawing.Size(288, 23);
-            this.permStreet.TabIndex = 1;
+            this.permStreet.TabIndex = 12;
             this.toolTip1.SetToolTip(this.permStreet, "Road Number/Street Name");
             this.permStreet.Validating += new System.ComponentModel.CancelEventHandler(this.textBox37_Validating);
             // 
@@ -673,6 +711,7 @@ namespace Unitel
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.comboBox2.FormattingEnabled = true;
+            this.errorProvider1.SetIconPadding(this.comboBox2, -40);
             this.comboBox2.Items.AddRange(new object[] {
             "Male",
             "Female",
@@ -680,7 +719,7 @@ namespace Unitel
             this.comboBox2.Location = new System.Drawing.Point(478, 122);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(146, 23);
-            this.comboBox2.TabIndex = 61;
+            this.comboBox2.TabIndex = 10;
             this.toolTip1.SetToolTip(this.comboBox2, "Gender");
             this.comboBox2.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox2_Validating);
             // 
@@ -690,13 +729,14 @@ namespace Unitel
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.comboBox1.FormattingEnabled = true;
+            this.errorProvider1.SetIconPadding(this.comboBox1, -40);
             this.comboBox1.Items.AddRange(new object[] {
             "Married",
             "Unmarried"});
             this.comboBox1.Location = new System.Drawing.Point(327, 75);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(145, 23);
-            this.comboBox1.TabIndex = 60;
+            this.comboBox1.TabIndex = 5;
             this.toolTip1.SetToolTip(this.comboBox1, "Marital Status");
             this.comboBox1.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox1_Validating);
             // 
@@ -717,7 +757,7 @@ namespace Unitel
             this.button2.Location = new System.Drawing.Point(673, 376);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 23);
-            this.button2.TabIndex = 0;
+            this.button2.TabIndex = 27;
             this.button2.Text = "Cancel";
             this.toolTip1.SetToolTip(this.button2, "Cancel (Esc)");
             this.button2.UseVisualStyleBackColor = true;
@@ -733,7 +773,7 @@ namespace Unitel
             this.button1.Location = new System.Drawing.Point(673, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 32);
-            this.button1.TabIndex = 57;
+            this.button1.TabIndex = 26;
             this.button1.Text = "Add User";
             this.toolTip1.SetToolTip(this.button1, "Create new customer (Enter)");
             this.button1.UseVisualStyleBackColor = false;
@@ -764,10 +804,12 @@ namespace Unitel
             this.preDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.preDivision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.preDivision.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.preDivision, -20);
             this.preDivision.Location = new System.Drawing.Point(301, 39);
             this.preDivision.Name = "preDivision";
             this.preDivision.Size = new System.Drawing.Size(140, 23);
-            this.preDivision.TabIndex = 25;
+            this.preDivision.TabIndex = 19;
+            this.preDivision.Validating += new System.ComponentModel.CancelEventHandler(this.preDivision_Validating);
             // 
             // label61
             // 
@@ -784,6 +826,7 @@ namespace Unitel
             this.preCountry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.preCountry.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.preCountry.FormattingEnabled = true;
+            this.errorProvider1.SetIconPadding(this.preCountry, -40);
             this.preCountry.Items.AddRange(new object[] {
             "Afghanistan",
             "Albania",
@@ -981,7 +1024,8 @@ namespace Unitel
             this.preCountry.Location = new System.Drawing.Point(129, 84);
             this.preCountry.Name = "preCountry";
             this.preCountry.Size = new System.Drawing.Size(166, 23);
-            this.preCountry.TabIndex = 23;
+            this.preCountry.TabIndex = 21;
+            this.preCountry.Validating += new System.ComponentModel.CancelEventHandler(this.preCountry_Validating);
             // 
             // label62
             // 
@@ -997,10 +1041,12 @@ namespace Unitel
             this.prePostcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.prePostcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.prePostcode.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.prePostcode, -20);
             this.prePostcode.Location = new System.Drawing.Point(301, 84);
             this.prePostcode.Name = "prePostcode";
             this.prePostcode.Size = new System.Drawing.Size(140, 23);
-            this.prePostcode.TabIndex = 5;
+            this.prePostcode.TabIndex = 22;
+            this.prePostcode.Validating += new System.ComponentModel.CancelEventHandler(this.prePostcode_Validating);
             // 
             // label63
             // 
@@ -1016,10 +1062,12 @@ namespace Unitel
             this.preCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.preCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.preCity.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.preCity, -20);
             this.preCity.Location = new System.Drawing.Point(6, 84);
             this.preCity.Name = "preCity";
             this.preCity.Size = new System.Drawing.Size(117, 23);
-            this.preCity.TabIndex = 3;
+            this.preCity.TabIndex = 20;
+            this.preCity.Validating += new System.ComponentModel.CancelEventHandler(this.preCity_Validating);
             // 
             // label64
             // 
@@ -1035,10 +1083,12 @@ namespace Unitel
             this.preStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.preStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.preStreet.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.preStreet, -20);
             this.preStreet.Location = new System.Drawing.Point(7, 39);
             this.preStreet.Name = "preStreet";
             this.preStreet.Size = new System.Drawing.Size(288, 23);
-            this.preStreet.TabIndex = 1;
+            this.preStreet.TabIndex = 18;
+            this.preStreet.Validating += new System.ComponentModel.CancelEventHandler(this.preStreet_Validating);
             // 
             // label65
             // 
@@ -1054,12 +1104,13 @@ namespace Unitel
             this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.errorProvider1.SetIconPadding(this.dateTimePicker2, -50);
             this.dateTimePicker2.Location = new System.Drawing.Point(478, 181);
             this.dateTimePicker2.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker2.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(146, 23);
-            this.dateTimePicker2.TabIndex = 54;
+            this.dateTimePicker2.TabIndex = 11;
             this.toolTip1.SetToolTip(this.dateTimePicker2, "Date of birth");
             this.dateTimePicker2.Value = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Validating += new System.ComponentModel.CancelEventHandler(this.dateTimePicker2_Validating);
@@ -1069,10 +1120,11 @@ namespace Unitel
             this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox13.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.textBox13, -20);
             this.textBox13.Location = new System.Drawing.Point(326, 122);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(145, 23);
-            this.textBox13.TabIndex = 53;
+            this.textBox13.TabIndex = 9;
             this.toolTip1.SetToolTip(this.textBox13, "Driving License Number");
             // 
             // label14
@@ -1110,10 +1162,11 @@ namespace Unitel
             this.textBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox14.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.textBox14, -20);
             this.textBox14.Location = new System.Drawing.Point(175, 122);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(145, 23);
-            this.textBox14.TabIndex = 49;
+            this.textBox14.TabIndex = 8;
             this.toolTip1.SetToolTip(this.textBox14, "NID or Passport Number");
             this.textBox14.Validating += new System.ComponentModel.CancelEventHandler(this.textBox14_Validating);
             // 
@@ -1131,10 +1184,11 @@ namespace Unitel
             this.textBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox15.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.textBox15, -20);
             this.textBox15.Location = new System.Drawing.Point(478, 75);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(145, 23);
-            this.textBox15.TabIndex = 47;
+            this.textBox15.TabIndex = 6;
             this.textBox15.Text = "Bangladeshi";
             this.toolTip1.SetToolTip(this.textBox15, "Nationality");
             this.textBox15.Validating += new System.ComponentModel.CancelEventHandler(this.textBox15_Validating);
@@ -1153,10 +1207,11 @@ namespace Unitel
             this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox16.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.textBox16, -20);
             this.textBox16.Location = new System.Drawing.Point(175, 75);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(145, 23);
-            this.textBox16.TabIndex = 45;
+            this.textBox16.TabIndex = 4;
             this.toolTip1.SetToolTip(this.textBox16, "Mother\'s Name");
             this.textBox16.Validating += new System.ComponentModel.CancelEventHandler(this.textBox16_Validating);
             // 
@@ -1174,10 +1229,11 @@ namespace Unitel
             this.textBox17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox17.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.textBox17, -20);
             this.textBox17.Location = new System.Drawing.Point(24, 75);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(145, 23);
-            this.textBox17.TabIndex = 43;
+            this.textBox17.TabIndex = 3;
             this.toolTip1.SetToolTip(this.textBox17, "Father\'s Name");
             this.textBox17.Validating += new System.ComponentModel.CancelEventHandler(this.textBox17_Validating);
             // 
@@ -1186,10 +1242,11 @@ namespace Unitel
             this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox18.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.textBox18, -20);
             this.textBox18.Location = new System.Drawing.Point(478, 31);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(145, 23);
-            this.textBox18.TabIndex = 42;
+            this.textBox18.TabIndex = 2;
             this.toolTip1.SetToolTip(this.textBox18, "Last Name");
             this.textBox18.Validating += new System.ComponentModel.CancelEventHandler(this.textBox18_Validating);
             // 
@@ -1216,10 +1273,11 @@ namespace Unitel
             this.textBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox19.ForeColor = System.Drawing.SystemColors.Control;
+            this.errorProvider1.SetIconPadding(this.textBox19, -20);
             this.textBox19.Location = new System.Drawing.Point(327, 31);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(145, 23);
-            this.textBox19.TabIndex = 0;
+            this.textBox19.TabIndex = 1;
             this.toolTip1.SetToolTip(this.textBox19, "First name");
             this.textBox19.Validating += new System.ComponentModel.CancelEventHandler(this.textBox19_Validating);
             // 
@@ -1228,36 +1286,6 @@ namespace Unitel
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyNumberToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.cancelToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 76);
-            // 
-            // copyNumberToolStripMenuItem
-            // 
-            this.copyNumberToolStripMenuItem.Name = "copyNumberToolStripMenuItem";
-            this.copyNumberToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyNumberToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.copyNumberToolStripMenuItem.Text = "Copy Number";
-            this.copyNumberToolStripMenuItem.Click += new System.EventHandler(this.copyNumberToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
-            // 
-            // cancelToolStripMenuItem
-            // 
-            this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
-            this.cancelToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.cancelToolStripMenuItem.Text = "Cancel";
-            this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
             // NewUser
             // 
@@ -1282,6 +1310,7 @@ namespace Unitel
             this.Text = "Unitel- New Customer";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.NewUser_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1291,7 +1320,6 @@ namespace Unitel
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

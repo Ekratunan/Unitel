@@ -308,9 +308,9 @@ namespace Unitel
             this.button11.Size = new System.Drawing.Size(75, 25);
             this.button11.TabIndex = 1;
             this.button11.Text = "Search";
+            this.toolTip1.SetToolTip(this.button11, "Search Customer (Enter)");
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.Button11_Click);
-            this.button11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button11_MouseMove);
             // 
             // groupBox1
             // 
@@ -342,9 +342,9 @@ namespace Unitel
             this.button6.Size = new System.Drawing.Size(75, 25);
             this.button6.TabIndex = 1;
             this.button6.Text = "Search";
+            this.toolTip1.SetToolTip(this.button6, "Search Employee (Enter)");
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
-            this.button6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button6_MouseMove);
             // 
             // label66
             // 
@@ -383,9 +383,9 @@ namespace Unitel
             this.button5.TabIndex = 4;
             this.button5.Text = "Sign out";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button5, "Sign Out (Shift+Alt+L)");
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
-            this.button5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button5_MouseMove);
             // 
             // button2
             // 
@@ -399,9 +399,9 @@ namespace Unitel
             this.button2.Size = new System.Drawing.Size(161, 29);
             this.button2.TabIndex = 1;
             this.button2.Text = "Add New Customer";
+            this.toolTip1.SetToolTip(this.button2, "Add New Customer (Ctrl+Alt+M)");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
-            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button2_MouseMove);
             // 
             // button1
             // 
@@ -415,9 +415,9 @@ namespace Unitel
             this.button1.Size = new System.Drawing.Size(161, 29);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add New Employee";
+            this.toolTip1.SetToolTip(this.button1, "Add New Employee (Ctrl+Alt+N)");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
             // panel2
             // 
@@ -1476,9 +1476,9 @@ namespace Unitel
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 13;
             this.button3.Text = "Edit";
+            this.toolTip1.SetToolTip(this.button3, "Edit (Ctrl+E)");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
-            this.button3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button3_MouseMove);
             // 
             // label67
             // 
@@ -1549,9 +1549,9 @@ namespace Unitel
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 4;
             this.button8.Text = "Remove";
+            this.toolTip1.SetToolTip(this.button8, "Remove Employee (Ctrl+D)");
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
-            this.button8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button8_MouseMove);
             // 
             // button7
             // 
@@ -1560,9 +1560,9 @@ namespace Unitel
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 3;
             this.button7.Text = "Update";
+            this.toolTip1.SetToolTip(this.button7, "Update Information (Ctrl+S)");
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
-            this.button7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button7_MouseMove);
             // 
             // Users
             // 
@@ -2976,9 +2976,9 @@ namespace Unitel
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 24;
             this.button4.Text = "Edit";
+            this.toolTip1.SetToolTip(this.button4, "Edit (Ctrl+E)");
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
-            this.button4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button4_MouseMove);
             // 
             // comboBox4
             // 
@@ -3071,9 +3071,9 @@ namespace Unitel
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 13;
             this.button9.Text = "Remove";
+            this.toolTip1.SetToolTip(this.button9, "Remove User (Ctrl+D)");
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.Button9_Click);
-            this.button9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button9_MouseMove);
             // 
             // button10
             // 
@@ -3082,9 +3082,9 @@ namespace Unitel
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 12;
             this.button10.Text = "Update";
+            this.toolTip1.SetToolTip(this.button10, "Update Information (Ctrl+S)");
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
-            this.button10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button10_MouseMove);
             // 
             // Queue
             // 
@@ -3240,7 +3240,6 @@ namespace Unitel
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unitel - Dashboard (Admin Panel)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDashboard_FormClosing);
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.SizeChanged += new System.EventHandler(this.AdminDashboard_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminDashboard_KeyDown);

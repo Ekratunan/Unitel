@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Unitel
@@ -18,7 +15,7 @@ namespace Unitel
             InitializeComponent();
             label3.Text = "";
 
-            
+
             GenerateMobileNumber();
             numberPass = label2.Text;
         }
@@ -67,7 +64,8 @@ namespace Unitel
                 img = null;
             }
 
-            databaseFile.InsertRecord("Personal_Info", new PersonModel {
+            databaseFile.InsertRecord("Personal_Info", new PersonModel
+            {
                 MobileNumber = label2.Text.Trim(),
 
 
@@ -196,8 +194,6 @@ namespace Unitel
 
         private void textBox19_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox19, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox19, -20);
 
             if (string.IsNullOrEmpty(textBox19.Text.Trim()))
             {
@@ -219,8 +215,6 @@ namespace Unitel
 
         private void textBox18_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox18, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox18, -20);
 
             if (string.IsNullOrEmpty(textBox18.Text.Trim()))
             {
@@ -241,8 +235,6 @@ namespace Unitel
 
         private void textBox17_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox17, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox17, -20);
             if (string.IsNullOrEmpty(textBox17.Text.Trim()))
             {
                 e.Cancel = true;
@@ -262,8 +254,6 @@ namespace Unitel
 
         private void textBox16_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox16, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox16, -20);
             if (string.IsNullOrEmpty(textBox16.Text.Trim()))
             {
                 e.Cancel = true;
@@ -283,8 +273,6 @@ namespace Unitel
 
         private void textBox15_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox15, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox15, -20);
             if (string.IsNullOrEmpty(textBox15.Text.Trim()))
             {
                 e.Cancel = true;
@@ -304,13 +292,12 @@ namespace Unitel
 
         private void textBox14_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox14, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox14, -20);
             if (string.IsNullOrEmpty(textBox14.Text.Trim()))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox14, "Enter NID or Passport Number");
-            }else if(textBox14.Text.Length < 10 || !textBox14.Text.Any(char.IsDigit))
+            }
+            else if (textBox14.Text.Length < 10 || !textBox14.Text.Any(char.IsDigit))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox14, "Enter a valid NID or Passport Number");
@@ -324,8 +311,6 @@ namespace Unitel
 
         private void comboBox2_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(comboBox2, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.comboBox2, -50);
             if (string.IsNullOrEmpty(comboBox2.Text.Trim()))
             {
                 e.Cancel = true;
@@ -340,15 +325,14 @@ namespace Unitel
 
         private void textBox1_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(textBox1, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.textBox1, -20);
             if (!string.IsNullOrEmpty(textBox1.Text.Trim()))
             {
-                if(textBox1.Text.Length < 11)
+                if (textBox1.Text.Length < 11)
                 {
                     e.Cancel = true;
                     errorProvider1.SetError(textBox1, "Phone Number must be contain 11 digits");
-                }else if (!textBox1.Text.All(char.IsDigit))
+                }
+                else if (!textBox1.Text.All(char.IsDigit))
                 {
                     e.Cancel = true;
                     errorProvider1.SetError(textBox1, "Phone Number must contain all numbers");
@@ -368,8 +352,6 @@ namespace Unitel
 
         private void dateTimePicker2_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(dateTimePicker2, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.dateTimePicker2, -50);
             if (dateTimePicker2.Text.Trim() == "01/01/1920")
             {
                 e.Cancel = true;
@@ -384,8 +366,6 @@ namespace Unitel
 
         private void textBox37_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(permStreet, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.permStreet, -20);
             if (string.IsNullOrEmpty(permStreet.Text.Trim()))
             {
                 e.Cancel = true;
@@ -400,8 +380,6 @@ namespace Unitel
 
         private void textBox20_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(permDivision, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.permDivision, -20);
             if (string.IsNullOrEmpty(permDivision.Text.Trim()))
             {
                 e.Cancel = true;
@@ -416,8 +394,6 @@ namespace Unitel
 
         private void textBox36_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(permCity, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.permCity, -20);
             if (string.IsNullOrEmpty(permCity.Text.Trim()))
             {
                 e.Cancel = true;
@@ -432,8 +408,6 @@ namespace Unitel
 
         private void comboBox7_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(permCountry, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.permCountry, -20);
             if (string.IsNullOrEmpty(permCountry.Text.Trim()))
             {
                 e.Cancel = true;
@@ -448,13 +422,12 @@ namespace Unitel
 
         private void textBox35_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(permPostcode, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.permPostcode, -20);
             if (string.IsNullOrEmpty(permPostcode.Text.Trim()))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(permPostcode, "Enter Postcode");
-            }else if (!permPostcode.Text.Any(char.IsDigit))
+            }
+            else if (!permPostcode.Text.Any(char.IsDigit))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(permPostcode, "Enter Valid Postcode");
@@ -468,8 +441,6 @@ namespace Unitel
 
         private void comboBox3_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(comboBox3, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.comboBox3, -50);
             if (string.IsNullOrEmpty(comboBox3.Text.Trim()))
             {
                 e.Cancel = true;
@@ -484,8 +455,6 @@ namespace Unitel
 
         private void comboBox4_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(comboBox4, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.comboBox4, -50);
             if (string.IsNullOrEmpty(comboBox4.Text.Trim()))
             {
                 e.Cancel = true;
@@ -500,15 +469,13 @@ namespace Unitel
 
         private void NewUser_Load(object sender, EventArgs e)
         {
-           // textBox19.Select();
+            // textBox19.Select();
             this.ActiveControl = textBox19;
             textBox19.Focus();
         }
 
         private void comboBox1_Validating(object sender, CancelEventArgs e)
         {
-            errorProvider1.SetIconAlignment(comboBox1, ErrorIconAlignment.MiddleRight);
-            errorProvider1.SetIconPadding(this.comboBox1, -50);
             if (string.IsNullOrEmpty(comboBox1.Text.Trim()))
             {
                 e.Cancel = true;
@@ -532,7 +499,8 @@ namespace Unitel
                 preCity.Text = permCity.Text;
                 preCountry.Text = permCountry.Text;
                 prePostcode.Text = permPostcode.Text;
-            }else if (!checkBox1.Checked)
+            }
+            else if (!checkBox1.Checked)
             {
                 groupBox7.Show();
                 preStreet.Text = "";
@@ -551,6 +519,96 @@ namespace Unitel
         private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void preStreet_Validating(object sender, CancelEventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                if (string.IsNullOrEmpty(preStreet.Text))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(preStreet, "Please enter Street Address.");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(preStreet, "");
+                }
+            }
+        }
+
+        private void preDivision_Validating(object sender, CancelEventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                if (string.IsNullOrEmpty(preDivision.Text))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(preDivision, "Please enter State/Division.");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(preDivision, "");
+                }
+            }
+        }
+
+        private void preCity_Validating(object sender, CancelEventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                if (string.IsNullOrEmpty(preCity.Text))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(preCity, "Please enter City.");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(preCity, "");
+                }
+            }
+        }
+
+        private void preCountry_Validating(object sender, CancelEventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                if (string.IsNullOrEmpty(preCountry.Text))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(preCountry, "Please enter Country");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(preCountry, "");
+                }
+            }
+        }
+
+        private void prePostcode_Validating(object sender, CancelEventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                if (string.IsNullOrEmpty(prePostcode.Text))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(prePostcode, "Please enter Postcode.");
+                }
+                else if (!prePostcode.Text.Any(char.IsDigit))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(prePostcode, "Postcode is not valid");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(prePostcode, "");
+                }
+            }
         }
     }
 }

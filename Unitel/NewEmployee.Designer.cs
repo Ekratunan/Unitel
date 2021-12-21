@@ -99,7 +99,7 @@ namespace Unitel
             this.emailTextBox.Location = new System.Drawing.Point(270, 219);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(243, 23);
-            this.emailTextBox.TabIndex = 17;
+            this.emailTextBox.TabIndex = 2;
             this.toolTip2.SetToolTip(this.emailTextBox, "Enter a valid email address");
             this.emailTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailTextBox_Validating);
             // 
@@ -134,7 +134,7 @@ namespace Unitel
             this.checkBox1.Location = new System.Drawing.Point(271, 351);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(95, 19);
-            this.checkBox1.TabIndex = 15;
+            this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Set as Admin";
             this.toolTip2.SetToolTip(this.checkBox1, "Give access into Admin Panel");
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@ namespace Unitel
             this.button2.Location = new System.Drawing.Point(357, 376);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
+            this.button2.TabIndex = 10;
             this.button2.Text = "Cancel";
             this.toolTip2.SetToolTip(this.button2, "Cancel (Esc)");
             this.button2.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@ namespace Unitel
             this.button1.Location = new System.Drawing.Point(438, 376);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Add";
             this.toolTip2.SetToolTip(this.button1, "Add new Employee (Enter)");
             this.button1.UseVisualStyleBackColor = false;
@@ -184,10 +184,11 @@ namespace Unitel
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.errorProvider1.SetIconPadding(this.textBox6, -20);
             this.textBox6.Location = new System.Drawing.Point(271, 307);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(243, 23);
-            this.textBox6.TabIndex = 11;
+            this.textBox6.TabIndex = 6;
             this.toolTip2.SetToolTip(this.textBox6, "Enter a salary (Ex: 30000)");
             this.textBox6.Validating += new System.ComponentModel.CancelEventHandler(this.textBox6_Validating);
             // 
@@ -196,10 +197,11 @@ namespace Unitel
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.errorProvider1.SetIconPadding(this.textBox5, -20);
             this.textBox5.Location = new System.Drawing.Point(22, 351);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(243, 23);
-            this.textBox5.TabIndex = 10;
+            this.textBox5.TabIndex = 7;
             this.toolTip2.SetToolTip(this.textBox5, "Enter a designation");
             this.textBox5.Validating += new System.ComponentModel.CancelEventHandler(this.textBox5_Validating);
             // 
@@ -208,10 +210,11 @@ namespace Unitel
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.errorProvider1.SetIconPadding(this.textBox4, -20);
             this.textBox4.Location = new System.Drawing.Point(22, 307);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(243, 23);
-            this.textBox4.TabIndex = 9;
+            this.textBox4.TabIndex = 5;
             this.toolTip2.SetToolTip(this.textBox4, "Enter phone number");
             this.textBox4.Validating += new System.ComponentModel.CancelEventHandler(this.textBox4_Validating);
             // 
@@ -221,10 +224,11 @@ namespace Unitel
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.errorProvider1.SetIconPadding(this.textBox3, -20);
             this.textBox3.Location = new System.Drawing.Point(271, 263);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(243, 23);
-            this.textBox3.TabIndex = 8;
+            this.textBox3.TabIndex = 4;
             this.toolTip2.SetToolTip(this.textBox3, "Enter employee last name");
             this.textBox3.Validating += new System.ComponentModel.CancelEventHandler(this.textBox3_Validating);
             // 
@@ -233,10 +237,11 @@ namespace Unitel
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(11)))), ((int)(((byte)(108)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.errorProvider1.SetIconPadding(this.textBox2, -20);
             this.textBox2.Location = new System.Drawing.Point(22, 263);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(243, 23);
-            this.textBox2.TabIndex = 7;
+            this.textBox2.TabIndex = 3;
             this.toolTip2.SetToolTip(this.textBox2, "Enter employee first name");
             this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
@@ -246,10 +251,11 @@ namespace Unitel
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.errorProvider1.SetIconPadding(this.textBox1, -20);
             this.textBox1.Location = new System.Drawing.Point(21, 219);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(243, 23);
-            this.textBox1.TabIndex = 6;
+            this.textBox1.TabIndex = 1;
             this.toolTip1.SetToolTip(this.textBox1, "Choose a unique Employee ID");
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
@@ -273,7 +279,6 @@ namespace Unitel
             this.label5.Size = new System.Drawing.Size(70, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "Designation";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 

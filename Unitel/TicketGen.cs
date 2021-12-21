@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -22,7 +21,7 @@ namespace Unitel
             int size = record.Count;
             try
             {
-                tokenNumber = record.Max(p => p.TokenDigit +1);
+                tokenNumber = record.Max(p => p.TokenDigit + 1);
             }
             catch (Exception)
             {
@@ -42,7 +41,7 @@ namespace Unitel
                 timer1.Enabled = true;
                 return false;
             }
-            else if(mobNumberInput.Length < 11)
+            else if (mobNumberInput.Length < 11)
             {
                 label3.Text = "Please enter a valid mobile number";
                 timer1.Enabled = true;
@@ -68,20 +67,21 @@ namespace Unitel
                     MobileNumber = textBox1.Text,
                     TypeOfService = service,
                     TokenNumber = tokenNum,
-                    TokenDigit = tokenNumber
+                    TokenDigit = tokenNumber,
+                    ActiveToken = true
                 });
 
                 tokenNumber++;
-                
+
 
                 label3.Text = "Token Created";
                 textBox1.Text = "";
                 timer1.Enabled = true;
             }
-            else if(record.Count > 0)
+            else if (record.Count > 0)
             {
                 bool exists = record.Any(r => r.MobileNumber == textBox1.Text.Trim());
-                
+
                 if (exists)
                 {
                     var rec = personInfo.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", textBox1.Text.Trim());
@@ -91,11 +91,12 @@ namespace Unitel
                         MobileNumber = rec.MobileNumber,
                         TypeOfService = service,
                         TokenNumber = tokenNum,
-                        TokenDigit = tokenNumber
+                        TokenDigit = tokenNumber,
+                        ActiveToken = true
                     });
 
                     tokenNumber++;
-                    
+
 
                     label3.Text = "Token Created";
                     timer1.Enabled = true;
@@ -114,7 +115,7 @@ namespace Unitel
             }
         }
 
-       
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -135,9 +136,9 @@ namespace Unitel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             TokenGenerator(newSim.Text, $"New{tokenNumber}");
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -175,6 +176,6 @@ namespace Unitel
             textBox1.Text = "";
         }
 
-        
+
     }
 }

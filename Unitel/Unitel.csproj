@@ -11,23 +11,24 @@
     <ApplicationIcon>icon_01_VbH_icon.ico</ApplicationIcon>
     <Win32Resource />
     <StartupObject>Unitel.Program</StartupObject>
-    <PackageId>UnitelAlpha</PackageId>
-    <Version>1.0.5</Version>
+    <PackageId>UnitelBeta</PackageId>
+    <Version>21.0.1</Version>
     <Company>Unitel PTO</Company>
     <NeutralLanguage>en-UM</NeutralLanguage>
-    <PackageReleaseNotes>07/12/2021 Release version:
-1. Bugs fixed.
-2. Tooltips added.
-3. Optimized performance.
-4. Fixed Admin Panel Error</PackageReleaseNotes>
+    <PackageReleaseNotes>8-12/2021 FInal Test Version Release patch note:
+1. Unitel can store a company's employee informations.
+2. You can perform customer additiona nd deletion.
+3. Customer Service centre patch added.
+4. No more major bugs.
+5. Added Ticket Generator and Queue screen</PackageReleaseNotes>
     <Description>Unitel is a universal customer service application that can be use at any Service Center for Mobile Operator, Bank, Device After Service Provider, Hospital and so on. This project is under consultation on porject group 'Unitel' for University of Development Alternative(UODA). Owners: Ekra Hossain, Abir Hossain,Nowshin Atia Sarker, Md. Rezwan Ibna Akram, Md. Saiful Islam Rafid, Md. Nasir Islam Sharif &amp; Md. Monir Hossain.</Description>
-    <AssemblyName>Unitel (Alpha)</AssemblyName>
+    <AssemblyName>Unitel (Beta)</AssemblyName>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIcon>Icon-01.png</PackageIcon>
     <PackageIconUrl />
-    <Nullable>disable</Nullable>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <Nullable>annotations</Nullable>
+    <AssemblyVersion>21.0.1.0</AssemblyVersion>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
     <UserSecretsId>28d35e26-359e-4b3e-b052-824e44a24587</UserSecretsId>
   </PropertyGroup>
@@ -37,6 +38,7 @@
     <Optimize>false</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath></OutputPath>
+    <DefineConstants />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -57,7 +59,6 @@
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.14.1" />
-    <PackageReference Include="simple-smtp-email" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Unitel
@@ -32,15 +29,19 @@ namespace Unitel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string adminName = textBox1.Text.Trim().ToString();
-            string password = textBox2.Text.Trim().ToString();
+            string adminName = textBox1.Text.Trim();
+            string password = textBox2.Text.Trim();
 
-            if(AdminVerification(adminName, password))
+            if (AdminVerification(adminName, password))
             {
                 label3.ForeColor = Color.Green;
                 label3.Text = "Successfully Log in";
 
                 AdminDashboard adminDashboard = new AdminDashboard();
+                Properties.Settings.Default.AdminLoggedIn = true;
+                Properties.Settings.Default.AdminUserId = adminName;
+                Properties.Settings.Default.AdminPassword = password;
+                Properties.Settings.Default.Save();
 
                 adminDashboard.Show();
                 this.Close();
@@ -58,28 +59,29 @@ namespace Unitel
 
         private bool AdminVerification(string adminID, string password)
         {
-            
+
             bool initialVerify = false;
             bool exist = false;
 
-            foreach(var rec in record)
+            foreach (var rec in record)
             {
-                if(rec.EmployeeID == adminID)
+                if (rec.EmployeeID == adminID)
                 {
                     string pass = null;
-                    if(rec.Password != null)
+                    if (rec.Password != null)
                     {
                         pass = decodePassword(rec.Password);
                     }
                     exist = true;
-                    if(rec.AdminStatus == "Admin" && rec.Password != null && textBox2.Text.Trim() == "")
+                    if (rec.AdminStatus == "Admin" && rec.Password != null && textBox2.Text.Trim() == "")
                     {
                         label3.Text = "Please enter password";
                     }
                     else if (rec.AdminStatus == "Admin" && pass == password)
                     {
                         initialVerify = true;
-                    }  else if (rec.Password == null)
+                    }
+                    else if (rec.Password == null)
                     {
                         PasswordGenerator passwordGenerator = new PasswordGenerator(rec.EmployeeID);
                         passwordGenerator.Show();
@@ -97,7 +99,7 @@ namespace Unitel
                         {
                             label3.Text = "";
                         }
-                    } 
+                    }
                 }
             }
 
@@ -110,7 +112,7 @@ namespace Unitel
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(record.Any(p => p.EmployeeID == textBox1.Text.Trim()))
+            if (record.Any(p => p.EmployeeID == textBox1.Text.Trim()))
             {
                 this.ActiveControl = textBox2;
                 textBox2.Focus();

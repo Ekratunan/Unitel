@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Unitel
@@ -14,14 +10,14 @@ namespace Unitel
         {
             InitializeComponent();
             tokenNum.Text = tokenNumber;
-            
+
         }
 
         Bitmap bitmap;
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-           // button1.Visible = false;
+            // button1.Visible = false;
             e.Graphics.DrawImage(bitmap, 0, 0);
         }
 
@@ -35,7 +31,7 @@ namespace Unitel
 
             Point panelLocation = PointToScreen(panel1.Location);
             grp.CopyFromScreen(panelLocation.X, panelLocation.Y, 0, 0, formSize);
-         
+
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
             printPreviewDialog1.ShowDialog();

@@ -117,11 +117,12 @@ namespace Unitel
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(884, 313);
+            this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.dataGridView1, "Awaiting Tickets");
             // 
             // panel3
             // 
@@ -313,6 +314,7 @@ namespace Unitel
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unitel - Dashboard (Counter)";
             this.toolTip1.SetToolTip(this, "Executive Dashboard");
+            this.Activated += new System.EventHandler(this.Dashboard_Activated);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.SizeChanged += new System.EventHandler(this.Dashboard_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dashboard_KeyDown);

@@ -2,7 +2,6 @@
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Runtime.InteropServices;
 
 namespace Unitel
@@ -50,8 +49,8 @@ namespace Unitel
             }
             catch (NullReferenceException)
             {
-                tryConAgain:
-                if(InternetGetConnectedState(out _, 0))
+            tryConAgain:
+                if (InternetGetConnectedState(out _, 0))
                 {
                     var client = new MongoClient("mongodb+srv://ekraHossain:ekraHossain17@unitel.m8yxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
                     database = client.GetDatabase(databaseNameGlobal);
@@ -61,10 +60,10 @@ namespace Unitel
                     goto tryConAgain;
                 }
                 Console.WriteLine("Insertion Error");
-                
+
             }
-            
-            
+
+
         }
 
         public List<T> LoadRecords<T>(string table)
@@ -78,12 +77,12 @@ namespace Unitel
             {
                 return null;
             }
-            
+
         }
 
         public T LoadRecordbyIdentity<T>(string table, string field, string value)
         {
-            tryCon:
+        tryCon:
             try
             {
                 var collection = database.GetCollection<T>(table);
@@ -95,7 +94,7 @@ namespace Unitel
             {
                 waitingCountDown = 0;
 
-                while(!InternetGetConnectedState(out _, 0))
+                while (!InternetGetConnectedState(out _, 0))
                 {
                     waitingCountDown++;
                 }
@@ -104,10 +103,10 @@ namespace Unitel
             }
         }
 
-        
-        public void UpsertRecord<T>(string table, BsonObjectId Id , T record)
+
+        public void UpsertRecord<T>(string table, BsonObjectId Id, T record)
         {
-            tryCon:
+        tryCon:
             try
             {
                 var collection = database.GetCollection<T>(table);
@@ -116,7 +115,7 @@ namespace Unitel
                 record,
                 new ReplaceOptions { IsUpsert = true });
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Console.WriteLine("Writing Error");
                 waitingCountDown = 0;

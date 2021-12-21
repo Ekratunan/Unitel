@@ -2,7 +2,6 @@
   "profiles": {
     "Unitel": {
       "commandName": "Project",
-      "workingDirectory": "C:\\Users\\user\\source\\repos\\Unitel\\Unitel\\bin\\Debug",
       "remoteDebugEnabled": false
     }
   }

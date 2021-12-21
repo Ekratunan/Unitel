@@ -1,6 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
 
 namespace Unitel
 {
@@ -15,7 +14,7 @@ namespace Unitel
         [BsonElement]
         public string FirstName { get; set; }
         [BsonElement]
-        public string LastName { get; set;  }
+        public string LastName { get; set; }
         [BsonElement]
         public string FathersName { get; set; }
         [BsonElement]

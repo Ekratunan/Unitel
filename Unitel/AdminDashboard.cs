@@ -1,5 +1,4 @@
-﻿using MongoDB.Bson;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -24,7 +23,6 @@ namespace Unitel
         {
             InitializeComponent();
             DataFetch();
-
         }
 
         private void CustomerWriteAccess(bool result)
@@ -74,7 +72,8 @@ namespace Unitel
                 textBox51.ReadOnly = false;
                 textBox51.Hide();
                 textBox35.ReadOnly = false;
-            }else if (!result)
+            }
+            else if (!result)
             {
                 linkLabel2.Hide();
 
@@ -140,13 +139,13 @@ namespace Unitel
             bool recordFound = false;
 
 
-            foreach(var rec in record)
+            foreach (var rec in record)
             {
                 if (rec.MobileNumber == phone)
                 {
                     var simRecord = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", rec.MobileNumber);
 
-                    if(rec.UserImage != null)
+                    if (rec.UserImage != null)
                     {
                         pictureBox3.Image = binToImage(rec.UserImage);
                     }
@@ -243,7 +242,7 @@ namespace Unitel
             {
                 if (rec.EmployeeID == empID)
                 {
-                    if(rec.UserImage != null)
+                    if (rec.UserImage != null)
                     {
                         pictureBox2.Image = binToImage(rec.UserImage);
                     }
@@ -266,11 +265,11 @@ namespace Unitel
                     textBox44.Text = rec.MaritalStatus;
                     textBox10.Text = rec.PhoneNumber;
                     textBox55.Text = rec.DateOfBirth;
-                    if(rec.DateOfBirth != null)
+                    if (rec.DateOfBirth != null)
                     {
                         dateTimePicker1.Value = DateTime.ParseExact(rec.DateOfBirth, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
                     }
-                    
+
 
 
                     textBox22.Text = rec.PresentAddress.Street;
@@ -315,20 +314,25 @@ namespace Unitel
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            NewEmployee newEmployee = new NewEmployee();
-            newEmployee.Show();
+            new NewEmployee().Show();
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            home.Show();
+            LogOut();
             this.Close();
+        }
+
+        private void LogOut()
+        {
+            Properties.Settings.Default.AdminLoggedIn = false;
+            Properties.Settings.Default.Save();
+            home.Show();              
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            NewUser newUser = new NewUser();
-            newUser.Show();
+            new NewUser().Show();
         }
 
         private Image binToImage(byte[] b)
@@ -340,7 +344,7 @@ namespace Unitel
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            if(InternetGetConnectedState(out _, 0))
+            if (InternetGetConnectedState(out _, 0))
             {
                 string empID = textBox1.Text.Trim();
                 if (empID != "")
@@ -359,7 +363,7 @@ namespace Unitel
             {
                 label66.Text = "No internet!";
             }
-            
+
         }
 
         private void Button11_Click(object sender, EventArgs e)
@@ -389,64 +393,69 @@ namespace Unitel
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            if(InternetGetConnectedState(out _, 0))
+            if (InternetGetConnectedState(out _, 0))
             {
-                DialogResult dr = MessageBox.Show("Save Changes?", "Confirmation", MessageBoxButtons.YesNo);
-                if (dr == DialogResult.Yes)
-                {
-                    DatabaseFile database = new DatabaseFile("Employee");
-                    var record = database.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
-                    record.UserImage = pictureCovert(pictureBox2.Image);
-                    record.FirstName = textBox2.Text.Trim();
-                    record.EmailAddress = empEmailTextbox.Text.Trim();
-                    record.LastName = textBox3.Text.Trim();
-                    record.FathersName = textBox4.Text.Trim();
-                    record.MothersName = textBox5.Text.Trim();
-                    record.Nationality = textBox6.Text.Trim();
-                    record.NID_Number = textBox7.Text.Trim();
-                    record.MaritalStatus = comboBox12.Text.Trim();
-                    record.Gender = comboBox9.Text.Trim();
-                    record.PhoneNumber = textBox10.Text.Trim();
-                    record.DrivingLicenseNum = textBox42.Text.Trim();
-                    record.DateOfBirth = dateTimePicker1.Text;
-                    record.Designation = textBox11.Text.Trim();
-                    record.Salary = textBox12.Text.Trim();
-                    record.EmployeeID = textBox8.Text.Trim();
-                    record.PresentAddress = new AddressModel
-                    {
-                        Street = textBox22.Text.Trim(),
-                        State = textBox30.Text.Trim(),
-                        City = textBox28.Text.Trim(),
-                        PostCode = textBox29.Text.Trim(),
-                        Country = comboBox5.Text.Trim()
-                    };
-                    record.PermanentAddress = new AddressModel
-                    {
-                        Street = textBox34.Text.Trim(),
-                        State = textBox31.Text.Trim(),
-                        City = textBox33.Text.Trim(),
-                        PostCode = textBox32.Text.Trim(),
-                        Country = comboBox6.Text.Trim()
-                    };
-
-                    database.UpsertRecord("Emp_Personal_Info", record.ID, record);
-                    label67.Text = "Saved Successfully!";
-
-                    EmpTabWriteAccess(false);
-
-                    button7.Hide();
-                    button8.Hide();
-
-                    button3.Text = "Edit";
-                }
-                else if (dr == DialogResult.No)
-                {
-                    //Nothing to do
-                }
+                EmployeeUpdate();
             }
             else
             {
                 label67.Text = "No internet!";
+            }
+        }
+
+        private void EmployeeUpdate()
+        {
+            DialogResult dr = MessageBox.Show("Save Changes?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DatabaseFile database = new DatabaseFile("Employee");
+                var record = database.LoadRecordbyIdentity<EmployeeModel>("Emp_Personal_Info", "EmployeeID", textBox8.Text);
+                record.UserImage = pictureCovert(pictureBox2.Image);
+                record.FirstName = textBox2.Text.Trim();
+                record.EmailAddress = empEmailTextbox.Text.Trim();
+                record.LastName = textBox3.Text.Trim();
+                record.FathersName = textBox4.Text.Trim();
+                record.MothersName = textBox5.Text.Trim();
+                record.Nationality = textBox6.Text.Trim();
+                record.NID_Number = textBox7.Text.Trim();
+                record.MaritalStatus = comboBox12.Text.Trim();
+                record.Gender = comboBox9.Text.Trim();
+                record.PhoneNumber = textBox10.Text.Trim();
+                record.DrivingLicenseNum = textBox42.Text.Trim();
+                record.DateOfBirth = dateTimePicker1.Text;
+                record.Designation = textBox11.Text.Trim();
+                record.Salary = textBox12.Text.Trim();
+                record.EmployeeID = textBox8.Text.Trim();
+                record.PresentAddress = new AddressModel
+                {
+                    Street = textBox22.Text.Trim(),
+                    State = textBox30.Text.Trim(),
+                    City = textBox28.Text.Trim(),
+                    PostCode = textBox29.Text.Trim(),
+                    Country = comboBox5.Text.Trim()
+                };
+                record.PermanentAddress = new AddressModel
+                {
+                    Street = textBox34.Text.Trim(),
+                    State = textBox31.Text.Trim(),
+                    City = textBox33.Text.Trim(),
+                    PostCode = textBox32.Text.Trim(),
+                    Country = comboBox6.Text.Trim()
+                };
+
+                database.UpsertRecord("Emp_Personal_Info", record.ID, record);
+                label67.Text = "Saved Successfully!";
+
+                EmpTabWriteAccess(false);
+
+                button7.Hide();
+                button8.Hide();
+
+                button3.Text = "Edit";
+            }
+            else if (dr == DialogResult.No)
+            {
+                //Nothing to do
             }
         }
 
@@ -562,7 +571,7 @@ namespace Unitel
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            if(button4.Text == "Edit" && textBox23.Text.Trim() != "")
+            if (button4.Text == "Edit" && textBox23.Text.Trim() != "")
             {
                 button10.Show();
                 button9.Show();
@@ -570,7 +579,8 @@ namespace Unitel
 
                 button4.Text = "Cancel";
 
-            }else if(button4.Text == "Cancel")
+            }
+            else if (button4.Text == "Cancel")
             {
                 button10.Hide();
                 button9.Hide();
@@ -675,29 +685,14 @@ namespace Unitel
 
         }
 
-        private int AdminNumber(DatabaseFile databaseFile)
-        {
-           
-            var numTot = databaseFile.LoadRecords<SecurityModel>("Emp_Account");
-            int tot = 0;
-            foreach(var rec in numTot)
-            {
-                if(rec.AdminStatus == "Admin")
-                {
-                    tot++;
-                }
-            }
-
-            return tot;
-        }
-
         private void Button8_Click(object sender, EventArgs e)
         {
-            if(InternetGetConnectedState(out _, 0))
+            if (InternetGetConnectedState(out _, 0))
             {
                 DatabaseFile databaseFile = new DatabaseFile("Employee");
+                var numTot = databaseFile.LoadRecords<SecurityModel>("Emp_Account");
 
-                if (AdminNumber(databaseFile) > 1)
+                if (numTot.Count > 1)
                 {
                     DialogResult dr = MessageBox.Show("Are you sure to delete the record?", "Confirmation", MessageBoxButtons.YesNo);
                     if (dr == DialogResult.Yes)
@@ -736,7 +731,7 @@ namespace Unitel
 
         private void Button10_Click(object sender, EventArgs e)
         {
-            if(InternetGetConnectedState(out _, 0))
+            if (InternetGetConnectedState(out _, 0))
             {
                 DialogResult dr = MessageBox.Show("Save changes?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
@@ -756,8 +751,8 @@ namespace Unitel
             {
                 label75.Text = "No internet!";
             }
-            
-           
+
+
 
         }
 
@@ -827,14 +822,14 @@ namespace Unitel
         private void TextBox24_KeyDown(object sender, KeyEventArgs e)
         {
             ctr1 = (Control)sender;
-            if(ctr1 is TextBox)
+            if (ctr1 is TextBox)
             {
-                if(e.KeyCode == Keys.Enter)
+                if (e.KeyCode == Keys.Enter)
                 {
                     button11.PerformClick();
                     e.Handled = true;
                     e.SuppressKeyPress = true;
-                    
+
                 }
             }
 
@@ -856,7 +851,7 @@ namespace Unitel
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            if(InternetGetConnectedState(out _, 0))
+            if (InternetGetConnectedState(out _, 0))
             {
                 DialogResult dr = MessageBox.Show("Are you sure to delete the record?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
@@ -899,7 +894,7 @@ namespace Unitel
             return bytes;
 
         }
-        
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -932,11 +927,6 @@ namespace Unitel
 
         }
 
-        private void AdminDashboard_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            home.Show();
-        }
-
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             label66.Text = "";
@@ -963,7 +953,7 @@ namespace Unitel
             counters = counterLoad;
             foreach (var rec in counters)
             {
-                    CounterSelect.Items.Add(rec.CounterNumber);
+                CounterSelect.Items.Add(rec.CounterNumber);
             }
         }
 
@@ -972,17 +962,19 @@ namespace Unitel
             if (tabControl1.SelectedTab == tabControl1.TabPages["Users"])
             {
                 this.ActiveControl = textBox24;
-            }else if(tabControl1.SelectedTab == tabControl1.TabPages["Employee"])
+            }
+            else if (tabControl1.SelectedTab == tabControl1.TabPages["Employee"])
             {
                 this.ActiveControl = textBox1;
-            }else if(tabControl1.SelectedTab == tabControl1.TabPages["Queue"])
+            }
+            else if (tabControl1.SelectedTab == tabControl1.TabPages["Queue"])
             {
                 var counterLoad = tokenSync.LoadRecords<CounterModel>("Counters");
                 counters = counterLoad;
                 DataFetch();
             }
         }
-   
+
         private void DataFetch()
         {
 
@@ -992,6 +984,7 @@ namespace Unitel
             dataGridView1.DataSource = record;
             dataGridView1.Columns["Id"].Visible = false;
             dataGridView1.Columns["TokenDigit"].Visible = false;
+            dataGridView1.Columns["ActiveToken"].Visible = false;
 
             //Modify Headers
             dataGridView1.Columns["CustomerName"].HeaderText = "Customer Name";
@@ -1010,7 +1003,7 @@ namespace Unitel
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(InternetGetConnectedState(out _, 0))
+            if (InternetGetConnectedState(out _, 0))
             {
                 var record = tokenSync.LoadRecords<TokenModel>("ActiveCounter");
                 var counterLoad = tokenSync.LoadRecords<CounterModel>("Counters");
@@ -1033,7 +1026,7 @@ namespace Unitel
                 {
                     DataFetch();
                 }
-            } 
+            }
         }
 
         private void AdminDashboard_SizeChanged(object sender, EventArgs e)
@@ -1052,8 +1045,8 @@ namespace Unitel
             {
                 Console.WriteLine("Loading Error");
             }
-            
-            
+
+
         }
 
         private void CounterSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -1066,7 +1059,7 @@ namespace Unitel
 
         private void AdminDashboard_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
             {
                 if (e.Control && e.KeyCode == Keys.E && button3.Visible)
                 {
@@ -1080,13 +1073,13 @@ namespace Unitel
                     e.Handled = true;
                     e.SuppressKeyPress = true;
                 }
-                if(e.Control && e.KeyCode == Keys.D && button8.Visible)
+                if (e.Control && e.KeyCode == Keys.D && button8.Visible)
                 {
                     button8.PerformClick();
                     e.Handled = true;
                     e.SuppressKeyPress = true;
                 }
-                
+
             }
 
             if (tabControl1.SelectedTab == tabControl1.TabPages["Users"])
@@ -1118,76 +1111,21 @@ namespace Unitel
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
-            
-            if(e.Control && e.KeyCode == Keys.M && e.Alt)
+
+            if (e.Control && e.KeyCode == Keys.M && e.Alt)
             {
                 button2.PerformClick();
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
 
-            if(e.Alt && e.Shift && e.KeyCode == Keys.L)
+            if (e.Alt && e.Shift && e.KeyCode == Keys.L)
             {
                 button5.PerformClick();
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
 
-        }
-
-        private void button8_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button8, "Ctrl+D");
-        }
-
-        private void button7_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button7, "Ctrl+S");
-        }
-
-        private void button3_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button3, "Ctrl+E");
-        }
-
-        private void button6_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button6, "Enter");
-        }
-
-        private void button1_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button1, "Ctrl+Alt+N");
-        }
-
-        private void button2_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button2, "Ctrl+Alt+M");
-        }
-
-        private void button5_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button5, "Shift+Alt+L");
-        }
-
-        private void button11_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button11, "Enter");
-        }
-
-        private void button4_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button4, "Ctrl+E");
-        }
-
-        private void button10_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button10, "Ctrl+S");
-        }
-
-        private void button9_MouseMove(object sender, MouseEventArgs e)
-        {
-            toolTip1.SetToolTip(button9, "Ctrl+D");
         }
     }
 }

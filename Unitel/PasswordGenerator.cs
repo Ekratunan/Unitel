@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Unitel
@@ -38,7 +37,7 @@ namespace Unitel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(InternetGetConnectedState(out _, 0))
+            if (InternetGetConnectedState(out _, 0))
             {
                 if (ValidateChildren(ValidationConstraints.Enabled))
                 {
@@ -53,7 +52,7 @@ namespace Unitel
             {
                 label4.Text = "No internet!";
             }
-            
+
         }
 
 
@@ -79,11 +78,13 @@ namespace Unitel
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox1, "Must contain a letter");
-            }else if (!hasNumber)
+            }
+            else if (!hasNumber)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox1, "Must contain at laest one number");
-            }else if (!hasSpeChar)
+            }
+            else if (!hasSpeChar)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox1, "Must contain a special character");
@@ -103,7 +104,7 @@ namespace Unitel
                 e.Cancel = true;
                 errorProvider1.SetError(textBox2, "Please confirm your password");
             }
-            else if(textBox1.Text != textBox2.Text)
+            else if (textBox1.Text != textBox2.Text)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox2, "Password does not match");
@@ -117,16 +118,17 @@ namespace Unitel
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(textBox1.Text.Trim()) && !string.IsNullOrEmpty(textBox2.Text.Trim())){
-                if(textBox1.Text == textBox2.Text)
+            if (!string.IsNullOrEmpty(textBox1.Text.Trim()) && !string.IsNullOrEmpty(textBox2.Text.Trim()))
+            {
+                if (textBox1.Text == textBox2.Text)
                 {
                     this.AcceptButton = button1;
                     button1.Enabled = true;
                     errorProvider1.SetError(textBox2, "");
                     label4.Text = "";
                 }
-                else if(textBox2.Text.Length < 4 || textBox1.Text != textBox2.Text)
-                { 
+                else if (textBox2.Text.Length < 4 || textBox1.Text != textBox2.Text)
+                {
                     label4.Text = "Password does not match!";
                     button1.Enabled = false;
                 }
@@ -153,7 +155,7 @@ namespace Unitel
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    if(textBox1.Text != textBox2.Text)
+                    if (textBox1.Text != textBox2.Text)
                     {
                         errorProvider1.SetIconAlignment(textBox2, ErrorIconAlignment.MiddleRight);
                         errorProvider1.SetIconPadding(this.textBox2, -20);

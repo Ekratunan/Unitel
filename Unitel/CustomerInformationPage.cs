@@ -10,51 +10,60 @@ namespace Unitel
     public partial class CustomerInformationPage : Form
     {
         Form dashboard { get; set; }
+        TokenModel currentToken { get; set; }
         private string Token { get; set; }
         DatabaseFile findData = new DatabaseFile("Customer");
         [DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int description, int reserved);
 
-        public CustomerInformationPage(string phoneNum, string token, string typeOfSer, Form dash)
+        public CustomerInformationPage(TokenModel currentToken,Form dash)
         {
             InitializeComponent();
-            ValuePicker(phoneNum);
-            button5.Hide();
-            label28.Text = "";
-            label29.Text = token;
-            label31.Text = typeOfSer;
-            label16.Text = phoneNum;
-            WriteAccess(true);
-            button1.Hide();
-            panel9.Hide();
-            panel6.Hide();
-            panel7.Hide();
+            this.currentToken = currentToken;
 
-            dashboard = dash;
-            Token = token;
+            if (currentToken.TypeOfService == "Buy New SIM")
+            {
+                label16.Text = "";
+                button4.Hide();
+                button1.Hide();
+                label28.Text = "";
+                WriteAccess(false);
+                dashboard = dash;
+            }
+            else
+            {
+                ValuePicker(currentToken.MobileNumber);
+                button5.Hide();
+                label28.Text = "";
+
+                WriteAccess(true);
+                button1.Hide();
+                panel9.Hide();
+                panel6.Hide();
+                panel7.Hide();
+
+                dashboard = dash;
+                Token = currentToken.TokenNumber;
+            }
+
+            label29.Text = currentToken.TokenNumber;
+            label31.Text = currentToken.TypeOfService;
+            label16.Text = currentToken.MobileNumber;
         }
 
-        
-        public CustomerInformationPage(string token, string typeOfSer, Form dash)
+
+    /*    public CustomerInformationPage(string token, string typeOfSer, Form dash)
         {
             InitializeComponent();
-            label16.Text = "";
-            button4.Hide();
-            button1.Hide();
-            label28.Text = "";
-            WriteAccess(false);
-            label29.Text = token;
-            label31.Text = typeOfSer;
-            Token = token;
-            dashboard = dash;
-        }
+            
+        }*/
 
         public CustomerInformationPage()
         {
             InitializeComponent();
         }
 
-        
+
 
         private Image BinToImage(byte[] b)
         {
@@ -66,12 +75,12 @@ namespace Unitel
 
         private void ValuePicker(string phoneNum)
         {
-               
-            DatabaseFile databaseFile = new DatabaseFile("Customer");    
+
+            DatabaseFile databaseFile = new DatabaseFile("Customer");
             var record = databaseFile.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", phoneNum);
             var simRecord = databaseFile.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", phoneNum);
 
-               
+
 
             if (record.UserImage != null)
             {
@@ -120,12 +129,12 @@ namespace Unitel
             comboBox3.Text = simRecord.UserLevel;
 
 
-                
+
             //SIM Information tab
-            
-            comboBox1.Text = simRecord.PackageType;   
-            textBox5.Text = simRecord.Device_IMEI; 
-            textBox9.Text = simRecord.Device_Model;       
+
+            comboBox1.Text = simRecord.PackageType;
+            textBox5.Text = simRecord.Device_IMEI;
+            textBox9.Text = simRecord.Device_Model;
             textBox8.Text = simRecord.SIM_Version;
             textBox16.Text = simRecord.DateOfIssue;
 
@@ -135,8 +144,16 @@ namespace Unitel
 
         }
 
+        private void ClosingOperation()
+        {
+            currentToken.ActiveToken = true;
+            DatabaseFile syncDB = new DatabaseFile("Tokens");
+            syncDB.UpsertRecord("ActiveCounter", currentToken.Id, currentToken);
+        }
+
         private void Button3_Click(object sender, EventArgs e)
         {
+            ClosingOperation();
             this.Close();
         }
 
@@ -173,10 +190,10 @@ namespace Unitel
                 textBox8.ReadOnly = false;
                 textBox14.ReadOnly = false;
             }
-            else if(!writable)
+            else if (!writable)
             {
                 textBox1.ReadOnly = true;
-                textBox4.ReadOnly = true; 
+                textBox4.ReadOnly = true;
                 textBox2.ReadOnly = true;
                 textBox3.ReadOnly = true;
                 textBox6.ReadOnly = true;
@@ -190,7 +207,7 @@ namespace Unitel
                 textBox30.ReadOnly = true;
                 textBox29.ReadOnly = true;
                 textBox28.ReadOnly = true;
-       
+
 
                 //Permanent Address
                 textBox34.ReadOnly = true;
@@ -278,12 +295,12 @@ namespace Unitel
 
                     button1.Hide();
                 }
-                catch(NullReferenceException)
+                catch (NullReferenceException)
                 {
                     MessageBox.Show("This user does not exists!", "Error", MessageBoxButtons.OK);
                 }
 
-                
+
             }
             else if (dr == DialogResult.No)
             {
@@ -309,7 +326,7 @@ namespace Unitel
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if(textBox10.Text.Trim() == "")
+            if (textBox10.Text.Trim() == "")
             {
                 label28.Text = "Please enter a Mobile Number";
             }
@@ -318,7 +335,7 @@ namespace Unitel
                 label28.Text = "Searching for user....";
                 WriteAccess(false);
 
-                
+
                 var records = findData.LoadRecords<PersonModel>("Personal_Info");
                 bool exists = records.Any(p => p.MobileNumber == textBox10.Text.Trim());
 
@@ -337,7 +354,7 @@ namespace Unitel
                 }
             }
 
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -487,7 +504,7 @@ namespace Unitel
             //Loading database
             DatabaseFile tokenDb = new DatabaseFile("Tokens");
             DatabaseFile customerDB = new DatabaseFile("Customer");
-            
+
             //Loading records
             var recToken = tokenDb.LoadRecordbyIdentity<TokenModel>("ActiveCounter", "TokenNumber", Token);
             var personLoad = customerDB.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", phone);
@@ -559,7 +576,7 @@ namespace Unitel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(InternetGetConnectedState(out _, 0))
+            if (InternetGetConnectedState(out _, 0))
             {
                 DialogResult dr = MessageBox.Show("Are you sure this ticket has been solved?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
@@ -588,7 +605,7 @@ namespace Unitel
             {
                 MessageBox.Show("No internet. Make sure you are connected to the internet", "Network Disconnected", MessageBoxButtons.OK);
             }
-            
+
         }
 
 
@@ -622,7 +639,7 @@ namespace Unitel
 
 
                 label28.Text = "Record Deleted";
-          
+
                 panel7.Show();
                 panel9.Show();
                 panel6.Show();
@@ -649,7 +666,7 @@ namespace Unitel
 
         private void textBox10_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 button6.PerformClick();
             }
@@ -662,7 +679,7 @@ namespace Unitel
 
         private void CustomerInformationPage_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Control && e.KeyCode == Keys.N && e.Alt)
+            if (e.Control && e.KeyCode == Keys.N && e.Alt)
             {
                 button5.PerformClick();
                 e.Handled = true;
@@ -676,38 +693,40 @@ namespace Unitel
                 e.SuppressKeyPress = true;
             }
 
-            if(e.Control && e.KeyCode == Keys.S && button1.Visible)
+            if (e.Control && e.KeyCode == Keys.S && button1.Visible)
             {
                 button1.PerformClick();
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
 
-            if(e.Control && e.KeyCode == Keys.D && button4.Visible)
+            if (e.Control && e.KeyCode == Keys.D && button4.Visible)
             {
                 button4.PerformClick();
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
 
-            if(e.Control && e.KeyCode == Keys.K)
+            if (e.Control && e.KeyCode == Keys.K)
             {
                 button2.PerformClick();
                 e.Handled = true;
                 e.SuppressKeyPress = true;
-            }else if(e.Control && e.KeyCode == Keys.J)
+            }
+            else if (e.Control && e.KeyCode == Keys.J)
             {
                 button3.PerformClick();
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
-            
+
         }
 
         private void CustomerInformationPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             dashboard.ShowInTaskbar = true;
             dashboard.WindowState = FormWindowState.Normal;
+            ClosingOperation();
         }
 
         private void button5_MouseMove(object sender, MouseEventArgs e)

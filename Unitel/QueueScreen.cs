@@ -43,14 +43,15 @@ namespace Unitel
                 //Main Line
                 line1TN.Text = token;
                 line1CN.Text = counter;
-            } else if (line1TN.Text != token)
+            }
+            else if (line1TN.Text != token)
             {
                 if (blinkerTimer.Enabled)
                 {
                     blinkerTimer.Stop();
                 }
-                
-                
+
+
                 //Line 6
                 line6TN.Text = line5TN.Text;
                 line6CN.Text = line5CN.Text;
@@ -74,13 +75,14 @@ namespace Unitel
                 //Main Line
                 line1TN.Text = token;
                 line1CN.Text = counter;
-            }else if(line1TN.Text == token)
+            }
+            else if (line1TN.Text == token)
             {
                 blinkerTimer.Enabled = true;
             }
 
-                
-            
+
+
 
         }
 

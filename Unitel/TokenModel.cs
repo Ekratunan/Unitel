@@ -1,12 +1,9 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Unitel
 {
-    class TokenModel
+    public class TokenModel
     {
         [BsonId]
         public BsonObjectId Id { get; set; }
@@ -15,6 +12,7 @@ namespace Unitel
         public string TokenNumber { get; set; }
         public string TypeOfService { get; set; }
         public int TokenDigit { get; set; }
+        public bool ActiveToken { get; set; }
     }
 
     public class ServiceRecord_Model

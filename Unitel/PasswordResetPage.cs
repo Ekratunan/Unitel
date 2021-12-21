@@ -98,14 +98,14 @@ namespace Unitel
 
         private void otpVerifierButton_Click(object sender, EventArgs e)
         {
-            if(textBox2.Text.Trim() == sampleTaken)
+            if (textBox2.Text.Trim() == sampleTaken)
             {
                 var rec = readEmployee.LoadRecordbyIdentity<SecurityModel>("Emp_Account", "EmployeeID", existingUser.EmployeeID);
                 rec.Password = null;
                 readEmployee.UpsertRecord("Emp_Account", rec.ID, rec);
 
                 DialogResult dr = MessageBox.Show("Password Reset Succesfully", "All Done!", MessageBoxButtons.OK);
-                if(dr == DialogResult.OK)
+                if (dr == DialogResult.OK)
                 {
                     this.Close();
                 }

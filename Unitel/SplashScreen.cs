@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -17,7 +16,7 @@ namespace Unitel
             InitializeComponent();
             label2.Text = Application.ProductVersion.ToString();
 
-            if (InternetGetConnectedState(out _,0))
+            if (InternetGetConnectedState(out _, 0))
             {
                 panel2.Width += 2;
                 timer1.Start();
@@ -49,33 +48,45 @@ namespace Unitel
         }
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            while(InternetGetConnectedState(out _, 0) && panel2.Width < panel1.Width - 350)
+            while (InternetGetConnectedState(out _, 0) && panel2.Width < panel1.Width - 400)
             {
                 panel2.Width += 1;
             }
 
 
-            if(InternetGetConnectedState(out _,0) && panel2.Width < panel1.Width)
+            if (InternetGetConnectedState(out _, 0) && panel2.Width < panel1.Width)
             {
                 panel2.Width += 2;
                 if (label1.Text == "Trying to connect")
                 {
                     label1.Text = "";
                 }
-                
-            }else if(!InternetGetConnectedState(out _, 0))
+
+            }
+            else if (!InternetGetConnectedState(out _, 0))
             {
-                if(label1.Text != "Trying to connect")
+                if (label1.Text != "Trying to connect")
                 {
                     label1.Text = "Trying to connect";
                 }
-                
+
             }
 
             if (panel2.Width >= panel1.Width)
             {
                 timer1.Stop();
-                home.Show();
+                if (Properties.Settings.Default.AdminLoggedIn)
+                {
+                    new PassConfirmation().Show();
+                }
+                else if (Properties.Settings.Default.LoggedIn)
+                {
+                    new Dashboard(Properties.Settings.Default.EmployeeID_Active, Properties.Settings.Default.Counter, Properties.Settings.Default.Number, false).Show();
+                }
+                else
+                {
+                    home.Show();
+                }
                 this.Hide();
             }
         }
@@ -83,7 +94,7 @@ namespace Unitel
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            tryCon:
+        tryCon:
             if (CheckForInternetConnection())
             {
                 timer1.Start();
