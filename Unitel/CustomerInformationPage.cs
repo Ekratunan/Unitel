@@ -11,7 +11,7 @@ namespace Unitel
     {
         Form dashboard { get; set; }
         TokenModel currentToken { get; set; }
-        private string Token { get; set; }
+       // private string Token { get; set; }
         DatabaseFile findData = new DatabaseFile("Customer");
         [DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int description, int reserved);
@@ -43,7 +43,6 @@ namespace Unitel
                 panel7.Hide();
 
                 dashboard = dash;
-                Token = currentToken.TokenNumber;
             }
 
             label29.Text = currentToken.TokenNumber;
@@ -147,8 +146,12 @@ namespace Unitel
         private void ClosingOperation()
         {
             currentToken.ActiveToken = true;
-            DatabaseFile syncDB = new DatabaseFile("Tokens");
-            syncDB.UpsertRecord("ActiveCounter", currentToken.Id, currentToken);
+
+            if (button2.Enabled)
+            {
+                DatabaseFile syncDB = new DatabaseFile("Tokens");
+                syncDB.UpsertRecord("ActiveCounter", currentToken.Id, currentToken);
+            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -495,7 +498,7 @@ namespace Unitel
         private void Mark_As_Solved()
         {
             DatabaseFile tokenDb = new DatabaseFile("Tokens");
-            var recToken = tokenDb.LoadRecordbyIdentity<TokenModel>("ActiveCounter", "TokenNumber", Token);
+            var recToken = tokenDb.LoadRecordbyIdentity<TokenModel>("ActiveCounter", "TokenNumber", currentToken.TokenNumber);
             tokenDb.DeleteRecord<TokenModel>("ActiveCounter", recToken.Id);
         }
 
@@ -506,7 +509,7 @@ namespace Unitel
             DatabaseFile customerDB = new DatabaseFile("Customer");
 
             //Loading records
-            var recToken = tokenDb.LoadRecordbyIdentity<TokenModel>("ActiveCounter", "TokenNumber", Token);
+            var recToken = tokenDb.LoadRecordbyIdentity<TokenModel>("ActiveCounter", "TokenNumber", currentToken.TokenNumber);
             var personLoad = customerDB.LoadRecordbyIdentity<PersonModel>("Personal_Info", "MobileNumber", phone);
             var simLoad = customerDB.LoadRecordbyIdentity<SIM_Model>("SIM_Info", "MobileNumber", phone);
 
@@ -576,18 +579,20 @@ namespace Unitel
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             if (InternetGetConnectedState(out _, 0))
             {
                 DialogResult dr = MessageBox.Show("Are you sure this ticket has been solved?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
+                    button2.Enabled = false;
                     if (label16.Text == "")
                     {
                         Mark_As_Solved();
                     }
                     else
                     {
-                        Mark_As_Solved(label16.Text);
+                        Mark_As_Solved(currentToken.MobileNumber);
                     }
 
 

@@ -4,33 +4,26 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Authors>Unitel PTO</Authors>
-    <Product>Unitel Desktop</Product>
-    <Copyright>2021 (c) Unitel PTO.</Copyright>
+    <Authors>Unitel Project Team and Organization</Authors>
+    <Product>Unitel 2022</Product>
+    <Copyright>© 2021 Unitel Project Team and Organization</Copyright>
     <SignAssembly>false</SignAssembly>
-    <ApplicationIcon>icon_01_VbH_icon.ico</ApplicationIcon>
-    <Win32Resource />
     <StartupObject>Unitel.Program</StartupObject>
-    <PackageId>UnitelBeta</PackageId>
-    <Version>21.0.1</Version>
-    <Company>Unitel PTO</Company>
+    <PackageId>Unitel</PackageId>
+    <Version>21.1.0</Version>
+    <Company>Unitel Project Team and Organization</Company>
     <NeutralLanguage>en-UM</NeutralLanguage>
-    <PackageReleaseNotes>8-12/2021 FInal Test Version Release patch note:
-1. Unitel can store a company's employee informations.
-2. You can perform customer additiona nd deletion.
-3. Customer Service centre patch added.
-4. No more major bugs.
-5. Added Ticket Generator and Queue screen</PackageReleaseNotes>
-    <Description>Unitel is a universal customer service application that can be use at any Service Center for Mobile Operator, Bank, Device After Service Provider, Hospital and so on. This project is under consultation on porject group 'Unitel' for University of Development Alternative(UODA). Owners: Ekra Hossain, Abir Hossain,Nowshin Atia Sarker, Md. Rezwan Ibna Akram, Md. Saiful Islam Rafid, Md. Nasir Islam Sharif &amp; Md. Monir Hossain.</Description>
-    <AssemblyName>Unitel (Beta)</AssemblyName>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>Release Version</PackageReleaseNotes>
+    <Description>A universal customer service application that can be use at any Service Center for Mobile Operator, Bank, Device After Service Provider, Hospital and so on. This project is under consultation on porject group 'Unitel' for University of Development Alternative(UODA). Owners: Ekra Hossain, Abir Hossain,Nowshin Atia Sarker, Md. Rezwan Ibna Akram, Md. Saiful Islam Rafid, Md. Nasir Islam Sharif &amp; Md. Monir Hossain.</Description>
+    <AssemblyName>Unitel</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIcon>Icon-01.png</PackageIcon>
     <PackageIconUrl />
-    <Nullable>annotations</Nullable>
-    <AssemblyVersion>21.0.1.0</AssemblyVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyVersion>21.1.0.0</AssemblyVersion>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
     <UserSecretsId>28d35e26-359e-4b3e-b052-824e44a24587</UserSecretsId>
+    <ApplicationIcon>icon_01_VbH_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -48,6 +41,10 @@
     <Optimize>false</Optimize>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="icon_01_VbH_icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />

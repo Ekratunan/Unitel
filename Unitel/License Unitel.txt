@@ -1,0 +1,151 @@
+UNITEL PTO SOFTWARE LICENSE AGREEMENT
+
+THIS AGREEMENT is entered into as of 2022 ("Effective Date") by and between
+UNITEL PROJECT TEAM AND ORGANIZATION, INC. (NEAR), with offices at Dhanmondi, Dhaka Bangladesh 94043-2241 ("LICENSOR") and COMPANY NAME
+and ADDRESS ("LICENSEE").
+ WHEREAS, Licensee wishes to license software for the purpose of xxxxxxxxx and
+NEAR desires to license this software to licensee.
+ NOW THEREFORE, the parties hereto agree as follows:
+1. GRANT OF LICENSE
+ Subject to the terms and conditions of the Agreement, NEAR grants to Licensee a
+non-exclusive, non-transferable license to use the software identified in Exhibit A (the "Licensed
+Programs") for the purpose of providing better services to Mobile Operators and other customer service companies. Licensee may use the Licensed
+Programs in executable format for its own use, and may translate or modify the licensed
+programs or incorporate them into other software. Licensee may not, however, transfer or
+sublicense the Licensed Programs to any third party, in whole or in part, in any form, whether
+modified or unmodified.
+2. CONSIDERATION TO NEAR
+ a. Licensee shall pay, upon delivery of the Licensed Programs, the license fees set
+forth in Exhibit A attached hereto.
+ b. License fees do not include any shipping, duties, bank fees, sales, use, excise or
+similar taxes due. If Licensor is required to pay any such amounts, Licensee shall reimburse
+Licensor in full.
+3. COPIES
+ Licensee may make copies of the Licensed Program in executable code form as
+necessary for use by Licensee and for backup or archive purposes. Licensee agrees to maintain
+records of the location and use of each copy, in whole or in part, of the Licensed Programs. Each
+Licensed Program is copyrighted but unpublished by NEAR. Licensee agrees to reproduce and
+apply the copyright notice and proprietary notice of NEAR to all copies made hereunder, in
+whole or in part and in any form, of Licensed Programs.
+4. OWNERSHIP
+ The original and any copies of the Licensed Programs, made by Licensee, including
+translations, compilations, partial copies, modifications, and updates, are the property of NEAR.
+5. PROPRIETARY RIGHTS
+ Licensee recognizes that NEAR regards the Licensed Programs as its proprietary
+information and as confidential trade secrets of great value. Licensee agrees not to provide or to
+otherwise make available in any form the Licensed Programs, or any portion thereof, to any
+person other than employees of Licensee without the prior written consent of NEAR. Licensee
+further agrees to treat the Licensed Programs with at least the same degree of care with which
+Licensee treats its own confidential information and in no event with less care than is reasonably
+required to protect the confidentiality of the Licensed Programs.
+6. TERM
+ The license granted hereunder shall continue unless and until terminated pursuant to
+Section 7 hereof and subject to Licensee's proper performance of its obligations hereunder.
+7. TERMINATION
+ NEAR may terminate this Agreement if Licensee is in default of any of the terms and
+conditions of this Agreement and fails to correct such default within ten (10) days after written
+notice thereof from NEAR.
+8. TERMINATION CERTIFICATE
+ In the event of termination, Licensee will immediately discontinue use of the
+Licensed Programs. Within one (1) month after termination of this Agreement, Licensee will
+furnish to NEAR a certificate which certifies with respect to each of the Licensed Programs that,
+through its best effort and to the best of its knowledge, the original and all copies, in whole or in
+part and in any form, of each of the Licensed Programs have been destroyed. The provisions of
+Sections 4, 5, 8, 11, and 13 hereof shall survive any termination of this Agreement.
+9. MAINTENANCE SUPPORT
+ Licensor will provide to Licensee the following support with respect to the Software:
+ (i) If during the 1st year of this Agreement, Licensee notifies Licensor of a
+substantial program error respecting the Software, or Licensor has reason to believe that error
+exists in the Software and so notifies Licensee, Licensor shall at its expense verify and attempt to
+correct such error within thirty (30) working days after the date of notification. If Licensee is not 
+satisfied with the correction, then Licensee may terminate this Agreement, but without refund of
+any amount paid to Licensor or release of any amounts due Licensor at the time of termination.
+ (ii) In the case that Licensee has technical questions in the use of the Software
+during the 1st year of this Agreement, Licensee may submit those questions to Licensor.
+Licensor shall provide consulting to answer such questions without charge to Licensee up to a
+maximum of sixteen (16) hours for each licensed program.
+ (iii) If License desires to continue the Software support specified in this section,
+Licensee shall pay to Licensor the maintenance fee(s) set forth in Exhibit A.
+10. DELIVERY OF LICENSED PROGRAMS
+ NEAR shall use its best efforts to deliver the Licensed Programs promptly after
+receipt of the purchase order and export license (if required).
+11. WARRANTY DISCLAIMER
+ NEAR licenses, and Licensee accepts, the licensed programs "AS IS." NEAR
+PROVIDES NO WARRANTIES AS TO THE FUNCTION OR USE OF THE LICENSED
+PROGRAMS, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING,
+WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR
+FITNESS FOR PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND
+PERFORMANCE OF THE LICENSED PROGRAM IS WITH LICENSEE. LICENSOR DOES
+NOT WARRANT THAT THE FUNCTIONS CONTAINED IN THE LICENSED PROGRAMS
+WILL MEET LICENSEE'S REQUIREMENTS OR THAT THE OPERATION OF THE
+LICENSED PROGRAMS WILL BE UNINTERRUPTED OR ERROR FREE.
+12. PATENT AND COPYRIGHT INDEMNITY
+ NEAR will defend at its own expense any action brought against Licensee to the
+extent it is based on a claim that the Licensed Programs used within the scope of the license
+granted hereunder infringe a United States patent, copyright or other proprietary right of a third
+party. NEAR will pay any costs, damages or attorney fees finally awarded against Licensee in
+such action which are attributable to such claim, provided NEAR is promptly notified in writing
+of such claim, may control the defense and/or settlement of such claim, and is provided with all
+requested assistance, information and authority. In the event that a Licensed Program becomes,
+or in NEAR's opinion is likely to become, the subject of a claim of infringement of a United
+States patent, copyright or trade secret, NEAR may at its option either secure Licensee's right to
+continue using the Licensed Programs, replace or modify the Licensed Programs to make them
+not infringing, or provide Licensee with a refund of the license fee less depreciation on a 5 (five)
+year, straight-line basis. NEAR shall have no liability for any claim of patent, copyright or trade
+secret infringement based on the use of a Licensed Program in any form other than the original,
+unmodified form provided to Licensee or the use of a combination of the Licensed Programs 
+with hardware, software or data not supplied by NEAR where the used Licensed Programs alone
+in their original, unmodified form would not constitute an infringement. The foregoing states
+Licensee's entire liability for infringement or claims of infringement of patents, copyrights or
+other intellectual property right.
+13. LIMITATION OF LIABILITY
+ NEAR'S LIABILITY TO LICENSEE UNDER ANY PROVISIONS OF THIS
+AGREEMENT FOR DAMAGES FINALLY AWARDED SHALL BE LIMITED TO THE
+AMOUNTS ACTUALLY PAID HEREUNDER BY LICENSEE TO NEAR. IN NO EVENT
+SHALL NEAR BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, OR
+CONSEQUENTIAL DAMAGES, INCLUDING LOSS OF USE, LOSS OF PROFITS OR
+INTERRUPTION OF BUSINESS, HOWEVER CAUSED OR ON ANY THEORY OF
+LIABILITY.
+14. NOTICES
+ All notices in connection with this Agreement shall be in writing and may be given by
+certified, registered, or first class mail or personally delivered at the address set forth on the front
+page. For purposes of this Agreement, a notice shall be deemed effective upon personal delivery
+to the party or if by mail five days after proper deposit in a mail box.
+15. SUCCESSORS
+ This Agreement will be binding upon and will inure to the benefit of the parties hereto
+and their respective representatives, successors and assigns except as otherwise provided herein.
+16. SEVERABILITY
+ In the event any provision of this Agreement is determined to be invalid or
+unenforceable, the remainder of this Agreement shall remain in force as if such provision were
+not a part.
+17. GOVERNING LAW/FORUM
+ This Agreement shall be governed and interpreted by the laws of the State of
+California. Santa Clara County, California shall be the appropriate venue and jurisdiction for the
+resolution of any disputes hereunder. Both parties hereby consent to such personal and exclusive
+jurisdiction.
+
+18. NON-ASSIGNMENT
+ This Agreement and the licenses granted by it may not be assigned, sublicensed, or
+otherwise transferred by Licensee without the prior written consent of NEAR. 
+- 5 -
+19. EXPORT REGULATIONS
+ Licensee understands that NEAR is subject to regulation by agencies of the U.S.
+Government, including the U.S. Departments of Commerce and State, which prohibit export or
+diversion of certain technical products to certain countries. Licensee warrants that it will comply
+in all respect with the export and re-export restrictions set forth in the export license for the
+Licensed Programs and all other applicable export regulations. Licensee agrees to indemnify and
+hold NEAR harmless from any loss, damages, liability or expenses incurred by NEAR as a result
+of Licensee's failure to comply with any export regulations or restrictions.
+20. ENTIRE AGREEMENT
+ This Agreement sets forth the entire understanding between the parties with respect to
+the subject matter hereof, and merges and supersedes all prior agreements, discussions and
+understandings, express or implied, concerning such matters. This Agreement shall take
+precedence over any additional or conflicting terms which may be contained in Licensee's
+purchase order or NEAR's order acknowledgment forms.
+IN WITNESS WHEREOF, the parties have caused this Agreement to be executed as of the
+Effective Date.
+LICENSEE: LICENSOR:
+ Unitel Project Team & Oranization, Inc.
+By:___Ekra Hossain___ By:___Abir Hossain___
+ (Signature) (Signature)
+Name:___Ekra Hossain__Name: Ekra Hossain
